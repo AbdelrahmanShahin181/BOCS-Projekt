@@ -59,9 +59,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# MacOS specific
 .DS_Store
-UserSettings/Layouts/default-2021.dwlt
-UserSettings/Layouts/default-2021.dwlt
-UserSettings/Layouts/default-2021.dwlt
-UserSettings/Layouts/default-2021.dwlt
+
+# User Settings / Resolution etc.
 UserSettings/Layouts/default-2021.dwlt
