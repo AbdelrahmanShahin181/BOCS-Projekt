@@ -500,9 +500,15 @@ RectTransform:
   m_Father: {fileID: 1449409133}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -153.93}
+=======
+  m_AnchorMin: {x: 0.5, y: 0.22314744}
+  m_AnchorMax: {x: 0.5, y: 0.22314744}
+  m_AnchoredPosition: {x: 10, y: 102.6187}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 160, y: 31.2374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51103627
