@@ -1561,7 +1561,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3273,6 +3273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592301095}
   - component: {fileID: 592301096}
+  - component: {fileID: 592301097}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -3354,6 +3355,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &592301097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592301094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be376020983f5449be935dda5edc1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 592301096}
 --- !u!1 &626398356
 GameObject:
   m_ObjectHideFlags: 0
@@ -14157,14 +14171,14 @@ MonoBehaviour:
   m_Follow: {fileID: 1040522825}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.276684, y: 1}
+    m_SensorSize: {x: 1.9292268, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14552,6 +14566,7 @@ GameObject:
   - component: {fileID: 1040522822}
   - component: {fileID: 1040522821}
   - component: {fileID: 1040522820}
+  - component: {fileID: 1040522826}
   m_Layer: 0
   m_Name: Player_Boy
   m_TagString: Untagged
@@ -14699,6 +14714,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040522826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040522819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41875245d21bdc940997b6bd0669a00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  healthBar: {fileID: 592301097}
 --- !u!1 &1383981753
 GameObject:
   m_ObjectHideFlags: 0
@@ -15766,6 +15796,7 @@ GameObject:
   - component: {fileID: 2002804154}
   - component: {fileID: 2002804153}
   - component: {fileID: 2002804152}
+  - component: {fileID: 2002804158}
   m_Layer: 0
   m_Name: Player_Girl
   m_TagString: Untagged
@@ -15913,3 +15944,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002804158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002804151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41875245d21bdc940997b6bd0669a00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  healthBar: {fileID: 592301097}
