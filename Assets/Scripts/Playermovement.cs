@@ -15,6 +15,7 @@ public class Playermovement : MonoBehaviour
     void Start()
     {
        // player= GetComponent<Rigidbody2D>();
+       DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
