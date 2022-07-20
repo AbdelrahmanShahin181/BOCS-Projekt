@@ -38,19 +38,19 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3254972063
+    locked: 0
+  - name: Floors
+    uniqueID: 940498381
+    locked: 0
+  - name: Backwalls
+    uniqueID: 1555009637
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
-    uniqueID: 3254972063
-    locked: 0
-  - name: New Layer 2
-    uniqueID: 940498381
-    locked: 0
-  - name: New Layer 3
-    uniqueID: 1555009637
-    locked: 0
-  - name: New Layer 4
+  - name: Frontwalls
     uniqueID: 534654843
     locked: 0
   - name: New Layer 5
@@ -58,4 +58,13 @@ TagManager:
     locked: 0
   - name: New Layer 6
     uniqueID: 94650323
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 3454097035
+    locked: 0
+  - name: Spielmaske
+    uniqueID: 3835827495
+    locked: 0
+  - name: New Layer 9
+    uniqueID: 3287171385
     locked: 0
