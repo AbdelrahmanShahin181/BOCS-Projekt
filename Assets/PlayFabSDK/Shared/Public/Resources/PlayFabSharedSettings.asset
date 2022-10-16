@@ -15,7 +15,7 @@ MonoBehaviour:
   TitleId: FA998
   DeveloperSecretKey: 7FUDZMUUYQMYOS1YAUYQJ7UGMS6XOX8H8TIH1Q57MIR5UHHHBP
   ProductionEnvironmentUrl: 
-  RequestType: 0
+  RequestType: 2
   DisableDeviceInfo: 0
   DisableFocusTimeCollection: 0
   RequestTimeout: 2000
