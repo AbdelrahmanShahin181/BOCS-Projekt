@@ -6,6 +6,7 @@ using PlayFab.ClientModels;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayfabManager : MonoBehaviour
 {
@@ -52,6 +53,8 @@ public class PlayfabManager : MonoBehaviour
     void OnLoginSuccess(LoginResult result)
     {
         messageText.text = "Login Success";
+        // switch scene 
+        SceneManager.LoadScene(2);
     }
     void OnPasswordReset(SendAccountRecoveryEmailResult result)
     {
