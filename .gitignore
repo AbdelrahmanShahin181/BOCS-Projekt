@@ -65,5 +65,8 @@ crashlytics-build.properties
 
 # User Settings
 UserSettings/
+
+# PlayFab
 Assets/PlayFabEditorExtensions/Editor/Resources/PlayFabEditorPrefsSO.asset
 Assets/PlayFabSDK/Shared/Public/Resources/PlayFabSharedSettings.asset
+Assets/PlayFabSDK/*.meta
