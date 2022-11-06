@@ -149,6 +149,7 @@ public class PlayfabManager : MonoBehaviour
     {
         return value.ToString("X2");
     }
+    
 
     private string ColorToString(Color color)
     {
