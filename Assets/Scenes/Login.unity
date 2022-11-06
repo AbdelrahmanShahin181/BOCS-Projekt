@@ -1612,6 +1612,8 @@ MonoBehaviour:
   messageText: {fileID: 1891841949}
   emailInput: {fileID: 636737837}
   passwordInput: {fileID: 697073462}
+  usernameInput: {fileID: 0}
+  spritegameobject: {fileID: 4374716913138653570, guid: 7397ee5c9668f1240a6f72c1106c9f08, type: 3}
 --- !u!1 &1419538604
 GameObject:
   m_ObjectHideFlags: 0
