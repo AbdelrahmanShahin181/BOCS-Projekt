@@ -143,13 +143,11 @@ public class PlayfabManager : MonoBehaviour
     }
 
 
-
     // color zu String umwandeln
     private string DecToHex(int value)
     {
         return value.ToString("X2");
     }
-    
 
     private string ColorToString(Color color)
     {
