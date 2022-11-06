@@ -56,7 +56,6 @@ public class PlayfabManager : MonoBehaviour
     {
         messageText.text = "Register Success";
         
-        
         SceneManager.LoadScene(4);
     }
     
