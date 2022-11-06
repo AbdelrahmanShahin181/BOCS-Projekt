@@ -42,8 +42,7 @@ public class PlayfabManager : MonoBehaviour
     {
         var request = new LoginWithEmailAddressRequest { Email = emailInput.text, Password = passwordInput.text };
         PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
-          
-        }
+    }
     
     public void ResetPasswordbutton()
     {
@@ -55,13 +54,7 @@ public class PlayfabManager : MonoBehaviour
     void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
         messageText.text = "Register Success";
-        
         SceneManager.LoadScene(4);
-    }
-    
-    void OnError(PlayFabError error)
-    {
-        messageText.text = error.ErrorMessage;
     }
     
     void OnLoginSuccess(LoginResult result)
@@ -85,6 +78,11 @@ public class PlayfabManager : MonoBehaviour
         messageText.text = "Password Reset Success";
     }
 
+        void OnError(PlayFabError error)
+    {
+        messageText.text = error.ErrorMessage;
+    }
+
     void Login()
     {
         var request = new LoginWithCustomIDRequest { CustomId = SystemInfo.deviceUniqueIdentifier, CreateAccount = true};
@@ -92,51 +90,53 @@ public class PlayfabManager : MonoBehaviour
     }
    
    public void SetUserData() {
-    
     PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest() {
         Data = new Dictionary<string, string>() {
             {"name",usernameInput.text },
             {"age",ageInput.text },
             {"color",myColor },
+           
+            
         }
-    },
-    
+    }, 
     result => Debug.Log("Successfully updated user data"),
     error => {
         Debug.Log("Got error setting user data Ancestor to Arthur");
         Debug.Log(error.GenerateErrorReport());
     });
-    //PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
     SceneManager.LoadScene(2);
     }
 
-   
-   
-   public void OnDataSend(UpdateUserDataResult result)
+
+
+    public void UserDataScuccess(GetUserDataResult result)
     {
-        messageText.text = "Data Send Success";
-    }
-    public void GetPlayerData()
-    {
-        PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
-            
-            Keys = null
-        }, userDataScuccess, OnError);
-        
-    }
-    public void userDataScuccess(GetUserDataResult result)
-    {
- if(result.Data == null || !result.Data.ContainsKey("name") || !result.Data.ContainsKey("age") || !result.Data.ContainsKey("color"))
+        if(result.Data == null || !result.Data.ContainsKey("name") || !result.Data.ContainsKey("age") || !result.Data.ContainsKey("color"))
         {
             Debug.Log("No data found");
             SceneManager.LoadScene(4);
         }else{
-            //result.Data["color"].Value
-            GetPlayerData();
             SceneManager.LoadScene(2);
         }
-       
-       
+    }
+    
+    public void GetPlayerData()
+    {
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
+        }, 
+        result => {
+            Debug.Log("Successfully retrieved user data:");
+            Debug.Log(JsonConvert.SerializeObject(result.Data));
+            usernameInput.text = result.Data["name"].Value;
+            ageInput.text = result.Data["age"].Value;
+            myColor = result.Data["color"].Value;
+            spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
+            spriteRenderer.color = ColorUtility.TryParseHtmlString(myColor, out Color color) ? color : Color.white;
+        }, 
+        error => {
+            Debug.Log("Got error retrieving user data:");
+            Debug.Log(error.GenerateErrorReport());
+        });
     }
 
 
