@@ -69,7 +69,7 @@ public class PlayfabManager : MonoBehaviour
         messageText.text = "Login Success";
         
         // switch scene
-        //GetPlayerData();
+        GetPlayerData();
        
         //usernameInput.text = userData["username"];
          SceneManager.LoadScene(2);
@@ -98,8 +98,6 @@ public class PlayfabManager : MonoBehaviour
             {"name",usernameInput.text },
             {"age",ageInput.text },
             {"color",myColor },
-           
-            
         }
     },
     
