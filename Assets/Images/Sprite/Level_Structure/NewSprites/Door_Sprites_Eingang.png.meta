@@ -116,12 +116,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Door_Sprites_Eingang
+      name: Door_Sprites_Eingang_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 81
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,8 +130,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d09d286fbfcfe4c4cbe252ec1f233285
-      internalID: 1306097903
+      spriteID: b6c91834a2fb01f488fb1bf30001b57b
+      internalID: -1548487179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_Eingang_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb3160b85397434fa6049145869f5fe
+      internalID: 1732576193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_Eingang_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0d913140427594793070cdc3d444fd
+      internalID: 2090429678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_Eingang_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b277acff3c44c2f4f97ab0841d01c6ee
+      internalID: 320294870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_Eingang_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c00b472d89bab946ab779486c9b4637
+      internalID: -1266415775
       vertices: []
       indices: 
       edges: []
@@ -147,7 +231,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Door_Sprites_Eingang: 1306097903
+      Door_Sprites_Eingang_3: 320294870
+      Door_Sprites_Eingang_0: -1548487179
+      Door_Sprites_Eingang_2: 2090429678
+      Door_Sprites_Eingang_4: -1266415775
+      Door_Sprites_Eingang_1: 1732576193
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
