@@ -119,19 +119,22 @@ public class PlayfabManager : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
-    
+
+
     public void GetPlayerData()
     {
         PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
         }, 
         result => {
-            Debug.Log("Successfully retrieved user data:");
-            Debug.Log(JsonConvert.SerializeObject(result.Data));
-            usernameInput.text = result.Data["name"].Value;
-            ageInput.text = result.Data["age"].Value;
-            myColor = result.Data["color"].Value;
+            print("Got user data:");
+            print(result.Data);
+            myColor =result.Data["color"].Value;
             spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = ColorUtility.TryParseHtmlString(myColor, out Color color) ? color : Color.white;
+            spriteRenderer.color = StringToColor(myColor);
+
+            print("Hallo");
+            print(myColor);
+
         }, 
         error => {
             Debug.Log("Got error retrieving user data:");
@@ -146,10 +149,12 @@ public class PlayfabManager : MonoBehaviour
     {
         return value.ToString("X2");
     }
+
     private string ColorToString(Color color)
     {
         return DecToHex((int)(color.r * 255)) + DecToHex((int)(color.g * 255)) + DecToHex((int)(color.b * 255));
     }
+  
     private Color StringToColor(string color)
     {
         return new Color(
@@ -158,30 +163,29 @@ public class PlayfabManager : MonoBehaviour
             int.Parse(color.Substring(4, 2), System.Globalization.NumberStyles.HexNumber) / 255f
         );
     }
-
    
    //Select Color
     public void redButton()
     {
-        SpriteRenderer spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
+        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.red;
         myColor =ColorToString(spriteRenderer.color);
     }
     public void blueButton()
     {
-        SpriteRenderer spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
+        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.blue;
         myColor =ColorToString(spriteRenderer.color);
     }
     public void greenButton()
     {
-        SpriteRenderer spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
+        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.green;
         myColor =ColorToString(spriteRenderer.color);
     }
     public void whiteButton()
     {
-         spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
+        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.white;
         myColor =ColorToString(spriteRenderer.color);
     }
