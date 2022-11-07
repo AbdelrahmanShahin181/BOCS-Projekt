@@ -123,23 +123,28 @@ public class PlayfabManager : MonoBehaviour
 
     public void GetPlayerData()
     {
-        PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
-        }, 
+        GetUserDataRequest request = new GetUserDataRequest();
+        PlayFabClientAPI.GetUserData(request, 
         result => {
-            print("Got user data:");
-            print(result.Data);
-            myColor =result.Data["color"].Value;
-            spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = StringToColor(myColor);
 
-            print("Hallo");
-            print(myColor);
-
+            if(result.Data == null || !result.Data.ContainsKey("name") || !result.Data.ContainsKey("age") || !result.Data.ContainsKey("color"))
+            {
+                Debug.Log("No data found");
+                SceneManager.LoadScene(4);
+            }else{
+                myColor =result.Data["color"].Value;
+                spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
+                spriteRenderer.color = StringToColor(myColor);
+                SceneManager.LoadScene(2);
+            }
         }, 
         error => {
             Debug.Log("Got error retrieving user data:");
             Debug.Log(error.GenerateErrorReport());
+            
         });
+
+        
     }
 
 
