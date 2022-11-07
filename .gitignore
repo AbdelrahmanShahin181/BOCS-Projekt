@@ -73,3 +73,4 @@ Assets/PlayFabSDK/Shared/Public/Resources/PlayFabSharedSettings.asset
 Assets/PlayFabSDK/*.meta
 Assets/PlayFabEditorExtensions/Editor/Resources/PlayFabEditorPrefsSO.asset
 Assets/PlayFabSDK/
+Assets/PlayFabEditorExtensions/
