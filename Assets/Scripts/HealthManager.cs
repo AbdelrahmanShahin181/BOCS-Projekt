@@ -29,5 +29,22 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        if(currentHealth <= 0)
+        {
+            currentHealth = 0;
+        }
     }
+
+    void heal(int heal)
+    {
+        currentHealth += heal;
+        healthBar.SetHealth(currentHealth);
+
+        if(currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
 }

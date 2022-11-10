@@ -24,6 +24,7 @@ public class NPC_movement : MonoBehaviour
         waitCounter = waitTime;
         walkCounter = walkTime;
         chooseDirection();
+        
     }
 
 
