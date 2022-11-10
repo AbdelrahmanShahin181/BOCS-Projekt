@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a6335a1135802441bb46ec8a4633d7a
+guid: 1e3249ab98e67df4eadb2fe12e75289c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floor_Sprites_0
+      name: Mensa_Furniture_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef2348078ebe45d4cb490fd87c2e1281
-      internalID: 2039912005
+      spriteID: b7dcbd806dd522a40a7c7749bbde2268
+      internalID: 1262895562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_1
+      name: Mensa_Furniture_1
       rect:
         serializedVersion: 2
         x: 16
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65de2468d54e44d4cbedca878e9a64dc
-      internalID: 1991616567
+      spriteID: d5935de62a0eca64b94c2f2efd5b6143
+      internalID: 1881834795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_2
+      name: Mensa_Furniture_2
       rect:
         serializedVersion: 2
         x: 32
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ef200b8804d9024c813b003d5aac46d
-      internalID: 1770599006
+      spriteID: e053312dd8786a046b8596a800e4de21
+      internalID: -987944523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_3
+      name: Mensa_Furniture_3
       rect:
         serializedVersion: 2
         x: 0
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76d609d86a24335428f0ca5319c167de
-      internalID: -218540242
+      spriteID: bb45256fb7b4d8048bb4879938b2802e
+      internalID: -184890337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_4
+      name: Mensa_Furniture_4
       rect:
         serializedVersion: 2
         x: 16
@@ -214,14 +214,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca5719b031b7f54289ece64b4b9aada
-      internalID: -1784376405
+      spriteID: b091329cff5f1c046b7bf9c900493445
+      internalID: -590544946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_5
+      name: Mensa_Furniture_5
       rect:
         serializedVersion: 2
         x: 32
@@ -235,14 +235,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 211b14c2813279c43b19ac2eb380769c
-      internalID: 680768798
+      spriteID: e81d86e94f01df34598ba7060f5ddd37
+      internalID: 969673331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_6
+      name: Mensa_Furniture_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d8fea683142874680185ad76b0542a
+      internalID: 310467844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mensa_Furniture_7
       rect:
         serializedVersion: 2
         x: 0
@@ -256,14 +277,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49daa198ba2ea624a9f53069c37e2756
-      internalID: 1684610457
+      spriteID: 0d60e4e0a0d2e7744900e141b29ae091
+      internalID: 58453669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_7
+      name: Mensa_Furniture_8
       rect:
         serializedVersion: 2
         x: 16
@@ -277,14 +298,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bf96581421018c498ba11d2d9ce1a75
-      internalID: -1945308311
+      spriteID: 6a56a189ffe4c6b48ac93e2b855cf36a
+      internalID: 1247686697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_8
+      name: Mensa_Furniture_9
       rect:
         serializedVersion: 2
         x: 32
@@ -298,14 +319,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36b6add1ee11a1540b285c1bd977bde4
-      internalID: 1221347900
+      spriteID: 485476170abefc34a9ac1936a24ba15c
+      internalID: 1540891692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Sprites_9
+      name: Mensa_Furniture_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ccc9e4d6ecd274c86f812ead8526f5
+      internalID: -1711261089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mensa_Furniture_11
       rect:
         serializedVersion: 2
         x: 0
@@ -319,8 +361,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5cd7cf8d0600454cbb0f85027581890
-      internalID: 1145790282
+      spriteID: 878367a0a46fdfe42bf06c6ec9bd98cc
+      internalID: -1365636060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mensa_Furniture_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb831d94d42b2b49b8cda2032ab7c73
+      internalID: -1728586264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mensa_Furniture_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c852908be5526d1499ef6e7794d69a10
+      internalID: 432071726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mensa_Furniture_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7328b6477a640745864726cf1495eb5
+      internalID: 1283617707
       vertices: []
       indices: 
       edges: []
@@ -336,16 +441,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Floor_Sprites_7: -1945308311
-      Floor_Sprites_3: -218540242
-      Floor_Sprites_5: 680768798
-      Floor_Sprites_4: -1784376405
-      Floor_Sprites_6: 1684610457
-      Floor_Sprites_2: 1770599006
-      Floor_Sprites_0: 2039912005
-      Floor_Sprites_9: 1145790282
-      Floor_Sprites_1: 1991616567
-      Floor_Sprites_8: 1221347900
+      Mensa_Furniture_6: 310467844
+      Mensa_Furniture_0: 1262895562
+      Mensa_Furniture_12: -1728586264
+      Mensa_Furniture_7: 58453669
+      Mensa_Furniture_10: -1711261089
+      Mensa_Furniture_1: 1881834795
+      Mensa_Furniture_4: -590544946
+      Mensa_Furniture_5: 969673331
+      Mensa_Furniture_3: -184890337
+      Mensa_Furniture_2: -987944523
+      Mensa_Furniture_13: 432071726
+      Mensa_Furniture_11: -1365636060
+      Mensa_Furniture_9: 1540891692
+      Mensa_Furniture_8: 1247686697
+      Mensa_Furniture_14: 1283617707
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
