@@ -59,6 +59,9 @@ TagManager:
   - name: 2_Backwalls
     uniqueID: 413127245
     locked: 0
+  - name: 2ndFloor
+    uniqueID: 1111564109
+    locked: 0
   - name: 2_Frontwalls
     uniqueID: 1252231037
     locked: 0
