@@ -304,6 +304,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Floor_Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5cd7cf8d0600454cbb0f85027581890
+      internalID: 1145790282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -322,6 +343,7 @@ TextureImporter:
       Floor_Sprites_6: 1684610457
       Floor_Sprites_2: 1770599006
       Floor_Sprites_0: 2039912005
+      Floor_Sprites_9: 1145790282
       Floor_Sprites_1: 1991616567
       Floor_Sprites_8: 1221347900
   spritePackingTag: 

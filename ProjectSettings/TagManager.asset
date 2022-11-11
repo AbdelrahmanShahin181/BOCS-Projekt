@@ -53,6 +53,18 @@ TagManager:
   - name: Frontwalls
     uniqueID: 534654843
     locked: 0
+  - name: 2_Floors
+    uniqueID: 2912186381
+    locked: 0
+  - name: 2_Backwalls
+    uniqueID: 413127245
+    locked: 0
+  - name: 2ndFloor
+    uniqueID: 1111564109
+    locked: 0
+  - name: 2_Frontwalls
+    uniqueID: 1252231037
+    locked: 0
   - name: New Layer 5
     uniqueID: 100558149
     locked: 0

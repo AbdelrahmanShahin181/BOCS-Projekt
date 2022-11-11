@@ -6,6 +6,7 @@ public class PlayerController : NetworkBehaviour
 
     public float speed ;
     private Rigidbody2D myRigidbody ;
+    private SpriteRenderer sprite ;
     private Vector3 change;
     private Animator animator ;
     // Start is called before the first frame update
@@ -46,5 +47,8 @@ public class PlayerController : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         if (!IsOwner) return;
+    }
+    void changeLayer() {
+        sprite.sortingLayerName = "2ndFloor";
     }
 }
