@@ -22,19 +22,47 @@ public class PlayerController : NetworkBehaviour
     void FixedUpdate()
     {
         if (!IsOwner) return;
-        change = Vector3.zero;
-        change.x = Input.GetAxisRaw("Horizontal");
-        change.y = Input.GetAxisRaw("Vertical");     
-        if(change != Vector3.zero){
-            MoveCharacter();
-            animator.SetFloat("MoveX",change.x);
-            animator.SetFloat("MoveY",change.y);
-            animator.SetBool("moving",true);
 
 
-        }  else{
-            animator.SetBool("moving",false);
-        } 
+        //touch input
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0f;
+            transform.position = Vector3.MoveTowards(transform.position, touchPosition, speed * Time.deltaTime);
+            change = Vector3.zero;
+            change.x = touchPosition.x;
+            change.y = touchPosition.y;
+            if (change != Vector3.zero)
+            {
+                MoveCharacter();
+                animator.SetFloat("moveX", touchPosition.x);
+                animator.SetFloat("moveY", touchPosition.y);
+                animator.SetBool("moving", true);
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
+
+        }else{
+            change = Vector3.zero;
+            change.x = Input.GetAxisRaw("Horizontal");
+            change.y = Input.GetAxisRaw("Vertical");     
+            if(change != Vector3.zero){
+                MoveCharacter();
+                animator.SetFloat("MoveX",change.x);
+                animator.SetFloat("MoveY",change.y);
+                animator.SetBool("moving",true);
+
+
+            }  else{
+                animator.SetBool("moving",false);
+            } 
+        }
+
+        
     }
     void MoveCharacter(){
         myRigidbody.MovePosition(transform.position+ change*speed* Time.deltaTime);
