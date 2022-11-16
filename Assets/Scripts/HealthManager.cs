@@ -25,7 +25,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -36,7 +36,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    void heal(int heal)
+    public void heal(int heal)
     {
         currentHealth += heal;
         healthBar.SetHealth(currentHealth);
