@@ -1206,7 +1206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &616379260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1879,7 +1879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1084272963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2292,12 +2292,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1544777717}
         m_TargetAssemblyTypeName: PlayfabManager, Assembly-CSharp
-        m_MethodName: redButton
-        m_Mode: 1
+        m_MethodName: SetPlayerID
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2426,8 +2426,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1544777717}
         m_TargetAssemblyTypeName: PlayfabManager, Assembly-CSharp
-        m_MethodName: blueButton
-        m_Mode: 1
+        m_MethodName: SetPlayerID
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2596,6 +2596,7 @@ MonoBehaviour:
   usernameInput: {fileID: 2084795491}
   ageInput: {fileID: 466423364}
   spritegameobject: {fileID: 4374716913138653570, guid: 7397ee5c9668f1240a6f72c1106c9f08, type: 3}
+  playerID: 0
 --- !u!1 &1696093186
 GameObject:
   m_ObjectHideFlags: 0
