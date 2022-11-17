@@ -9,6 +9,7 @@ public class KaffeeautomatDialog : MonoBehaviour
     public Text dialogText;
     public string dialog;
     public bool playerInRange;
+    public HealthManager healthManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +31,21 @@ public class KaffeeautomatDialog : MonoBehaviour
                 dialogText.text = dialog;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.J) && playerInRange){
+                if(healthManager != null){
+                    healthManager.heal(5);
+                    dialogText.text = "Du hast 5 Lebenspunkte wiederhergestellt!  [E] Exit";
+                }
+            }
+        
     }
     
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             Debug.Log("Player entered");
             playerInRange = true;
-
-            if(Input.GetKeyDown(KeyCode.J)){
-                var health = other.GetComponent<HealthManager>();
-                health.heal(5);
-            }
+            healthManager = other.GetComponent<HealthManager>();
         }
     }
     public void OnTriggerExit2D(Collider2D other) {
