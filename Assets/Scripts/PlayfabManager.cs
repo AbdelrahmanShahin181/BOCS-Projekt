@@ -19,9 +19,8 @@ public class PlayfabManager : MonoBehaviour
 
     
     public GameObject spritegameobject;
-    string myColor;
     SpriteRenderer spriteRenderer;
-
+    public int playerID;
 
     public void Registerbutton()
     {
@@ -94,9 +93,7 @@ public class PlayfabManager : MonoBehaviour
         Data = new Dictionary<string, string>() {
             {"name",usernameInput.text },
             {"age",ageInput.text },
-            {"color",myColor },
-           
-            
+            {"playerID",playerID.ToString() }
         }
     }, 
     result => Debug.Log("Successfully updated user data"),
@@ -107,11 +104,13 @@ public class PlayfabManager : MonoBehaviour
     SceneManager.LoadScene(2);
     }
 
-
+    public void SetPlayerID(int playerID) {
+        this.playerID = playerID;
+    }
 
     public void UserDataScuccess(GetUserDataResult result)
     {
-        if(result.Data == null || !result.Data.ContainsKey("name") || !result.Data.ContainsKey("age") || !result.Data.ContainsKey("color"))
+        if(result.Data == null || !result.Data.ContainsKey("name"))
         {
             Debug.Log("No data found");
             SceneManager.LoadScene(4);
@@ -127,14 +126,11 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.GetUserData(request, 
         result => {
 
-            if(result.Data == null || !result.Data.ContainsKey("name") || !result.Data.ContainsKey("age") || !result.Data.ContainsKey("color"))
+            if(result.Data == null || !result.Data.ContainsKey("name"))
             {
                 Debug.Log("No data found");
                 SceneManager.LoadScene(4);
             }else{
-                myColor =result.Data["color"].Value;
-                spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
-                spriteRenderer.color = StringToColor(myColor);
                 SceneManager.LoadScene(2);
             }
         }, 
@@ -153,47 +149,5 @@ public class PlayfabManager : MonoBehaviour
     {
         return value.ToString("X2");
     }
-
-    private string ColorToString(Color color)
-    {
-        return DecToHex((int)(color.r * 255)) + DecToHex((int)(color.g * 255)) + DecToHex((int)(color.b * 255));
-    }
-  
-    private Color StringToColor(string color)
-    {
-        return new Color(
-            int.Parse(color.Substring(0, 2), System.Globalization.NumberStyles.HexNumber) / 255f,
-            int.Parse(color.Substring(2, 2), System.Globalization.NumberStyles.HexNumber) / 255f,
-            int.Parse(color.Substring(4, 2), System.Globalization.NumberStyles.HexNumber) / 255f
-        );
-    }
-   
-   //Select Color
-    public void redButton()
-    {
-        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.red;
-        myColor =ColorToString(spriteRenderer.color);
-    }
-    public void blueButton()
-    {
-        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.blue;
-        myColor =ColorToString(spriteRenderer.color);
-    }
-    public void greenButton()
-    {
-        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.green;
-        myColor =ColorToString(spriteRenderer.color);
-    }
-    public void whiteButton()
-    {
-        spriteRenderer = spritegameobject.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.white;
-        myColor =ColorToString(spriteRenderer.color);
-    }
-
-   
 }
 
