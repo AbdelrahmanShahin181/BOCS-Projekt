@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 [System.Serializable]
 public enum MaskType {OFF, ON, GONE};
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class VisibilityShaderScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
@@ -25,7 +25,7 @@ public class VisibilityShaderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null) target = GameObject.FindGameObjectWithTag("MainCamera");
+        if (target == null) target = GameObject.FindGameObjectWithTag("Player");
         updateShader();
         toggleShader();
     }

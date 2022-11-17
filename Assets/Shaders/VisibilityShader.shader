@@ -100,15 +100,12 @@ Shader "Custom/VisibilityShader"
 							c.a = 0;
 						}
 						else {
-							c.a = c.a*(1 - (dist/(_RenderDistance))*(dist/(_RenderDistance)));
+							c.a = c.a*(1 - (dist/_RenderDistance)*(dist/_RenderDistance));
 						}
 					}
 					else if (_MaskType <= 2){
-						if ( dist > _RenderDistance) {
-							c.a = c.a;
-						}
-						else {
-							c.a = c.a*(dist/(_RenderDistance))*(dist/(_RenderDistance));
+						if ( dist <= _RenderDistance)  {
+							c.a = c.a*(dist/_RenderDistance);
 						}
 					}
                     
