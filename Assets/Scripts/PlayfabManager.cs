@@ -91,7 +91,7 @@ public class PlayfabManager : MonoBehaviour
    public void SetUserData() {
     PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest() {
         Data = new Dictionary<string, string>() {
-            {"name",usernameInput.text },
+            {"username",usernameInput.text },
             {"age",ageInput.text },
             {"playerID",playerID.ToString() }
         }
@@ -110,7 +110,7 @@ public class PlayfabManager : MonoBehaviour
 
     public void UserDataScuccess(GetUserDataResult result)
     {
-        if(result.Data == null || !result.Data.ContainsKey("name"))
+        if(result.Data == null || !result.Data.ContainsKey("username"))
         {
             Debug.Log("No data found");
             SceneManager.LoadScene(4);
@@ -126,7 +126,7 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.GetUserData(request, 
         result => {
 
-            if(result.Data == null || !result.Data.ContainsKey("name"))
+            if(result.Data == null || !result.Data.ContainsKey("username"))
             {
                 Debug.Log("No data found");
                 SceneManager.LoadScene(4);

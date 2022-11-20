@@ -48,7 +48,7 @@ namespace Photon.Chat.Demo
 
         public int HistoryLengthToFetch; // set in inspector. Up to a certain degree, previously sent messages can be fetched for context
 
-        public string UserName { get; set; }
+        private string UserName;
 
         private string selectedChannelName; // mainly used for GUI/input
 
@@ -120,9 +120,10 @@ namespace Photon.Chat.Demo
                 "\t<color=#E07B00>\\clear</color>";
 
 
-        public void Start()
+        public async void Start()
         {
-            GetPlayerData();
+            GetPlayerData(); 
+            await System.Threading.Tasks.Task.Delay(3000);
             Debug.Log("Connecting as: " + this.UserName);
             DontDestroyOnLoad(this.gameObject);
 
@@ -131,12 +132,12 @@ namespace Photon.Chat.Demo
             //this.StateText.gameObject.SetActive(true);
             //this.UserIdText.gameObject.SetActive(true);
             //this.Title.SetActive(true);
-            this.ChatPanel.gameObject.SetActive(true); // set true for debugging 
+            //this.ChatPanel.gameObject.SetActive(true); // set true for debugging 
             //this.ConnectingLabel.SetActive(false);
 
             if (string.IsNullOrEmpty(this.UserName))
             {
-                this.UserName = "user" + Environment.TickCount%99; //made-up username
+                this.UserName = "guest" + Environment.TickCount%99; //made-up username
             }
 
             #if PHOTON_UNITY_NETWORKING
@@ -182,13 +183,15 @@ namespace Photon.Chat.Demo
                 GetUserDataRequest request = new GetUserDataRequest();
                 PlayFabClientAPI.GetUserData(request, 
                 result => {
-                    if(result.Data == null || !result.Data.ContainsKey("name") || !result.Data.ContainsKey("age") || !result.Data.ContainsKey("color"))
+                    if(result.Data == null || !result.Data.ContainsKey("username"))
                     {
-                        UserName = "Guest";
+                        UserName = "guest";
                     }else{
-                        UserName = result.Data["name"].Value;
+                        this.UserName = result.Data["username"].Value;
+                        Debug.Log("Jalal und Abdo Username: " + this.UserName);
+                        Debug.Log("Jalal und Abdo Username: " + result.Data["username"].Value);
                     }
-                    Debug.Log("NickName is: " + UserName);
+                    Debug.Log("NickName is: " + this.UserName);
                 }, 
                 error => {
                     Debug.Log("Got error retrieving user data:"); 
@@ -196,9 +199,16 @@ namespace Photon.Chat.Demo
             }
             catch (System.Exception)
             {
-                UserName = "Guest";
+                UserName = "guest";
                 Debug.Log("NickName is: " + UserName + " You are not logged in ");
             }
+        }
+
+        public void GetUserName()
+        {
+            Debug.Log("Clicked on GetUserName");
+            Debug.Log("My Username is: " + this.UserName);
+            //return this.UserName;
         }
 
         /// <summary>To avoid that the Editor becomes unresponsive, disconnect all Photon connections in OnDestroy.</summary>
@@ -237,6 +247,10 @@ namespace Photon.Chat.Demo
         }
 
 
+        public void OnChatButtonClick()
+        {
+            this.ChatPanel.gameObject.SetActive(!this.ChatPanel.gameObject.activeSelf);
+        }
         public void OnEnterSend()
         {
             if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
@@ -256,6 +270,10 @@ namespace Photon.Chat.Demo
                 this.SendChatMessage(this.InputFieldChat.text);
                 this.InputFieldChat.text = "";
             }
+        }
+
+        void OnMouseDown() {
+            GetUserName();
         }
 
 
@@ -434,7 +452,7 @@ namespace Photon.Chat.Demo
 
             //this.UserIdText.text = "Connected as "+ this.UserName;
 
-            this.ChatPanel.gameObject.SetActive(true);
+            //this.ChatPanel.gameObject.SetActive(true);
 
             /*if (this.FriendsList!=null  && this.FriendsList.Length>0)
             {
