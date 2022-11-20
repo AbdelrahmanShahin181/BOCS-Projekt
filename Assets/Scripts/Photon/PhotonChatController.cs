@@ -10,8 +10,8 @@ using Unity.Netcode;
 
 namespace KnoxGameStudios
 {
-    public class PhotonChatController : MonoBehaviour, IChatClientListener
-    {
+    public class PhotonChatController : MonoBehaviour//, IChatClientListener
+    {/*
         [SerializeField] private string nickName;
         private ChatClient chatClient;
 
@@ -182,6 +182,6 @@ namespace KnoxGameStudios
         {
             Debug.Log("Disconnecting from Photon Chat");
         }
-        #endregion
+        #endregion*/
     }
 }
