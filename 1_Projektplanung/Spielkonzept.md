@@ -2,7 +2,23 @@
 
 ## Spielbeschreibung
 
-(folgt)
+Man spielt einen Studenten, der sich durch die Hochschule bewegt und dort verschiedene Aufgaben erledigt. Dabei lernt er die verschiedenen Gebäude und Räume kennen. Ziel ist es, möglichst viele ECTS-Punkte zu sammeln, um einen Informatik-Bachelor oder -Master zu bekommen.
+
+Zuerst sieht man die Hochschule von außen. Man geht herein, läuft zum Studienbüro und holt sich seinen Studierendenausweis ab. Wenn man nicht weiß wie man dorthin kmmt, kann man vorne an der Rezeption fragen. Dort werden die grundlegenden Mechaniken (Bewegung, Interaktion).
+
+Im Studienbüro erhält man eine kurze Einweisung ins Spiel. Beispielsweise kriegt man den Tipp, NPCs anzusprechen um Aufgaben zu erhalten.
+
+In jedem Semester gibt es ein Modul, welches man erledigen muss. Zu jeder dieser Module gibt es eine Klausur als Minigame. D.h. 7 Minigames mit je 25 ECTS = 175 ECTS für den Bachelor. Die restlichen 35 ECTS werden durch Side Quests (NPCs etc.) erledigt. Die Module bauen aufeinander auf und werden immer schwieriger.
+
+Man kann bestimmte Aufgaben immer erst ab einer bestimmten Anzahl an ECTS durchführen - trotzdem ist man in der Reihenfolge der (freigeschalteten) Aufgaben frei.
+
+Es gibt Storyrelevante NPCs und Storyunrelevante NPCs. Storyrelevante NPCs geben eine Story und ein Modul vor, Storyunrelevante NPCs geben Side Quests oder reden einfach nur.
+
+---
+## Branch-Idee
+
+Wir erstellen einen BOCS-Branch - dieser ist rein lokal (ohne Chat, ohne Multiplayer, ohne PlayFab) und soll zunächst den Fokus auf die Entwicklung des Spielerlebnisses legen. Wenn das fertig ist, können wir beide Branches zusammenführen, um wieder Multiplayer etc. zu ermöglichen.
+Wir können ebenfalls den Multiplayer-Branch als Community-Treffpunkt fertig entwicklen - das ist dann zwar kein Spiel, aber trotzdem ein netter Ort zum Treffen und Kennenlernen der HS sowie anderer Studierender.
 
 ---
 
@@ -28,7 +44,6 @@ Konzept: Ansprechen, man wird dann eine Basic-Frage gefragt.
 
 - Wenn korrekt, bekommt man eine kleine Belohnung (z.B. 1ECTS) und Dialog "Danke, das hat mir echt geholfen!"
 - Wenn falsch, verliert man Lebenspunkte / Energie und Dialog "Das kann nicht richtig sein. Schau lieber nochmal in deiner Erstimappe nach!"
-- Eventuell: 
 
 ## Einige Fragen
 
@@ -123,6 +138,11 @@ Konzept: Ansprechen, man wird dann eine Basic-Frage gefragt.
 2. Kommilitone fragt, ob man seinen Antrag auf Klausuranrechnung beim Studierendenbüro in den Briefkasten werfen könnte, weil er keine Zeit mehr hat und dringend zum Flunkyball-Turnier muss. Wenn man das macht, erhält man 1 ECTS per BOPal. 
 3. Der wissenschaftliche Mitarbeiter (Herr Chefkoch) möchte, dass man einen Mikrocontroller verdrahtet. Wenn da klappt, erhält man 1 ECTS. *(Verdrahtung ähnlich wie bei Among Us)*
 4. Kommilitone sagt, die Klausurergebnisse für eine der kommenden Klausuren liegen im Büro von Herrn Professor Kühn und die Tür sei nicht abgeschlossen. Wenn man die Klausurergebnisse klaut und nicht erwischt wird, erhält man 10 ECTS - vor Angst verliert man aber 2/3 seiner Lebenspunkte sofort und erhält zusätzlich einen "Debuff", bei dem man ständig etwas essen/trinken muss um nicht zu sterben. Wird man  erwischt, ist man sofort Game Over. 
+5. Informatiker-Klischees erfüllen, man muss eine Freundin finden und führt einen Dialog. Immer, wenn man etwas von Informatik erzählt, verliert man Sympathiepunkte (in einer Leiste). Zu Beginn kann man von Urlaub, Hobbies etc. erzählen aber wenn diese Themen durch sind, muss man irgendwann von Informatik erzählen - in Summe 
+6. Super schwere Aufgabe in einem Praktikum, die (fast?) unlösbar ist. Jedes Mal wenn sie falsch ist, kann man das Blatt zusammenknüllen. Man muss dann den Dozenten abwerfen, ohne dass er merkt wer es gewesen ist. Wenn man ihn vier mal getroffen hat, rastet er aus, verlässt den Raum und man hat das Praktikum bestanden.
 
 ---
 
+## Weitere ungeordnete Ideen
+
+1. Man landet in einer falschen Klausur in der sehr seltsame Fragen gestellt werden... Dass sie falsch ist, erfährt man aber erst später.
