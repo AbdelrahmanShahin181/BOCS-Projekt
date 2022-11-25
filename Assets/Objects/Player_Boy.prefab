@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4374716913138653573}
   - component: {fileID: 4374716913138653580}
   - component: {fileID: 1912694853794294732}
+  - component: {fileID: -9101329897024348271}
   - component: {fileID: 7117455671980975374}
   - component: {fileID: 6128662673629425007}
   - component: {fileID: 4242007856798529289}
@@ -289,7 +290,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41562ee370901e04a92ebed6f6ffece2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
+--- !u!114 &-9101329897024348271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374716913138653570}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
 --- !u!114 &7117455671980975374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,15 +366,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4374716913138653570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b38465d8ab053a4795c57d4ab692e5a, type: 3}
+  m_Script: {fileID: 11500000, guid: d7c010bff3e2b4f4eaa6b75fab701d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChannelsToJoinOnConnect: []
-  FriendsList: []
-  HistoryLengthToFetch: 0
-  ChatPanel: {fileID: 0}
-  InputFieldChat: {fileID: 0}
-  CurrentChannelText: {fileID: 0}
-  FriendListUiItemtoInstantiate: {fileID: 0}
-  ShowState: 1
-  TestLength: 2048
