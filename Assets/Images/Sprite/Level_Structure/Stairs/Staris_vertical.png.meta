@@ -68,7 +68,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -1470,11 +1470,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Staris_vertical_0: 115869199
       Staris_vertical_30: 1518038186
       Staris_vertical_20: 642529508
       Staris_vertical_52: -634810262
       Staris_vertical_45: -765827947
-      Staris_vertical_46: -106050764
       Staris_vertical_34: -235566149
       Staris_vertical_9: 1718958730
       Staris_vertical_39: -455044644
@@ -1501,8 +1501,8 @@ TextureImporter:
       Staris_vertical_22: -1111485972
       Staris_vertical_47: 176410280
       Staris_vertical_48: -261509309
-      Staris_vertical_3: -1020408212
       Staris_vertical_51: 2015863063
+      Staris_vertical_3: -1020408212
       Staris_vertical_44: -5769228
       Staris_vertical_62: -647019970
       Staris_vertical_4: 1485315799
@@ -1530,10 +1530,10 @@ TextureImporter:
       Staris_vertical_50: 411791236
       Staris_vertical_23: -918333427
       Staris_vertical_2: -641010987
-      Staris_vertical_1: -84625845
-      Staris_vertical_41: 1382601931
+      Staris_vertical_46: -106050764
       Staris_vertical_33: -1183620692
-      Staris_vertical_0: 115869199
+      Staris_vertical_41: 1382601931
+      Staris_vertical_1: -84625845
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

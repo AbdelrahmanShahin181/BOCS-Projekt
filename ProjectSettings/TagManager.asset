@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Elevator
+  - Light
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,18 @@ TagManager:
   - name: Background
     uniqueID: 3254972063
     locked: 0
+  - name: 0_Floors
+    uniqueID: 2661859141
+    locked: 0
+  - name: 0_Backwalls
+    uniqueID: 1066463623
+    locked: 0
+  - name: 0_Def
+    uniqueID: 2285687747
+    locked: 0
+  - name: 0_Frontwalls
+    uniqueID: 170151147
+    locked: 0
   - name: Floors
     uniqueID: 940498381
     locked: 0
@@ -49,6 +63,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1_Def
+    uniqueID: 299409359
     locked: 0
   - name: Frontwalls
     uniqueID: 534654843
@@ -59,7 +76,7 @@ TagManager:
   - name: 2_Backwalls
     uniqueID: 413127245
     locked: 0
-  - name: 2ndFloor
+  - name: 2_Def
     uniqueID: 1111564109
     locked: 0
   - name: 2_Frontwalls
