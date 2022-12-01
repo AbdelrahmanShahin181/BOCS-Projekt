@@ -7,7 +7,6 @@ TagManager:
   - Elevator
   - Light
   - Door
-  - Stair
   layers:
   - Default
   - TransparentFX
