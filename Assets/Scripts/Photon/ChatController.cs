@@ -689,7 +689,7 @@ namespace Photon.Chat.Demo
             }
         }
 
-            
+
 
         public void ShowChannel(string channelName)
         {

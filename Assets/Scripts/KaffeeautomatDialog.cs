@@ -10,6 +10,7 @@ public class KaffeeautomatDialog : MonoBehaviour
     public string dialog;
     public bool playerInRange;
     public HealthManager healthManager;
+    public HealthBarScript healthBarScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +46,7 @@ public class KaffeeautomatDialog : MonoBehaviour
         if (other.CompareTag("Player")) {
             Debug.Log("Player entered");
             playerInRange = true;
-            healthManager = other.GetComponent<HealthManager>();
+            healthManager = healthBarScript.GetComponent<HealthManager>();
         }
     }
     public void OnTriggerExit2D(Collider2D other) {
