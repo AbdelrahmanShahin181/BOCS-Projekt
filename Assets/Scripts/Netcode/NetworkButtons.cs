@@ -14,6 +14,7 @@ public class NetworkButtons : MonoBehaviour {
 	private List<ConnectedPlayer> _connectedPlayers;
     int playerID = 0;
     public GameObject [] playerPrefabs;
+    public GameObject player ;
     private void Awake(){
         //new UnityLogger();
         print("Call Awake");
@@ -37,12 +38,18 @@ public class NetworkButtons : MonoBehaviour {
     }
 
     private void OnGUI() {
+        //GetPlayerData();
         GUILayout.BeginArea(new Rect(10, 10, 300, 300));
         if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer) {
             if (GUILayout.Button("Host")){
                 NetworkManager.Singleton.StartHost();
-                GetPlayerData();
-                NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
+
+                //GetPlayerData();
+                //Debug.Log("today " + playerID);
+                //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
+                //player = playerPrefabs[playerID];	
+                //Debug.Log("player >>> " + player);
+                //Debug.Log("today " + NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
             } 
             if (GUILayout.Button("Server")){
 				StartRemoteServer();
@@ -56,6 +63,8 @@ public class NetworkButtons : MonoBehaviour {
         }
 
         GUILayout.EndArea();
+        GetPlayerData();
+        NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
         
     }
 
@@ -112,6 +121,7 @@ public class NetworkButtons : MonoBehaviour {
                             playerID = 0;
                         }else{
                             playerID = int.Parse(result.Data["playerID"].Value);
+                            Debug.Log("getting Player ID  ");
                         }
                         Debug.Log("playerID: " + playerID);
                     },
