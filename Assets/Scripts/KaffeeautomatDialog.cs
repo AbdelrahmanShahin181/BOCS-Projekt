@@ -40,7 +40,6 @@ public class KaffeeautomatDialog : MonoBehaviour
         if (other.CompareTag("Player")) {
             Debug.Log("Player entered");
             playerInRange = true;
-            healthManager = healthBarScript.GetComponent<HealthManager>();
         }
     }
     public void OnTriggerExit2D(Collider2D other) {
