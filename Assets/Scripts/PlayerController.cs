@@ -1,7 +1,8 @@
 using UnityEngine;
-using Unity.Netcode;
+using System.Collections;
 
-public class PlayerController : NetworkBehaviour
+
+public class PlayerController : MonoBehaviour
 {
 
     public float speed ;
@@ -12,7 +13,6 @@ public class PlayerController : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!IsOwner) return;
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         PlayerCameraFollow.Instance.FollowPlayer(transform);
@@ -21,8 +21,6 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!IsOwner) return;
-
 
         //touch input
         if (Input.touchCount > 0)
@@ -68,14 +66,6 @@ public class PlayerController : NetworkBehaviour
         myRigidbody.MovePosition(transform.position+ change*speed* Time.deltaTime);
     }
 
-    public override void OnNetworkDespawn()
-    {
-        if (!IsOwner) Destroy(this);
-    }
-    public override void OnNetworkSpawn()
-    {
-        if (!IsOwner) return;
-    }
     void changeLayer() {
         sprite.sortingLayerName = "2ndFloor";
     }
