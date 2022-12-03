@@ -8,6 +8,7 @@ public class HideFront : MonoBehaviour
         if (collision.CompareTag("Player")) {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
         }
     }
 
@@ -15,6 +16,7 @@ public class HideFront : MonoBehaviour
         if (collision.CompareTag("Player")) {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 }

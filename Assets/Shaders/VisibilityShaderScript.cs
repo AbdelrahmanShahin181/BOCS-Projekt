@@ -14,6 +14,7 @@ public class VisibilityShaderScript : MonoBehaviour
     public MaskType type = MaskType.OFF;
     public float distance = 9;
     public static GameObject target;
+    public float strength = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,7 @@ public class VisibilityShaderScript : MonoBehaviour
         mpb.SetFloat("_MaskTargetX", target.transform.position.x);
         mpb.SetFloat("_MaskTargetY", target.transform.position.y);
         mpb.SetFloat("_MaskType", typeToInt());
+        mpb.SetFloat("_MaskStrength", strength);
 
         if (spriteRenderer != null) spriteRenderer.SetPropertyBlock(mpb);
         if (tileRenderer != null) tileRenderer.SetPropertyBlock(mpb);

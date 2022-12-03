@@ -58,6 +58,7 @@ Shader "Custom/VisibilityShader"
             float _MaskTargetY;
             float _RenderDistance;
             float _MaskType;
+			float _MaskStrength;
 
 			v2f vert(appdata_t IN)
 			{
@@ -100,12 +101,12 @@ Shader "Custom/VisibilityShader"
 							c.a = 0;
 						}
 						else {
-							c.a = c.a*(1 - (dist/_RenderDistance)*(dist/_RenderDistance));
+							c.a = c.a*(1 - pow((dist/_RenderDistance), _MaskStrength));
 						}
 					}
 					else if (_MaskType <= 2){
 						if ( dist <= _RenderDistance)  {
-							c.a = c.a*(dist/_RenderDistance);
+							c.a = c.a*pow((dist/_RenderDistance), _MaskStrength);
 						}
 					}
                     
