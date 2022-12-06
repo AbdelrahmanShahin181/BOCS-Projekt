@@ -8,6 +8,8 @@ TagManager:
   - Light
   - Door
   - Stair
+  - Food
+  - ECTS
   layers:
   - Default
   - TransparentFX
