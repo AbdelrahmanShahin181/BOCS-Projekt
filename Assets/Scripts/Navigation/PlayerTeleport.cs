@@ -37,42 +37,42 @@ public class PlayerTeleport : MonoBehaviour
             }
         }
         if (collision.CompareTag("StairsUp-A")) {
-            if(Input.GetKey(KeyCode.A)) {
+            if(collision.transform.position.x > transform.position.x) {
                 ChangeLayer(layer+1);
             }
         }
         if (collision.CompareTag("StairsUp-D")) {
-            if(Input.GetKey(KeyCode.D)) {
+            if(collision.transform.position.x < transform.position.x) {
                 ChangeLayer(layer+1);
             }
         }
         if (collision.CompareTag("StairsUp-W")) {
-            if(Input.GetKey(KeyCode.W)) {
+            if(collision.transform.position.y < transform.position.y) {
                 ChangeLayer(layer+1);
             }
         }
         if (collision.CompareTag("StairsUp-S")) {
-            if(Input.GetKey(KeyCode.S)) {
+            if(collision.transform.position.y > transform.position.y) {
                 ChangeLayer(layer+1);
             }
         }
         if (collision.CompareTag("StairsDown-A")) {
-            if(Input.GetKey(KeyCode.A)) {
+            if(collision.transform.position.x > transform.position.x) {
                 ChangeLayer(layer-1);
             }
         }
         if (collision.CompareTag("StairsDown-D")) {
-            if(Input.GetKey(KeyCode.D)) {
+            if(collision.transform.position.x < transform.position.x) {
                 ChangeLayer(layer-1);
             }
         }
         if (collision.CompareTag("StairsDown-W")) {
-            if(Input.GetKey(KeyCode.W)) {
+            if(collision.transform.position.y < transform.position.y) {
                 ChangeLayer(layer-1);
             }
         }
         if (collision.CompareTag("StairsDown-S")) {
-            if(Input.GetKey(KeyCode.S)) {
+            if(collision.transform.position.y > transform.position.y) {
                 ChangeLayer(layer-1);
             }
         }
