@@ -10,6 +10,14 @@ TagManager:
   - Stair
   - Food
   - ECTS
+  - StairsUp-A
+  - StairsUp-D
+  - StairsUp-W
+  - StairsUp-S
+  - StairsDown-A
+  - StairsDown-D
+  - StairsDown-W
+  - StairsDown-S
   layers:
   - Default
   - TransparentFX
@@ -47,22 +55,25 @@ TagManager:
   - name: Background
     uniqueID: 3254972063
     locked: 0
-  - name: 0_Floors
-    uniqueID: 2661859141
+  - name: -1_Back
+    uniqueID: 3228374267
     locked: 0
-  - name: 0_Backwalls
+  - name: -1_Def
+    uniqueID: 2747616733
+    locked: 0
+  - name: -1_Front
+    uniqueID: 203000731
+    locked: 0
+  - name: 0_Back
     uniqueID: 1066463623
     locked: 0
   - name: 0_Def
     uniqueID: 2285687747
     locked: 0
-  - name: 0_Frontwalls
+  - name: 0_Front
     uniqueID: 170151147
     locked: 0
-  - name: Floors
-    uniqueID: 940498381
-    locked: 0
-  - name: Backwalls
+  - name: 1_Back
     uniqueID: 1555009637
     locked: 0
   - name: Default
@@ -71,20 +82,71 @@ TagManager:
   - name: 1_Def
     uniqueID: 299409359
     locked: 0
-  - name: Frontwalls
+  - name: 1_Front
     uniqueID: 534654843
     locked: 0
-  - name: 2_Floors
-    uniqueID: 2912186381
-    locked: 0
-  - name: 2_Backwalls
+  - name: 2_Back
     uniqueID: 413127245
     locked: 0
   - name: 2_Def
     uniqueID: 1111564109
     locked: 0
-  - name: 2_Frontwalls
+  - name: 2_Front
     uniqueID: 1252231037
+    locked: 0
+  - name: 3_Back
+    uniqueID: 2839549499
+    locked: 0
+  - name: 3_Def
+    uniqueID: 2618759237
+    locked: 0
+  - name: 3_Front
+    uniqueID: 617235229
+    locked: 0
+  - name: 4_Back
+    uniqueID: 970164757
+    locked: 0
+  - name: 4_Def
+    uniqueID: 1483378605
+    locked: 0
+  - name: 4_Front
+    uniqueID: 321999619
+    locked: 0
+  - name: 5_Back
+    uniqueID: 1545418299
+    locked: 0
+  - name: 5_Def
+    uniqueID: 846579675
+    locked: 0
+  - name: 5_Front
+    uniqueID: 493027367
+    locked: 0
+  - name: 6_Back
+    uniqueID: 3517572867
+    locked: 0
+  - name: 6_Def
+    uniqueID: 2852237085
+    locked: 0
+  - name: 6_Front
+    uniqueID: 2182254869
+    locked: 0
+  - name: 7_Back
+    uniqueID: 2629725935
+    locked: 0
+  - name: 7_Def
+    uniqueID: 2468460115
+    locked: 0
+  - name: 7_Front
+    uniqueID: 1826898127
+    locked: 0
+  - name: 8_Back
+    uniqueID: 1190574335
+    locked: 0
+  - name: 8_Def
+    uniqueID: 2202502971
+    locked: 0
+  - name: 8_Front
+    uniqueID: 1045078707
     locked: 0
   - name: New Layer 5
     uniqueID: 100558149
