@@ -1,5 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+using System;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTeleport : MonoBehaviour
@@ -83,11 +84,18 @@ public class PlayerTeleport : MonoBehaviour
             karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(true);
             karte.transform.GetChild(i).transform.GetChild(1).gameObject.SetActive(false);
             karte.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
+            
         }
 
         karte.transform.GetChild(target+1).transform.GetChild(2).gameObject.SetActive(true);
         karte.transform.GetChild(target+1).transform.GetChild(1).gameObject.SetActive(true);
         karte.transform.GetChild(target+1).transform.GetChild(0).gameObject.SetActive(true);
+        try {
+            Transform cStairs = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Up");
+            if(cStairs != null)
+            cStairs.gameObject.SetActive(false);
+        }
+        catch(NullReferenceException e){}
         GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
 
         for(int i = target+2; i<9; i++) {
