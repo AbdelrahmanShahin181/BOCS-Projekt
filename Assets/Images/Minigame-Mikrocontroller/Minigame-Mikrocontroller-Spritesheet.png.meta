@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 131
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070dbcbcd4a0d624da54087b17250d16
+      internalID: -1068545515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 132
+        width: 4
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e109c612707fef24883a1b10bb6876c9
+      internalID: -1313385734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 132
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d25ab3861fe2f4cae8901eb7cd1166
+      internalID: 1309447924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6360bba799771458703507742230db
+      internalID: 725785429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d923147e772a44e88dc82ab88e900f
+      internalID: 1033804422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 100
+        width: 4
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962c2502109d9404b8d0e70617dae910
+      internalID: -1530665998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 100
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1bbe49e195da94b9c2b86d9c4106af
+      internalID: 288617100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 98
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de76c1924314bd4dbaff4b84be7740f
+      internalID: 1280690373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0940071caf95a4cb7d9cdc97b8815a
+      internalID: -1667787444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 68
+        width: 4
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c9e7415a7f55c498707a07539a7f58
+      internalID: 2118756998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 68
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fb173408487474096c4ad32de4777e
+      internalID: -1250722910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f31cd2df186ed4581a4a1c39b967f8
+      internalID: 1974942991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 36
+        width: 4
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183b257ecb73887458db87c9b88871c8
+      internalID: -1754909933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigame-Mikrocontroller-Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 36
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85c70e75a3d5cd42815e5226e35d905
+      internalID: -1712630074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +408,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Minigame-Mikrocontroller-Spritesheet_11: 1974942991
+      Minigame-Mikrocontroller-Spritesheet_5: -1530665998
+      Minigame-Mikrocontroller-Spritesheet_4: 1033804422
+      Minigame-Mikrocontroller-Spritesheet_12: -1754909933
+      Minigame-Mikrocontroller-Spritesheet_0: -1068545515
+      Minigame-Mikrocontroller-Spritesheet_7: 1280690373
+      Minigame-Mikrocontroller-Spritesheet_6: 288617100
+      Minigame-Mikrocontroller-Spritesheet_2: 1309447924
+      Minigame-Mikrocontroller-Spritesheet_9: 2118756998
+      Minigame-Mikrocontroller-Spritesheet_10: -1250722910
+      Minigame-Mikrocontroller-Spritesheet_8: -1667787444
+      Minigame-Mikrocontroller-Spritesheet_13: -1712630074
+      Minigame-Mikrocontroller-Spritesheet_1: -1313385734
+      Minigame-Mikrocontroller-Spritesheet_3: 725785429
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
