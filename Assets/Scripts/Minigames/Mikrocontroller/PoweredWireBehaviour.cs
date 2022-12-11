@@ -19,9 +19,9 @@ public class PoweredWireBehaviour : MonoBehaviour
     void Update()
     {
         MoveWire();
-        
-        line.SetPosition(3, new Vector3(gameObject.transform.localPosition.x-.1f,gameObject.transform.localPosition.y-.1f,0));
-        line.SetPosition(2, new Vector3(gameObject.transform.localPosition.x-.4f,gameObject.transform.localPosition.y-.1f,0));
+        //line.SetPosition(1, new Vector3(gameObject.transform.position.x - 0.1f, gameObject.transform.position.y - 0.1f, 0));
+        line.SetPosition(1, new Vector3(gameObject.transform.position.x - 0.05f, gameObject.transform.position.y, 0));
+
     }
 
     void OnMouseDown()
@@ -45,7 +45,15 @@ public class PoweredWireBehaviour : MonoBehaviour
     void OnMouseUp()
     {
         mouseDown = false;
-        gameObject.transform.position = powerWireS.startPosition;
+        if (!powerWireS.connected)
+        {
+            gameObject.transform.position = powerWireS.startPosition;
+        }
+        else
+        {
+            gameObject.transform.position = powerWireS.connectedPosition;
+        }
+        
     }
 
     void MoveWire()
