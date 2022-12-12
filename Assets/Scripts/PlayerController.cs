@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        
         //touch input
         if (Input.touchCount > 0)
         {
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
             change.y = touchPosition.y;
             if (change != Vector3.zero)
             {
+                Debug.Log("moving");
                 MoveCharacter();
                 animator.SetFloat("moveX", touchPosition.x);
                 animator.SetFloat("moveY", touchPosition.y);
@@ -66,7 +67,4 @@ public class PlayerController : MonoBehaviour
         myRigidbody.MovePosition(transform.position+ change*speed* Time.deltaTime);
     }
 
-    void changeLayer() {
-        sprite.sortingLayerName = "2ndFloor";
-    }
 }
