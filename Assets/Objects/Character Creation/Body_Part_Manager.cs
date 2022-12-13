@@ -51,10 +51,11 @@ public class Body_Part_Manager : MonoBehaviour
 
                     // Get players animation from player body
                     // ***NOTE: Unless Changed Here, Animation Naming Must Be: "[Type]_[Index]_[state]_[direction]" (Ex. Body_0_idle_down)
-                    animationClip = Resources.Load<AnimationClip>("Player Animations/" + partType + "/" + partType + "_" + partID + "_" + state + "_" + direction);
+                    animationClip = Resources.Load<AnimationClip>("PlayerAnimations/" + partType + "/" + partType + "_" + partID + "_" + state + "_" + direction);
 
                     // Override default animation
                     defaultAnimationClips[partType + "_" + 0 + "_" + state + "_" + direction] = animationClip;
+                    //Debug.Log(partType + "_" + 0 + "_" + state + "_" + direction);
                 }
             }
         }

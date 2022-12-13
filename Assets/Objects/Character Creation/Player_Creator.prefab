@@ -265,10 +265,10 @@ GameObject:
   - component: {fileID: 3905459460661770871}
   - component: {fileID: -5037175794388928154}
   - component: {fileID: 7824041099492661343}
-  - component: {fileID: 1321669855807700819}
   - component: {fileID: 8291508260159494625}
   - component: {fileID: 142464195220842162}
   - component: {fileID: 8882367426662080977}
+  - component: {fileID: 9084909669794287214}
   m_Layer: 0
   m_Name: Player_Creator
   m_TagString: Player
@@ -365,20 +365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &1321669855807700819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4807460625514789179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c010bff3e2b4f4eaa6b75fab701d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 0}
-  karte: {fileID: 0}
 --- !u!114 &8291508260159494625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +415,20 @@ MonoBehaviour:
   - Right
   - Up
   - Down
+--- !u!114 &9084909669794287214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4807460625514789179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c010bff3e2b4f4eaa6b75fab701d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  karte: {fileID: 0}
 --- !u!1 &5552422788162255871
 GameObject:
   m_ObjectHideFlags: 0

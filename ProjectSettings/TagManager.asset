@@ -18,6 +18,7 @@ TagManager:
   - StairsDown-D
   - StairsDown-W
   - StairsDown-S
+  - Teleporter
   layers:
   - Default
   - TransparentFX
