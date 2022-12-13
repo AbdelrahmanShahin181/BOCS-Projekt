@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: -165077057463309308}
   - component: {fileID: 4374716913138653574}
   - component: {fileID: 4374716913138653573}
-  - component: {fileID: 4374716913138653580}
   - component: {fileID: 1912694853794294732}
   - component: {fileID: 4242007856798529289}
   - component: {fileID: 3982085080453602795}
@@ -261,22 +260,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4374716913138653580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4374716913138653570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &1912694853794294732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c010bff3e2b4f4eaa6b75fab701d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  karte: {fileID: 0}
 --- !u!114 &2155221105655744738
 MonoBehaviour:
   m_ObjectHideFlags: 0

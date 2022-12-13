@@ -91,12 +91,24 @@ public class PlayerTeleport : MonoBehaviour
         karte.transform.GetChild(target+1).transform.GetChild(1).gameObject.SetActive(true);
         karte.transform.GetChild(target+1).transform.GetChild(0).gameObject.SetActive(true);
         try {
-            Transform cStairs = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Up");
-            if(cStairs != null)
-            cStairs.gameObject.SetActive(false);
+            Transform cStairsUp = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Up");
+            Transform cStairsDown = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Down");
+            if(cStairs != null){
+                if(target<layer){
+                    cStairsUp.gameObject.SetActive(true);
+                    cStairsDown.gameObject.SetActive(false);
+                }
+                else {
+                    cStairsUp.gameObject.SetActive(false);
+                    cStairsDown.gameObject.SetActive(true);
+                }
+            }
         }
         catch(NullReferenceException e){}
-        GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
+        transform.GetChild(0).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
+        transform.GetChild(1).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
+        transform.GetChild(2).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
+        transform.GetChild(3).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
 
         for(int i = target+2; i<9; i++) {
             karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(false);
