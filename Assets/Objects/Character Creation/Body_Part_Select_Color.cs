@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Body_Part_Select_Color : MonoBehaviour
 
 {
-
+    [SerializeField] private SO_CharacterColors characterColor;
     [SerializeField] public GameObject player;
     public int bodyPart = -1;
     public string[] colors = new string[] {"_ColorHair", "_ColorSkin", "_ColorShirt", "_ColorPants"};
@@ -33,6 +33,7 @@ public class Body_Part_Select_Color : MonoBehaviour
     public void ChangeColor() {
         if (bodyPart != -1) {
             UnityEngine.Color newColor = new UnityEngine.Color(red.value, green.value, blue.value, 1);
+            characterColor.Colors[bodyPart]= newColor;
             player.transform.GetChild(0).GetComponent<SpriteRenderer>().material.SetColor(colors[bodyPart], newColor);
             player.transform.GetChild(1).GetComponent<SpriteRenderer>().material.SetColor(colors[bodyPart], newColor);
             player.transform.GetChild(2).GetComponent<SpriteRenderer>().material.SetColor(colors[bodyPart], newColor);

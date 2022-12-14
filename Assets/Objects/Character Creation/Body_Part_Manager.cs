@@ -6,6 +6,7 @@ public class Body_Part_Manager : MonoBehaviour
     // ~~ 1. Updates All Animations to Match Player Selections
 
     [SerializeField] private SO_Character_Build characterBuild;
+    [SerializeField] private SO_CharacterColors characterColor;
 
     // String Arrays
     [SerializeField] private string[] bodyPartTypes;
@@ -17,6 +18,7 @@ public class Body_Part_Manager : MonoBehaviour
     private AnimationClip animationClip;
     private AnimatorOverrideController animatorOverrideController;
     private AnimationClipOverrides defaultAnimationClips;
+    public string[] colors = new string[] {"_ColorHair", "_ColorSkin", "_ColorShirt", "_ColorPants"};
 
     private void Start()
     {
@@ -27,6 +29,14 @@ public class Body_Part_Manager : MonoBehaviour
 
         defaultAnimationClips = new AnimationClipOverrides(animatorOverrideController.overridesCount);
         animatorOverrideController.GetOverrides(defaultAnimationClips);
+
+        // Set Colors
+        for(int i=0; i<4; i++) {
+            transform.GetChild(i).GetComponent<SpriteRenderer>().material.SetColor(colors[0], characterColor.Colors[0]);
+            transform.GetChild(i).GetComponent<SpriteRenderer>().material.SetColor(colors[1], characterColor.Colors[1]);
+            transform.GetChild(i).GetComponent<SpriteRenderer>().material.SetColor(colors[2], characterColor.Colors[2]);
+            transform.GetChild(i).GetComponent<SpriteRenderer>().material.SetColor(colors[3], characterColor.Colors[3]);
+        }
 
         // Set body part animations
         UpdateBodyParts();

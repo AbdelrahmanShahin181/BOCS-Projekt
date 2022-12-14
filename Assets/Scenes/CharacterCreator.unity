@@ -402,6 +402,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0fe407389d9f60b42acace7ad4e6763f, type: 2}
     - target: {fileID: 8882367426662080977, guid: 74155bc5c3d213445a248feca2ee402c, type: 3}
+      propertyPath: characterColor
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b008192a67da2e40b6815779c38f65c, type: 2}
+    - target: {fileID: 8882367426662080977, guid: 74155bc5c3d213445a248feca2ee402c, type: 3}
       propertyPath: characterDirections.Array.data[0]
       value: Down
       objectReference: {fileID: 0}
@@ -1097,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e03a16818eb1442bb333594049a394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterColor: {fileID: 11400000, guid: 9b008192a67da2e40b6815779c38f65c, type: 2}
   player: {fileID: 1670146945}
   bodyPart: -1
   colors:
