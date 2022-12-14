@@ -188,8 +188,6 @@ namespace Photon.Chat.Demo
                         UserName = "guest";
                     }else{
                         this.UserName = result.Data["username"].Value;
-                        Debug.Log("Jalal und Abdo Username: " + this.UserName);
-                        Debug.Log("Jalal und Abdo Username: " + result.Data["username"].Value);
                     }
                     Debug.Log("NickName is: " + this.UserName);
                 }, 

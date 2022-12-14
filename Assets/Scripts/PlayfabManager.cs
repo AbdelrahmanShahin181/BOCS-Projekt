@@ -62,7 +62,6 @@ public class PlayfabManager : MonoBehaviour
         
         // switch scene
         GetPlayerData();
-       
         //usernameInput.text = userData["username"];
          SceneManager.LoadScene(2);
 

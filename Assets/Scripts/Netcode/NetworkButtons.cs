@@ -33,6 +33,10 @@ public class NetworkButtons : MonoBehaviour {
                 NetworkManager.Singleton.StartHost();
             }
         }
+        GetPlayerData();
+        Debug.Log("Player Prefab is " + playerPrefabs[playerID]);
+        Debug.Log("Player Prefab is " + NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
+        
         //NetworkManager.Singleton.StartClient();
     }
 
@@ -41,8 +45,6 @@ public class NetworkButtons : MonoBehaviour {
         if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer) {
             if (GUILayout.Button("Host")){
                 NetworkManager.Singleton.StartHost();
-                GetPlayerData();
-                NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
             } 
             if (GUILayout.Button("Server")){
 				StartRemoteServer();
@@ -50,13 +52,11 @@ public class NetworkButtons : MonoBehaviour {
             } 
             if (GUILayout.Button("Client")){ 
                 NetworkManager.Singleton.StartClient();
-                GetPlayerData();
-                NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
             }
         }
 
         GUILayout.EndArea();
-        
+        NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
     }
 
     private void StartRemoteServer()
