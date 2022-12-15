@@ -8,11 +8,14 @@ public class NPC_movement : MonoBehaviour
     public float moveSpeed;
     private Rigidbody2D myRigidbody;
     public bool isWalking;
-    public float walkTime;
+    public float walkTimeLeft;
+    public float walkTimeRight;
+    public float walkTimeUp;
+    public float walkTimeDown;
     public float walkCounter;
     public float waitTime;
     public float waitCounter;
-    private int walkDirection;
+    private int walkDirection = 0;
     private Animator anim;
 
 
@@ -22,7 +25,7 @@ public class NPC_movement : MonoBehaviour
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         waitCounter = waitTime;
-        walkCounter = walkTime;
+        //walkCounter = walkTime;
         chooseDirection();
         
     }
@@ -73,15 +76,34 @@ public class NPC_movement : MonoBehaviour
 
     public void chooseDirection()
     {
-        walkDirection = Random.Range(0, 4);
+        walkDirection +=1;
+        
+        if(walkDirection > 3){
+            walkDirection = 0;
+        }
+
         isWalking = true;
-        walkCounter = walkTime;
+
+        switch (walkDirection)
+            {
+            case 0:
+                walkCounter = walkTimeUp;
+                break;
+            case 1:
+                 walkCounter = walkTimeRight;
+                break;
+            case 2:
+                walkCounter = walkTimeDown;
+                break;
+            case 3:
+                walkCounter = walkTimeLeft;
+                break; 
+            }
     }
     void UpdateAnimationAndMove()
     {
             anim.SetFloat("Horizontal", myRigidbody.velocity.x);
             anim.SetFloat("Vertical", myRigidbody.velocity.y);  
-            anim.SetBool("moving", true); 
-            
+            anim.SetBool("moving", true);         
     }
 }

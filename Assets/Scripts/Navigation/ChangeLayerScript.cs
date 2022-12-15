@@ -22,10 +22,20 @@ public class ChangeLayerScript : MonoBehaviour
         return KeyCode.W;
     }
 
+    KeyCode KeyToKeyDirection(Key key) {
+        switch(key) {
+            //case Key.W: return Vector3(0);
+            case Key.A: return KeyCode.A;
+            case Key.S: return KeyCode.S;
+            case Key.D: return KeyCode.D;
+        }
+        return KeyCode.W;
+    }
+
 
     void OnTriggerExit2D(Collider2D pl) {
         if(pl.tag == "Player") {
-        Debug.Log("Trigger");
+        Debug.Log(pl.GetComponent<Transform>().position);
             if(Input.GetKey(KeyToKeyCode(up))) {
                 _upperLevel.transform.GetChild(2).gameObject.SetActive(true);
                 _upperLevel.transform.GetChild(1).gameObject.SetActive(true);

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class KaffeeautomatDialog : MonoBehaviour
 {
     public GameObject dialogBox;
@@ -14,9 +13,7 @@ public class KaffeeautomatDialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -32,21 +29,17 @@ public class KaffeeautomatDialog : MonoBehaviour
                 dialogText.text = dialog;
             }
         }
-
         if(Input.GetKeyDown(KeyCode.J) && playerInRange){
                 if(healthManager != null){
                     healthManager.heal(5);
                     dialogText.text = "Du hast 5 Lebenspunkte wiederhergestellt!  [E] Exit";
                 }
             }
-        
     }
-    
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             Debug.Log("Player entered");
             playerInRange = true;
-            healthManager = healthBarScript.GetComponent<HealthManager>();
         }
     }
     public void OnTriggerExit2D(Collider2D other) {
