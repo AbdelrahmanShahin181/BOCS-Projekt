@@ -20,6 +20,7 @@ public class NPCQuizManager : MonoBehaviour
     private static NPCQuizManager instance;
 
     ECTSCounter ectsCounter;
+    HealthManager hpLoss;
     GameObject playerBoy;
 
     private void Awake(){
@@ -144,12 +145,22 @@ public class NPCQuizManager : MonoBehaviour
             AddECTS();
         }
 
+        else{
+
+            looseHP();
+        }
+
     }
 
     public void AddECTS(){
 
         ectsCounter = GameObject.Find("Player_Boy").GetComponent<ECTSCounter>();
         ectsCounter.erhoeheWert(5);
+    }
+
+    public void looseHP(){
+        hpLoss = GameObject.Find("Healthbar").GetComponent<HealthManager>();
+        hpLoss.TakeDamage(3);
     }
 
 
