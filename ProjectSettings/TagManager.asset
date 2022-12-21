@@ -19,6 +19,10 @@ TagManager:
   - StairsDown-W
   - StairsDown-S
   - Teleporter
+  - Bullet
+  - CheckPoint
+  - MobileUI
+  - AI
   layers:
   - Default
   - TransparentFX
