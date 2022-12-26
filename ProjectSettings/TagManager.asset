@@ -23,6 +23,7 @@ TagManager:
   - CheckPoint
   - MobileUI
   - AI
+  - Obstacle
   layers:
   - Default
   - TransparentFX
