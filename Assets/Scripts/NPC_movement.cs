@@ -33,6 +33,10 @@ public class NPC_movement : MonoBehaviour
 
     void Update()
     {
+        if(NPCQuizManager.GetInstance().dialogIsActive){
+            myRigidbody.velocity = Vector2.zero;
+            return;
+        }
         if(isWalking){
 
             walkCounter -= Time.deltaTime;
