@@ -58,6 +58,6 @@ public class FoodSpawn : MonoBehaviour
         }
         GameObject obj = (GameObject)Instantiate(myPrefab, new Vector3(Random.Range(-7.5f, 7.5f), 10, 0), Quaternion.Euler( 0, 0, Random.Range(-180f, 180f)));
         obj.GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-150f, 150f);
-        timerTime = targetTime + Random.Range(-0.3f, 1.5f);
+        timerTime = targetTime + Random.Range(targetTime/2, targetTime*2);
     }
 }

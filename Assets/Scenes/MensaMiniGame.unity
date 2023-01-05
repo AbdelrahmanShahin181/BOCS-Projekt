@@ -186,7 +186,7 @@ MonoBehaviour:
   food2: {fileID: 5696910840442794072, guid: 970b88517ff4ca1418996453ae128972, type: 3}
   food3: {fileID: 5696910840442794072, guid: 1517304efabe12b4d8cc4197ceeddc7b, type: 3}
   food4: {fileID: 5696910840442794072, guid: 26b83357179d5904b98f2452d8d466ce, type: 3}
-  targetTime: 1
+  targetTime: 0.5
   timerTime: 0
 --- !u!1 &790358177
 GameObject:
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 1419995265}
   - component: {fileID: 1419995266}
   m_Layer: 0
-  m_Name: Despawn (1)
+  m_Name: DespawnAbove
   m_TagString: Despawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -761,7 +761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419995261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
   m_LocalScale: {x: 6, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1074,7 +1074,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658800971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1420,7 +1420,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941803448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

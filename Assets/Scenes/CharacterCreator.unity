@@ -1076,6 +1076,7 @@ MonoBehaviour:
     bodyPartOptions:
     - {fileID: 11400000, guid: efad99e1045884a4490e158942f3168f, type: 2}
     - {fileID: 11400000, guid: b49a0755f29cf5044bd721f54f59fbb8, type: 2}
+    - {fileID: 11400000, guid: 22e88b3086964c2418e6eef251506fd2, type: 2}
     bodyPartCurrentIndex: 0
   - bodyPartName: Head
     bodyPartOptions:
@@ -1083,11 +1084,13 @@ MonoBehaviour:
     bodyPartCurrentIndex: 0
   - bodyPartName: Shirt
     bodyPartOptions:
-    - {fileID: 11400000, guid: 40a8a0a1ecc1e80499bccfa8ba1e5fcf, type: 2}
+    - {fileID: 11400000, guid: b825dd3957c31a44ba697b17f9e946f4, type: 2}
+    - {fileID: 11400000, guid: 0e8640bca51ffb243bb3512080a246f7, type: 2}
     bodyPartCurrentIndex: 0
   - bodyPartName: Pants
     bodyPartOptions:
-    - {fileID: 11400000, guid: b825dd3957c31a44ba697b17f9e946f4, type: 2}
+    - {fileID: 11400000, guid: 40a8a0a1ecc1e80499bccfa8ba1e5fcf, type: 2}
+    - {fileID: 11400000, guid: 582d13e7abcb9504fab731d7fa18d6a8, type: 2}
     bodyPartCurrentIndex: 0
 --- !u!114 &1107185222
 MonoBehaviour:
