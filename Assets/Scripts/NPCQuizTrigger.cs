@@ -12,6 +12,8 @@ public class NPCQuizTrigger : MonoBehaviour
 
     public bool inRange;
 
+    public int correctChoice;
+
     public void Awake(){
 
         visualCue.SetActive(false);
@@ -26,7 +28,7 @@ public class NPCQuizTrigger : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.E)){
 
-                NPCQuizManager.GetInstance().StartDialog(inkJSON);
+                NPCQuizManager.GetInstance().StartDialog(inkJSON, correctChoice);
             }
         }
 

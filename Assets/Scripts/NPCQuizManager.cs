@@ -18,6 +18,7 @@ public class NPCQuizManager : MonoBehaviour
     public bool dialogIsActive{get; private set;}
 
     private static NPCQuizManager instance;
+    private int rightChoice;
 
     ECTSCounter ectsCounter;
     HealthManager hpLoss;
@@ -68,8 +69,9 @@ public class NPCQuizManager : MonoBehaviour
         }
     }
 
-    public void StartDialog(TextAsset inkJSON){
+    public void StartDialog(TextAsset inkJSON, int correctChoice){
 
+        rightChoice = correctChoice;
         currentStory = new Story(inkJSON.text);
         dialogIsActive = true;
         dialogPanel.SetActive(true);
@@ -135,12 +137,11 @@ public class NPCQuizManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
     }
 
-    public void ChooseChoice(int choiceIndex){
+    public void chooseChoice(int choiceIndex){
 
         currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
 
-        if(choiceIndex == 2){
+        if(choiceIndex == rightChoice){
 
             AddECTS();
         }
@@ -150,11 +151,13 @@ public class NPCQuizManager : MonoBehaviour
             looseHP();
         }
 
+        ContinueStory();
     }
+    
 
     public void AddECTS(){
 
-        ectsCounter = GameObject.Find("Player_Boy").GetComponent<ECTSCounter>();
+        ectsCounter = GameObject.Find("Player_Creator").GetComponent<ECTSCounter>();
         ectsCounter.erhoeheWert(5);
     }
 
