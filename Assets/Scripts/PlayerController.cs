@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -10,17 +11,31 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite ;
     private Vector3 change;
     private Animator animator ;
+    private bool moveLeft = false;
+    private bool wasMovingLeft = false;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
-        PlayerCameraFollow.Instance.FollowPlayer(transform);
+        //PlayerCameraFollow.Instance.FollowPlayer(transform);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(Input.GetKey(KeyCode.LeftShift)){
+            if(!animator.GetBool("isRunning")){
+                animator.SetBool("isRunning", true);
+                speed = speed * 2;
+            }
+        }
+        else {
+            if(animator.GetBool("isRunning")){
+                animator.SetBool("isRunning", false);
+                speed = speed / 2;
+            }
+        }
         
         //touch input
         if (Input.touchCount > 0)
@@ -34,15 +49,43 @@ public class PlayerController : MonoBehaviour
             change.y = touchPosition.y;
             if (change != Vector3.zero)
             {
-                Debug.Log("moving");
+                //Debug.Log("moving");
                 MoveCharacter();
-                animator.SetFloat("moveX", touchPosition.x);
-                animator.SetFloat("moveY", touchPosition.y);
-                animator.SetBool("moving", true);
+                
+                if(Mathf.Abs(change.x) < Mathf.Abs(change.y)) {
+                    animator.SetFloat("moveX", 0);
+                    animator.SetFloat("moveY", change.y);
+                }
+                else {
+                    animator.SetFloat("moveX", change.x);
+                    animator.SetFloat("moveY", 0);
+                    
+                }
+                if(change.x < 0) {
+                        moveLeft = true;
+                        if(moveLeft != wasMovingLeft) {
+                            Vector3 newScale = transform.localScale;
+                            newScale.x *= -1;
+                            transform.localScale = newScale;
+                            Debug.Log("Direction Change");
+                        }
+                        wasMovingLeft = true;
+                    }
+                    else {
+                        moveLeft = false;
+                        if(moveLeft != wasMovingLeft) {
+                            Vector3 newScale = transform.localScale;
+                            newScale.x *= -1;
+                            transform.localScale = newScale;
+                            Debug.Log("Direction Change");
+                        }
+                        wasMovingLeft = false;
+                    }
+                animator.SetBool("isWalking", true);
             }
             else
             {
-                animator.SetBool("moving", false);
+                animator.SetBool("isWalking", false);
             }
 
         }else{
@@ -51,13 +94,40 @@ public class PlayerController : MonoBehaviour
             change.y = Input.GetAxisRaw("Vertical");     
             if(change != Vector3.zero){
                 MoveCharacter();
-                animator.SetFloat("MoveX",change.x);
-                animator.SetFloat("MoveY",change.y);
-                animator.SetBool("moving",true);
+                if(Mathf.Abs(change.x) < Mathf.Abs(change.y)) {
+                    animator.SetFloat("moveX", 0);
+                    animator.SetFloat("moveY", change.y);
+                }
+                else {
+                    animator.SetFloat("moveX", change.x);
+                    animator.SetFloat("moveY", 0);
+                }
+
+                if(change.x < 0) {
+                        moveLeft = true;
+                        if(moveLeft != wasMovingLeft) {
+                            Vector3 newScale = transform.localScale;
+                            newScale.x *= -1;
+                            transform.localScale = newScale;
+                            Debug.Log("Direction Change");
+                        }
+                        wasMovingLeft = true;
+                    }
+                    else {
+                        moveLeft = false;
+                        if(moveLeft != wasMovingLeft) {
+                            Vector3 newScale = transform.localScale;
+                            newScale.x *= -1;
+                            transform.localScale = newScale;
+                            Debug.Log("Direction Change");
+                        }
+                        wasMovingLeft = false;
+                    }
+                animator.SetBool("isWalking",true);
 
 
             }  else{
-                animator.SetBool("moving",false);
+                animator.SetBool("isWalking",false);
             } 
         }
 
@@ -68,3 +138,4 @@ public class PlayerController : MonoBehaviour
     }
 
 }
+
