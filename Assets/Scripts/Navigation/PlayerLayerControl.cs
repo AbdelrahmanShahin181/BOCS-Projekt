@@ -105,10 +105,7 @@ public class PlayerLayerControl : MonoBehaviour
             }
         }
         catch(NullReferenceException e){}
-        transform.GetChild(0).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
-        transform.GetChild(1).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
-        transform.GetChild(2).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
-        transform.GetChild(3).transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
+        transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
 
         for(int i = target+2; i<9; i++) {
             karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(false);
