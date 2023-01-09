@@ -12,4 +12,5 @@ public class ECTSCounter : MonoBehaviour
         wert += value;
         text.text = wert.ToString();      
     }
+
 }

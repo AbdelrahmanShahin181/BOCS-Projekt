@@ -11,6 +11,7 @@ public class FoodSpawn : MonoBehaviour
     public GameObject food2;
     public GameObject food3;
     public GameObject food4;
+    
     public float targetTime = 5.0f;
     private GameObject myPrefab;
     public float timerTime;
