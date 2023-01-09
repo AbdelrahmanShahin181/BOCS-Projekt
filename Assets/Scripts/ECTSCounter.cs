@@ -10,6 +10,6 @@ public class ECTSCounter : MonoBehaviour
 
     public void erhoereWert(int value) {
         wert += value;
-        text.text = "ECTS: " + wert.ToString();      
+        text.text = wert.ToString();      
     }
 }
