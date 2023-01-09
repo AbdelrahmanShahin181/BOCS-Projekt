@@ -8,7 +8,7 @@ public class ECTSPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            other.gameObject.GetComponent<ECTSCounter>().erhoereWert(value);
+            other.gameObject.GetComponent<ECTSCounter>().erhoeheWert(value);
             Destroy(gameObject);
         }
         

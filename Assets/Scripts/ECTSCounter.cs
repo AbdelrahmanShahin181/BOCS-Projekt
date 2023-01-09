@@ -8,7 +8,7 @@ public class ECTSCounter : MonoBehaviour
     public int wert = 0;
     public Text text;
 
-    public void erhoereWert(int value) {
+    public void erhoeheWert(int value) {
         wert += value;
         text.text = wert.ToString();      
     }
