@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed ;
+    public HealthManager healthManager;
     private Rigidbody2D myRigidbody ;
     private SpriteRenderer sprite ;
     private Vector3 change;
@@ -134,7 +135,7 @@ public class PlayerController : MonoBehaviour
         
     }
     void MoveCharacter(){
-        myRigidbody.MovePosition(transform.position+ change*speed* Time.deltaTime);
+        myRigidbody.MovePosition(transform.position+ change*(speed* healthManager.currentHealth /10) * Time.deltaTime);
     }
 
 }

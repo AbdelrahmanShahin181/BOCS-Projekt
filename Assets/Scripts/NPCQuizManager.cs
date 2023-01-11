@@ -73,12 +73,12 @@ public class NPCQuizManager : MonoBehaviour
 
         rightChoice = correctChoice;
         currentStory = new Story(inkJSON.text);
-        dialogIsActive = true;
-        dialogPanel.SetActive(true);
+        dialogIsActive = !dialogIsActive;
+        dialogPanel.SetActive(dialogIsActive);
         ContinueStory();
     }
 
-    private void ExitDialogeMode(){
+    public void ExitDialogeMode(){
 
         dialogIsActive = false;
         dialogPanel.SetActive(false);
@@ -97,7 +97,7 @@ public class NPCQuizManager : MonoBehaviour
 
         else{
 
-            ExitDialogeMode();
+            //ExitDialogeMode();
         }
     }
 

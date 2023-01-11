@@ -10,6 +10,7 @@ public class KaffeeautomatDialog : MonoBehaviour
     public bool playerInRange;
     public HealthManager healthManager;
     public HealthBarScript healthBarScript;
+    public ECTSCounter ECTSCounter;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +32,14 @@ public class KaffeeautomatDialog : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.J) && playerInRange){
                 if(healthManager != null){
-                    healthManager.heal(5);
-                    dialogText.text = "Du hast 5 Lebenspunkte wiederhergestellt!  [E] Exit";
+                    if(ECTSCounter.wert > 0) {
+                        ECTSCounter.senkeWert(1);
+                        healthManager.heal(5);
+                        dialogText.text = "Du hast 5 Lebenspunkte wiederhergestellt!  [E] Exit";
+                    }
+                    else {
+                        dialogText.text = "Du hast nicht genug Kaffee Coins";
+                    }
                 }
             }
     }
