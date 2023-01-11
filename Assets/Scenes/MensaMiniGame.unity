@@ -655,7 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 790358179}
   foodCount: 0
-  gameTime: 20
+  gameTime: 60
   WinLose: {fileID: 2005292870}
   winLoseText: {fileID: 1743095920}
 --- !u!1 &1419995261
