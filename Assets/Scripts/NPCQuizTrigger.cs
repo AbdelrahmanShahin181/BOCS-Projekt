@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class NPCQuizTrigger : MonoBehaviour
 {
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
-
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
@@ -15,26 +12,17 @@ public class NPCQuizTrigger : MonoBehaviour
     public int correctChoice;
 
     public void Awake(){
-
-        visualCue.SetActive(false);
         inRange = false;
     }
 
     public void Update(){
 
-        if(inRange && !NPCQuizManager.GetInstance().dialogIsActive){
-
-            visualCue.SetActive(true);
+        if(inRange /*&& !NPCQuizManager.GetInstance().activeSelf*/){
 
             if(Input.GetKeyDown(KeyCode.E)){
 
                 NPCQuizManager.GetInstance().StartDialog(inkJSON, correctChoice);
             }
-        }
-
-        else{
-                
-                visualCue.SetActive(false);
         }
     }
 
@@ -52,6 +40,7 @@ public class NPCQuizTrigger : MonoBehaviour
         if(other.gameObject.tag == "Player"){
 
             inRange = false;
+            NPCQuizManager.GetInstance().ExitDialogeMode();
         }
         
     }
