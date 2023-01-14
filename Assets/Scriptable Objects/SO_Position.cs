@@ -8,4 +8,5 @@ public class SO_Position : ScriptableObject
     public float x;
     public float y;
     public int layer;
+    public int hp;
 }

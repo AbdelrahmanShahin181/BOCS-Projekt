@@ -8,12 +8,16 @@ public class HealthManager : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
     public HealthBarScript healthBar;
+    [SerializeField] private SO_Position position;
 
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+        currentHealth = position.hp;
+        healthBar.SetHealth(currentHealth);
     }
 
    
@@ -31,6 +35,7 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = 0;
         }
+        position.hp = currentHealth;
     }
 
     public void heal(int heal)
@@ -42,6 +47,7 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        position.hp = currentHealth;
     }
 
 }

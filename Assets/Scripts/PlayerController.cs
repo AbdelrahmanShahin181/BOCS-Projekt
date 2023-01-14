@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
         
     }
     void MoveCharacter(){
-        myRigidbody.MovePosition(transform.position+ change*(speed* healthManager.currentHealth /10) * Time.deltaTime);
+        myRigidbody.MovePosition(transform.position+ change*(speed/2 + (speed/2* healthManager.currentHealth /10)) * Time.deltaTime);
     }
 
 }

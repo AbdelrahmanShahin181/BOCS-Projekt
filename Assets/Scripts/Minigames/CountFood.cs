@@ -8,11 +8,12 @@ using System.Threading;
 public class CountFood : MonoBehaviour
 {
     public TextMeshProUGUI score;
-    public int foodCount = -2;
+    public int foodCount = 0;
     public float gameTime = 60.0f;
     public GameObject WinLose;
     public TextMeshProUGUI winLoseText;
     public Timeline timeline;
+    [SerializeField] private SO_Position position;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,9 @@ public class CountFood : MonoBehaviour
             if(timeline.level == 1)
                 timeline.level = 1;
             Thread.Sleep(5000);
+            position.hp = 2;
+            position.x = 13.5;
+            position.y = -32;
             SceneManager.LoadScene("Main Scene");
         }
     }

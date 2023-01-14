@@ -15,3 +15,4 @@ MonoBehaviour:
   x: 6
   y: -90.25
   layer: 0
+  hp: 10
