@@ -50,8 +50,8 @@ public class CountFood : MonoBehaviour
                 timeline.level = 1;
             Thread.Sleep(5000);
             position.hp = 2;
-            position.x = 13.5;
-            position.y = -32;
+            position.x = 13.5f;
+            position.y = -32f;
             SceneManager.LoadScene("Main Scene");
         }
     }
