@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterCustomization.unity
     guid: 113eff5b4cb17024fab0a3075554aeeb
+  - enabled: 1
+    path: Assets/Scenes/MensaMiniGame.unity
+    guid: d88958db91b886c4eb0c4484ad6820e1
   m_configObjects: {}
