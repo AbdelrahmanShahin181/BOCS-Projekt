@@ -30,7 +30,7 @@ public class KaffeeautomatDialog : MonoBehaviour
                 dialogText.text = dialog;
             }
         }
-        if(Input.GetKeyDown(KeyCode.J) && playerInRange){
+        if(dialogBox.activeSelf &&Input.GetKeyDown(KeyCode.J) && playerInRange){
                 if(healthManager != null){
                     if(ECTSCounter.wert > 0) {
                         ECTSCounter.senkeWert(1);

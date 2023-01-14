@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
+using System.Threading;
 
 public class CountFood : MonoBehaviour
 {
@@ -10,10 +12,12 @@ public class CountFood : MonoBehaviour
     public float gameTime = 60.0f;
     public GameObject WinLose;
     public TextMeshProUGUI winLoseText;
+    public Timeline timeline;
     // Start is called before the first frame update
     void Start()
     {
-        
+        timeline = GameObject.Find("Timeline").GetComponent<Timeline>();
+        Debug.Log("Level = "+timeline.level);
     }
 
     // Update is called once per frame
@@ -26,15 +30,25 @@ public class CountFood : MonoBehaviour
     }
 
     void gameEnded(){
-        if ( foodCount > 10) {
+        if ( foodCount >= 5) {
             score.gameObject.SetActive(false);
             WinLose.gameObject.SetActive(true);
             winLoseText.text = "Erfolg";
+            //sleep for 5 seconds
+            if(timeline.level == 1)
+                timeline.level = 2;
+            Thread.Sleep(5000);
+            SceneManager.LoadScene("Main Scene");
+
         }
         else {
             score.gameObject.SetActive(false);
             WinLose.gameObject.SetActive(true);
             winLoseText.text = "Niederlage";
+            if(timeline.level == 1)
+                timeline.level = 1;
+            Thread.Sleep(5000);
+            SceneManager.LoadScene("Main Scene");
         }
     }
 
