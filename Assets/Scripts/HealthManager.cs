@@ -19,10 +19,7 @@ public class HealthManager : MonoBehaviour
    
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
+        
     }
 
     public void TakeDamage(int damage)
