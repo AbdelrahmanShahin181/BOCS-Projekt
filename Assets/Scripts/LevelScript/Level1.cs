@@ -13,6 +13,8 @@ public class Level1 : MonoBehaviour
     public HealthManager healthManager;
     public HealthBarScript healthBarScript;
     public Timeline timeline;
+    [SerializeField] private SO_Position position;
+    public GameObject player;
 
     private int counter = 0;
     
@@ -32,6 +34,9 @@ public class Level1 : MonoBehaviour
                     dialogBox.SetActive(false);
                     counter = 0;
                     if(timeline.level >= 1){
+                        position.x = player.transform.position.x;
+                        position.y = player.transform.position.y;
+                        position.layer = player.transform.GetComponent<PlayerLayerControl>().layer;
                         SceneManager.LoadScene("MensaMiniGame");
                     }
                     

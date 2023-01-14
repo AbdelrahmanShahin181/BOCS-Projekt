@@ -9,7 +9,7 @@ public class PlayerLayerControl : MonoBehaviour
     public GameObject karte;
     private GameObject currentElevator;
     
-    private int layer = 0;
+    public int layer = 0;
 
     // Update is called once per frame
     void Update()
