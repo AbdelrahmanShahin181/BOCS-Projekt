@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba4fd26312e45b47a730f63a8ab53e5, type: 3}
   m_Name: Position
   m_EditorClassIdentifier: 
-  x: 6
-  y: -90.25
+  x: 13.5
+  y: -32
   layer: 0
   hp: 10
+  kaffeeCoins: 25
