@@ -7,15 +7,23 @@ public class ECTSCounter : MonoBehaviour
 {
     public int wert = 0;
     public Text text;
+    [SerializeField] private SO_Position position;
+
+    void Start() {
+        wert = position.kaffeeCoins;
+        text.text = wert.ToString();
+    }
 
     public void erhoeheWert(int value) {
         wert += value;
-        text.text = wert.ToString();      
+        text.text = wert.ToString();    
+        position.kaffeeCoins = wert;  
     }
 
     public void senkeWert(int value) {
         wert -= value;
-        text.text = wert.ToString();      
+        text.text = wert.ToString();    
+        position.kaffeeCoins = wert;  
     }
 
 }

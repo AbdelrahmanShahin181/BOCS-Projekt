@@ -14,6 +14,7 @@ public class CountFood : MonoBehaviour
     public TextMeshProUGUI winLoseText;
     public Timeline timeline;
     [SerializeField] private SO_Position position;
+    private string text;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,11 @@ public class CountFood : MonoBehaviour
         if (gameTime <= 0.0f) {
             gameEnded();
         }
+
+        if(Input.GetKeyDown(KeyCode.E) && WinLose.gameObject.activeSelf) {
+            SceneManager.LoadScene("Main Scene");
+            timeline.endMinigameText(text);
+        }
     }
 
     void gameEnded(){
@@ -38,9 +44,7 @@ public class CountFood : MonoBehaviour
             //sleep for 5 seconds
             if(timeline.level == 1)
                 timeline.level = 2;
-            Thread.Sleep(5000);
-            SceneManager.LoadScene("Main Scene");
-
+            text = "Du hast ganz schön viel gestapelt";
         }
         else {
             score.gameObject.SetActive(false);
@@ -48,11 +52,11 @@ public class CountFood : MonoBehaviour
             winLoseText.text = "Niederlage";
             if(timeline.level == 1)
                 timeline.level = 1;
-            Thread.Sleep(5000);
             position.hp = 2;
             position.x = 13.5f;
             position.y = -32f;
-            SceneManager.LoadScene("Main Scene");
+            position.layer = 0;
+            text = "Das war zu wenig Essen. Du fällst in Ohnmacht und wachst geschwächt neben dem Kaffeeautomaten in der Lounge wieder auf.";
         }
     }
 

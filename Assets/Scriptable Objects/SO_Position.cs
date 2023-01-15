@@ -9,4 +9,5 @@ public class SO_Position : ScriptableObject
     public float y;
     public int layer;
     public int hp;
+    public int kaffeeCoins;
 }
