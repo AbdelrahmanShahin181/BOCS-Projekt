@@ -14,12 +14,15 @@ public class PlayerController : MonoBehaviour
     private Animator animator ;
     private bool moveLeft = false;
     private bool wasMovingLeft = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
-        //PlayerCameraFollow.Instance.FollowPlayer(transform);
+
+        PlayerCameraFollow.Instance.FollowPlayer(transform);
     }
 
     // Update is called once per frame

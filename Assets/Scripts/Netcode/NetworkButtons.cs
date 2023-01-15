@@ -15,29 +15,7 @@ public class NetworkButtons : MonoBehaviour {
     int playerID = 0;
     public GameObject [] playerPrefabs;
     private void Awake(){
-        //new UnityLogger();
-        print("Call Awake");
-        Application.targetFrameRate = 30;
-		//StartRemoteServer();
-        //NetworkManager.Singleton.StartServer();
-        string [] args = System.Environment.GetCommandLineArgs();
-        for (int i = 0; i < args.Length; i++){
-            if (args[i] == "-server"){
-				StartRemoteServer();
-                NetworkManager.Singleton.StartServer();
-            }
-            else if (args[i] == "-client"){
-                NetworkManager.Singleton.StartClient();
-            }
-            else if (args[i] == "-host"){
-                NetworkManager.Singleton.StartHost();
-            }
-        }
         GetPlayerData();
-        Debug.Log("Player Prefab is " + playerPrefabs[playerID]);
-        Debug.Log("Player Prefab is " + NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
-        
-        //NetworkManager.Singleton.StartClient();
     }
 
     private void OnGUI() {
@@ -57,6 +35,7 @@ public class NetworkButtons : MonoBehaviour {
 
         GUILayout.EndArea();
         NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
+        //playerPrefabs[playerID].SetActive(true);
     }
 
     private void StartRemoteServer()

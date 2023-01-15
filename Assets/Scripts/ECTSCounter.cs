@@ -10,6 +10,7 @@ public class ECTSCounter : MonoBehaviour
     [SerializeField] private SO_Position position;
 
     void Start() {
+        text = GameObject.Find("Wert").GetComponent<Text> ();
         wert = position.kaffeeCoins;
         text.text = wert.ToString();
     }
