@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5a89cb0840f5647a07c40f19aa1f0d, type: 3}
+  m_Name: New Character Body Part Options
+  m_EditorClassIdentifier: 
+  characterBody: {fileID: 0}
+  bodyPartSelections:
+  - bodyPartName: Hair
+    bodyPartOptions:
+    - {fileID: 11400000, guid: ac0715ef47f6d4445b39eca1bd344467, type: 2}
+    - {fileID: 11400000, guid: c1174e92bb15ca442b21f63738d37dcd, type: 2}
+    - {fileID: 11400000, guid: 5c9d2ca5857f1464a83b87d26b66457b, type: 2}
+    - {fileID: 11400000, guid: 9bec7b3b0069c35488daa23a71e786d9, type: 2}
+    - {fileID: 11400000, guid: 485e8d1b30bb5a5479d84fc70e2ef8b5, type: 2}
+    - {fileID: 11400000, guid: aa4a5a6824308b240857579107fea768, type: 2}
+    bodyPartCurrentIndex: 0
+  - bodyPartName: Head
+    bodyPartOptions:
+    - {fileID: 11400000, guid: c3dcb50ef7dbf5843a7e2f716e3bb870, type: 2}
+    - {fileID: 11400000, guid: 3d34e82094aa6054e98da07074191fac, type: 2}
+    - {fileID: 11400000, guid: dd9fb76edf9b2ea40842f5d351994d1b, type: 2}
+    - {fileID: 11400000, guid: f1da03682633dd341896b1b51a5c0751, type: 2}
+    bodyPartCurrentIndex: 0
+  - bodyPartName: Shirt
+    bodyPartOptions:
+    - {fileID: 11400000, guid: 20c29a625e66a0a46b949041e14427f9, type: 2}
+    - {fileID: 11400000, guid: 87bd8c40cbe3c4c458124568b2b95401, type: 2}
+    - {fileID: 11400000, guid: 15ab15be40e5b204382864d52208e661, type: 2}
+    bodyPartCurrentIndex: 0
+  - bodyPartName: Pants
+    bodyPartOptions:
+    - {fileID: 11400000, guid: 92d6f994f287c074cb191de4429ee71f, type: 2}
+    - {fileID: 11400000, guid: 270d1415e5fbf004684a715e09cd3e53, type: 2}
+    bodyPartCurrentIndex: 0

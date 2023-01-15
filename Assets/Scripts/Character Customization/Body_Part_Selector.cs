@@ -84,6 +84,7 @@ public class Body_Part_Selector : MonoBehaviour
         //bodyPartSelections[partIndex].bodyPartNameTextComponent.text = bodyPartSelections[partIndex].bodyPartOptions[bodyPartSelections[partIndex].bodyPartCurrentIndex].bodyPartName;
         // Update Character Body Part
         characterBody.BodyParts[partIndex] = bodyPartSelections[partIndex].bodyPartOptions[bodyPartSelections[partIndex].bodyPartCurrentIndex];
+        characterBody.indexes[partIndex] = bodyPartSelections[partIndex].bodyPartCurrentIndex;
         player.transform.GetComponent<SpriteRenderer>().material.SetTexture(parts[partIndex], characterBody.BodyParts[partIndex].Texture);
         player.transform.GetComponent<SpriteRenderer>().material.SetFloat(partIndexes[partIndex], bodyPartSelections[partIndex].bodyPartCurrentIndex);
         //Debug.Log(partIndex + " " + characterBuild.characterBodyParts[partIndex].bodyPart.bodyPartName);

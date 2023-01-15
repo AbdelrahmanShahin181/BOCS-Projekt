@@ -7,4 +7,5 @@ public class SO_Character_Body : ScriptableObject
 {
     //public int bodyPartID;
     public SO_Body_Part[] BodyParts;  
+    public int[] indexes;
 }
