@@ -12,6 +12,11 @@ public class Timeline : MonoBehaviour
     public Text dialogText;
     private bool textActive;
     private string savedText = "Das Spiel beginnt";
+    [SerializeField] private SO_Position position;
+
+    void Start() {
+        level = position.TimelineLevel;
+    }
 
     private void Awake() {
         DontDestroyOnLoad(this.gameObject);
@@ -21,8 +26,10 @@ public class Timeline : MonoBehaviour
         }
         else
             Destroy(gameObject);
-        
-        
+    }
+
+    private void OnApplicationQuit() {
+        position.TimelineLevel = level;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
@@ -31,6 +38,7 @@ public class Timeline : MonoBehaviour
         textActive = true;
         dialogBox.SetActive(true);
         dialogText.text = savedText;
+        //position.TimelineLevel = level;
     }
     
 

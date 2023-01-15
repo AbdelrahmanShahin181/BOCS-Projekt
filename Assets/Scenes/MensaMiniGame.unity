@@ -381,7 +381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pukte: 0'
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdbac9309855f42dea62438c4641c257, type: 2}
   m_sharedMaterial: {fileID: -6323881474591022114, guid: fdbac9309855f42dea62438c4641c257, type: 2}
