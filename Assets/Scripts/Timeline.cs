@@ -11,7 +11,9 @@ public class Timeline : MonoBehaviour
     public GameObject dialogBox;
     public Text dialogText;
     private bool textActive;
-    private string savedText = "Das Spiel beginnt";
+    private string[] savedText = {"Das Spiel beginnt"};
+    private int i = 0;
+    public int car = 0;
     [SerializeField] private SO_Position position;
 
     void Start() {
@@ -37,19 +39,26 @@ public class Timeline : MonoBehaviour
         dialogText = dialogBox.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>();
         textActive = true;
         dialogBox.SetActive(true);
-        dialogText.text = savedText;
+        i = 0;
+        dialogText.text = savedText[i];
         //position.TimelineLevel = level;
     }
     
 
-    public void endMinigameText(string text){
+    public void endMinigameText(string[] text){
         savedText = text;
     }
 
     void Update() {
         if((Input.GetKeyDown(KeyCode.E)||Input.GetKeyDown(KeyCode.Escape)) && textActive) {
-            textActive = false;
-            dialogBox.SetActive(false);
+            i++;
+            if (i< savedText.Length) {
+                dialogText.text = savedText[i];
+            }
+            else{
+                textActive = false;
+                dialogBox.SetActive(false);
+            }
         }
     }
     

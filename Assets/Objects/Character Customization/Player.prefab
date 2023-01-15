@@ -15,14 +15,12 @@ GameObject:
   - component: {fileID: 6723149107129999117}
   - component: {fileID: 6723149107129999113}
   - component: {fileID: 1959926476}
-  - component: {fileID: 1959926477}
   - component: {fileID: 1959926478}
   - component: {fileID: 7074529820197911831}
   - component: {fileID: 1959926479}
   - component: {fileID: 1959926480}
   - component: {fileID: 1959926489}
   - component: {fileID: 7263263961341086352}
-  - component: {fileID: 1850487894007923395}
   - component: {fileID: 6183406822999635606}
   m_Layer: 0
   m_Name: Player
@@ -184,22 +182,6 @@ MonoBehaviour:
   wert: 0
   text: {fileID: 0}
   position: {fileID: 11400000, guid: 67bfaa8d06fc3a141bf7dcf60f1545af, type: 2}
---- !u!114 &1959926477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6723149107129999119}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41875245d21bdc940997b6bd0669a00f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  position: {fileID: 11400000, guid: 67bfaa8d06fc3a141bf7dcf60f1545af, type: 2}
 --- !u!114 &1959926478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +223,11 @@ MonoBehaviour:
   - _Body
   - _Shirt
   - _Pants
+  partIndexes:
+  - _HairIndex
+  - _SkinIndex
+  - _ShirtIndex
+  - _PantsIndex
 --- !u!114 &1959926479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,32 +280,6 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &1850487894007923395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6723149107129999119}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  InLocalSpace: 0
-  Interpolate: 1
 --- !u!114 &6183406822999635606
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,7 +136,8 @@ public class Snake : MonoBehaviour
         scoreText.text = _score.ToString() + " POINTS";
         highScoreText.text = "HIGHSCORE: " + highScore.ToString();
 
-        timeline.endMinigameText("Dieses Mal hast du es aber nicht geschafft!");
+        string[] text = {"Hey, du in der letzten Reihe. Aufpassen!"};
+        timeline.endMinigameText(text);
         SceneManager.LoadScene("Main Scene");
 
     }
@@ -148,7 +149,9 @@ public class Snake : MonoBehaviour
             _score = 0;
             if(timeline.level == 2)
                 timeline.level = 3;
-            timeline.endMinigameText("Du schlaues Würmchen! Sehr gut gemacht!");
+            string[] text ={"Oh wow. Es ist zwar nicht ok während der Vorlesug Snake zu spielen, aber das ist ein neuer Hochschulrekord.",
+            "Ich werde mal mit dem Dekan reden. Dafür wird er dich sicherlich ins dritte Semester versetzen."};
+            timeline.endMinigameText(text);
             SceneManager.LoadScene("Main Scene");
            
        }

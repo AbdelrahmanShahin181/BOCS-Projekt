@@ -1,7 +1,7 @@
 
 using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator ;
     private bool moveLeft = false;
     private bool wasMovingLeft = false;
+    private static GameObject instance;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,25 @@ public class PlayerController : MonoBehaviour
         healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+
+        PlayerCameraFollow.Instance.FollowPlayer(transform);
+    }
+
+    private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+        if (instance == null) {
+            instance = gameObject;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
+            Destroy(gameObject);
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
+        gameObject.GetComponent<PlayerLayerControl>().Start();
+        gameObject.GetComponent<LoadCharacterDesign>().Start();
+        gameObject.GetComponent<ECTSCounter>().Start();
 
         PlayerCameraFollow.Instance.FollowPlayer(transform);
     }
@@ -71,7 +91,7 @@ public class PlayerController : MonoBehaviour
                             Vector3 newScale = transform.localScale;
                             newScale.x *= -1;
                             transform.localScale = newScale;
-                            Debug.Log("Direction Change");
+                            //Debug.Log("Direction Change");
                         }
                         wasMovingLeft = true;
                     }
@@ -81,7 +101,7 @@ public class PlayerController : MonoBehaviour
                             Vector3 newScale = transform.localScale;
                             newScale.x *= -1;
                             transform.localScale = newScale;
-                            Debug.Log("Direction Change");
+                            //Debug.Log("Direction Change");
                         }
                         wasMovingLeft = false;
                     }
@@ -113,7 +133,7 @@ public class PlayerController : MonoBehaviour
                             Vector3 newScale = transform.localScale;
                             newScale.x *= -1;
                             transform.localScale = newScale;
-                            Debug.Log("Direction Change");
+                            //Debug.Log("Direction Change");
                         }
                         wasMovingLeft = true;
                     }
@@ -123,7 +143,7 @@ public class PlayerController : MonoBehaviour
                             Vector3 newScale = transform.localScale;
                             newScale.x *= -1;
                             transform.localScale = newScale;
-                            Debug.Log("Direction Change");
+                            //Debug.Log("Direction Change");
                         }
                         wasMovingLeft = false;
                     }

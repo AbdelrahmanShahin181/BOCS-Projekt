@@ -14,7 +14,6 @@ public class CountFood : MonoBehaviour
     public TextMeshProUGUI winLoseText;
     public Timeline timeline;
     [SerializeField] private SO_Position position;
-    private string text;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +31,6 @@ public class CountFood : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E) && WinLose.gameObject.activeSelf) {
             SceneManager.LoadScene("Main Scene");
-            timeline.endMinigameText(text);
         }
     }
 
@@ -44,7 +42,9 @@ public class CountFood : MonoBehaviour
             //sleep for 5 seconds
             if(timeline.level == 1)
                 timeline.level = 2;
-            text = "Du hast ganz schön viel gestapelt";
+            string[] text = {"Wow, so viel Essen hat noch niemand bisher gestapelt. Dafür erhälst du einen Ehrenpreis vom AKAFÖ und wirst sofort ins zweite Semester versetzt",
+            "Und da steht gleich im H9 die Mathe 2 Vorlesung an. Die ist nicht ganz einfach, also sollte man da wirklich aufpassen."};
+            timeline.endMinigameText(text);
         }
         else {
             score.gameObject.SetActive(false);
@@ -54,7 +54,8 @@ public class CountFood : MonoBehaviour
             position.x = 13.5f;
             position.y = -32f;
             position.layer = 0;
-            text = "Das war zu wenig Essen. Du fällst in Ohnmacht und wachst geschwächt neben dem Kaffeeautomaten in der Lounge wieder auf.";
+            string[] text = {"Das war zu wenig Essen. Du fällst in Ohnmacht und wachst geschwächt neben dem Kaffeeautomaten in der Lounge wieder auf."};
+            timeline.endMinigameText(text);
         }
     }
 

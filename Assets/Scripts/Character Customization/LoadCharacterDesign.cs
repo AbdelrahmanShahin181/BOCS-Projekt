@@ -15,7 +15,7 @@ public class LoadCharacterDesign : MonoBehaviour
     public string[] parts = new string[] {"_Hair", "_Body", "_Shirt", "_Pants"};
     public string[] partIndexes = new string[] {"_HairIndex", "_SkinIndex", "_ShirtIndex", "_PantsIndex"};
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         for(int i = 0; i < 4; i++) {
             transform.GetComponent<SpriteRenderer>().material.SetColor(colors[i], characterColor.Colors[i]);

@@ -80,13 +80,16 @@ public class CarLapCounter : MonoBehaviour
                             Debug.Log("You Won");
                             positionHandler.getRasultScreenWon().SetActive(true);
                             if(timeline.level ==3)
-                                timeline.level = 4;
-                            timeline.endMinigameText("Brilliant! Führerschein weg! Gewonnen ist aber gewonnen.");
+                                //timeline.level = 4;
+                                timeline.car = 1;
+                            string[] text = {"Wow, du bist wirklich ganz schön schnell. Ein Versprechen ist ein Versprechen also darfst du das Auto behalten", "Wenn du aber sowieso immer mit der U-Bahn kommst, weil du so Umweltbewusst bist, solltest du mal mit dem Dozenten in C-6 sprechen.", "Ich habe gehört der sucht ein neues Auto. Vielleicht bietet er dir ja etwas im Tausch an"};
+                            timeline.endMinigameText(text);
                         }
                         else {
                             Debug.Log("You Lost"+ " Your Position: " + carPosition);
                             positionHandler.getRasultScreenLost().SetActive(true);
-                            timeline.endMinigameText("Brilliant! Führerschein weg! und du hast verloren.");
+                            string[] text ={"Puh, Das war zum Glück nur ein Traum. Aber so ein Alptraum setzt einem auch ganz schön zu. Versuche es gleich nochmal."};
+                            timeline.endMinigameText(text);
                         }
                         positionHandler.setWinnerDeclared(true);
                     }

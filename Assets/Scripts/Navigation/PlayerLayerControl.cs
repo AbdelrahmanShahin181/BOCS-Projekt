@@ -11,7 +11,7 @@ public class PlayerLayerControl : MonoBehaviour
     
     public int layer = 0;
 
-    private void Start() {
+    public void Start() {
         karte = GameObject.Find("Karte");
         menu = GameObject.Find("Spielmaske").transform.GetChild(0).gameObject;
     }

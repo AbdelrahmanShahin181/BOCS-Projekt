@@ -11,6 +11,7 @@ public class Level3 : MonoBehaviour
    public GameObject dialogBox;
     public Text dialogText;
     public string[] dialog;
+    public string[] dialogWrong;
     public bool playerInRange;
     public HealthManager healthManager;
     public HealthBarScript healthBarScript;
@@ -29,33 +30,54 @@ public class Level3 : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            
-            if(dialogBox.activeInHierarchy)
-            {
-                if(counter >= dialog.Length)
+            if(timeline.level >= 3){
+                if(dialogBox.activeInHierarchy)
                 {
-                    dialogBox.SetActive(false);
-                    counter = 0;
-                    if(timeline.level >= 3){
+                
+                    if(counter >= dialog.Length)
+                    {
+                        dialogBox.SetActive(false);
+                        counter = 0;
+                        
                         position.x = player.transform.position.x;
                         position.y = player.transform.position.y;
                         position.layer = player.transform.GetComponent<PlayerLayerControl>().layer;
                         SceneManager.LoadScene("Race Scene");
                     }
-                    
-                    //Debug.Log("Level 2");
+                    else
+                    {
+                        dialogText.text = dialog[counter];
+                        counter++;
+                    }
                 }
                 else
                 {
-                    dialogText.text = dialog[counter];
-                    counter++;
+                    dialogBox.SetActive(true);
+                    dialogText.text = dialog[0];
+                    counter = 1;
                 }
             }
-            else
-            {
-                dialogBox.SetActive(true);
-                dialogText.text = dialog[0];
-                counter = 1;
+            else {
+                if(dialogBox.activeInHierarchy)
+                {
+                
+                    if(counter >= dialogWrong.Length)
+                    {
+                        dialogBox.SetActive(false);
+                        counter = 0;
+                    }
+                    else
+                    {
+                        dialogText.text = dialogWrong[counter];
+                        counter++;
+                    }
+                }
+                else
+                {
+                    dialogBox.SetActive(true);
+                    dialogText.text = dialogWrong[0];
+                    counter = 1;
+                }
             }
         }
         if(dialogBox.activeSelf &&Input.GetKeyDown(KeyCode.Escape) && playerInRange){
@@ -64,6 +86,7 @@ public class Level3 : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
+            player = other.gameObject;
             Debug.Log("Player entered");
             playerInRange = true;
         }
