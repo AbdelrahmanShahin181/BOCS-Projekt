@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ECTSCounter : MonoBehaviour
 {
-    public int wert = 0;
+    public int wert;
     public Text text;
     [SerializeField] private SO_Position position;
 

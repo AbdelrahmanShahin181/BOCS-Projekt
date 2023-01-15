@@ -17,3 +17,4 @@ MonoBehaviour:
   layer: 0
   hp: 10
   kaffeeCoins: 25
+  TimelineLevel: 0

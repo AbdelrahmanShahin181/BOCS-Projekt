@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 
 public class NPCQuizManager : MonoBehaviour
 {
@@ -20,9 +22,9 @@ public class NPCQuizManager : MonoBehaviour
     private static NPCQuizManager instance;
     private int rightChoice;
 
-    ECTSCounter ectsCounter;
+    
     HealthManager hpLoss;
-    GameObject playerBoy;
+    public GameObject player;
 
     private void Awake(){
 
@@ -157,13 +159,13 @@ public class NPCQuizManager : MonoBehaviour
 
     public void AddECTS(){
 
-        ectsCounter = GameObject.Find("Player").GetComponent<ECTSCounter>();
-        ectsCounter.erhoeheWert(5);
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<ECTSCounter>().erhoeheWert(5);
     }
 
     public void looseHP(){
         hpLoss = GameObject.Find("Healthbar").GetComponent<HealthManager>();
-        hpLoss.TakeDamage(3);
+        hpLoss.TakeDamage(2);
     }
 
 
