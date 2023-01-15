@@ -30,4 +30,8 @@ public class LoadCharacterDesign : MonoBehaviour
     {
         
     }
+
+    Public void SetBodypart( int Index, String Name) {
+        player.transform.GetComponent<SpriteRenderer>().material.SetTexture(Name, bodyPart.BodyParts[Index].Texture);
+    }
 }
