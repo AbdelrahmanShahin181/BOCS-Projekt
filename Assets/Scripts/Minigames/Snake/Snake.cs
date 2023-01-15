@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -11,20 +12,26 @@ public class Snake : MonoBehaviour
     private List<Transform> _segments = new List<Transform>();
     public Transform segmentPrefab;
     public int initialSize = 3;
+    private bool die = false;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
 
 
+    public GameOverScreen gameOverScreen;
+    public WonScreen wonScreen ;
+
+    private Timeline timeline;
 
     private int _score = 0;
     private int highScore = 0;
 
 
     
+    
     void Start()
     {
-
+        timeline = GameObject.Find("Timeline").GetComponent<Timeline>();
         ResetState();
         highScore = PlayerPrefs.GetInt("HighScore",0);
         scoreText.text = _score.ToString() + " POINTS";
@@ -54,11 +61,13 @@ public class Snake : MonoBehaviour
         
     }
     private void FixedUpdate() {
+        if(!die){
         for(int i = _segments.Count-1;i>0;i--){
             _segments[i].position = _segments[i-1].position;
         }
         transform.position = new Vector3(Mathf.Round(transform.position.x)+direction.x,Mathf.Round(transform.position.y)+direction.y,0.0f);
         }
+    }
     private void Grow(){
         Transform segment = Instantiate(segmentPrefab);
         segment.position = _segments[_segments.Count-1].position;
@@ -94,23 +103,55 @@ public class Snake : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Food"){
             Grow();
+            wonGame();
+           
 
         }
         else if(other.tag == "Obstacle"){
-            ResetState();
+            //ResetState();
+            die = true;
             Debug.Log("Game Over");
             Debug.Log("Score: "+_score);
+            gameOverScreen.setUp(_score);
             _score = 0;
             
         }
         else if(other.tag == "Player"){
-            ResetState();
+            die = true;
             Debug.Log("Game Over");
             Debug.Log("Score: "+_score);
+            gameOverScreen.setUp(_score);
             _score = 0;
         }
 
     
 
+    }
+    public void RestratGame(){
+        die = false;
+        gameOverScreen.gameObject.SetActive(false);
+        wonScreen.gameObject.SetActive(false);
+        ResetState();
+        highScore = PlayerPrefs.GetInt("HighScore",0);
+        scoreText.text = _score.ToString() + " POINTS";
+        highScoreText.text = "HIGHSCORE: " + highScore.ToString();
+
+        timeline.endMinigameText("Dieses Mal hast du es aber nicht geschafft!");
+        SceneManager.LoadScene("Main Scene");
+
+    }
+    public void wonGame(){
+       if (_score == 4){
+           die = true;
+            //wonGame.gameObject.SetActive(true);    
+            wonScreen.setUp(_score);
+            _score = 0;
+            if(timeline.level == 2)
+                timeline.level = 3;
+            timeline.endMinigameText("Du schlaues Würmchen! Sehr gut gemacht!");
+            SceneManager.LoadScene("Main Scene");
+           
+       }
+       
     }
 }

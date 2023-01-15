@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MensaMiniGame.unity
     guid: d88958db91b886c4eb0c4484ad6820e1
+  - enabled: 1
+    path: Assets/Scenes/Snake.unity
+    guid: 1d49349bbe1e171489f3d6946ce6b6ba
   m_configObjects: {}
