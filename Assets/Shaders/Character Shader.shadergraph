@@ -29,6 +29,18 @@
         },
         {
             "m_Id": "9616ab87025947fbb56bf06cac826392"
+        },
+        {
+            "m_Id": "219eb75bcb8940749153be7d956caacb"
+        },
+        {
+            "m_Id": "d0dc32e227204519bdf497e70badabaa"
+        },
+        {
+            "m_Id": "1b498f8d4a1c4262b61f58c24f96fa23"
+        },
+        {
+            "m_Id": "fb601b6bce9d4621a3a82b07636d31c1"
         }
     ],
     "m_Keywords": [],
@@ -733,6 +745,33 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "1b498f8d4a1c4262b61f58c24f96fa23",
+    "m_Guid": {
+        "m_GuidSerialized": "b093939a-5ecd-4cef-92f4-9c911014ead4"
+    },
+    "m_Name": "ShirtIndex",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "ShirtIndex",
+    "m_DefaultReferenceName": "_ShirtIndex",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "1dd56cdab78243a794e4642e695c0e9d",
@@ -764,6 +803,33 @@
     },
     "m_Property": {
         "m_Id": "176d8a3b21ec42d0b4b7c6569ae8cbb6"
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "219eb75bcb8940749153be7d956caacb",
+    "m_Guid": {
+        "m_GuidSerialized": "394c1333-bf58-4ae9-a981-5cbe0569de56"
+    },
+    "m_Name": "HairIndex",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "HairIndex",
+    "m_DefaultReferenceName": "_HairIndex",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
     }
 }
 
@@ -1813,6 +1879,18 @@
         },
         {
             "m_Id": "9616ab87025947fbb56bf06cac826392"
+        },
+        {
+            "m_Id": "219eb75bcb8940749153be7d956caacb"
+        },
+        {
+            "m_Id": "d0dc32e227204519bdf497e70badabaa"
+        },
+        {
+            "m_Id": "1b498f8d4a1c4262b61f58c24f96fa23"
+        },
+        {
+            "m_Id": "fb601b6bce9d4621a3a82b07636d31c1"
         }
     ]
 }
@@ -1849,6 +1927,33 @@
     },
     "m_Property": {
         "m_Id": "9616ab87025947fbb56bf06cac826392"
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "d0dc32e227204519bdf497e70badabaa",
+    "m_Guid": {
+        "m_GuidSerialized": "bd7fc353-6b26-4ab1-a10e-301876641f84"
+    },
+    "m_Name": "SkinIndex",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "SkinIndex",
+    "m_DefaultReferenceName": "_SkinIndex",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
     }
 }
 
@@ -2069,6 +2174,33 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "fb601b6bce9d4621a3a82b07636d31c1",
+    "m_Guid": {
+        "m_GuidSerialized": "f05ecc42-453e-4152-8e5f-046a0b3f3b1f"
+    },
+    "m_Name": "PantsIndex",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "PantsIndex",
+    "m_DefaultReferenceName": "_PantsIndex",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
 }
 
 {

@@ -17,7 +17,9 @@ public class LoadCharacterDesign : MonoBehaviour
         for(int i = 0; i < 4; i++) {
             transform.GetComponent<SpriteRenderer>().material.SetColor(colors[i], characterColor.Colors[i]);
             transform.GetComponent<SpriteRenderer>().material.SetTexture(parts[i], bodyPart.BodyParts[i].Texture);
+            
         }
+        
         transform.GetComponent<PlayerLayerControl>().ChangeLayer(position.layer);
         transform.position = new Vector3(position.x, position.y, 0);
         
@@ -27,5 +29,9 @@ public class LoadCharacterDesign : MonoBehaviour
     void Update()
     {
         
+    }
+
+    Public void SetBodypart( int Index, String Name) {
+        player.transform.GetComponent<SpriteRenderer>().material.SetTexture(Name, bodyPart.BodyParts[Index].Texture);
     }
 }
