@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Snake : MonoBehaviour
     public GameOverScreen gameOverScreen;
     public WonScreen wonScreen ;
 
-
+    private Timeline timeline;
 
     private int _score = 0;
     private int highScore = 0;
@@ -30,7 +31,7 @@ public class Snake : MonoBehaviour
     
     void Start()
     {
-
+        timeline = GameObject.Find("Timeline").GetComponent<Timeline>();
         ResetState();
         highScore = PlayerPrefs.GetInt("HighScore",0);
         scoreText.text = _score.ToString() + " POINTS";
@@ -134,13 +135,22 @@ public class Snake : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore",0);
         scoreText.text = _score.ToString() + " POINTS";
         highScoreText.text = "HIGHSCORE: " + highScore.ToString();
+
+        timeline.endMinigameText("Dieses Mal hast du es aber nicht geschafft!");
+        SceneManager.LoadScene("Main Scene");
+
     }
     public void wonGame(){
        if (_score == 4){
            die = true;
             //wonGame.gameObject.SetActive(true);    
             wonScreen.setUp(_score);
-           _score = 0;
+            _score = 0;
+            if(timeline.level == 2)
+                timeline.level = 3;
+            timeline.endMinigameText("Du schlaues Würmchen! Sehr gut gemacht!");
+            SceneManager.LoadScene("Main Scene");
+           
        }
        
     }
