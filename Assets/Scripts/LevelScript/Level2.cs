@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 
 public class Level2 : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class Level2 : MonoBehaviour
     
     private void Start() {
         timeline = GameObject.Find("Timeline").GetComponent<Timeline>();
+        player = NetworkManager.Singleton.NetworkConfig.PlayerPrefab;
     }
     // Update is called once per frame
     void Update()

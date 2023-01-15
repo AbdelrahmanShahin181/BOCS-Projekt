@@ -11,6 +11,7 @@ public class Body_Part_Selector : MonoBehaviour
     [SerializeField] private BodyPartSelection[] bodyPartSelections;
     [SerializeField] public GameObject player;
     public string[] parts = new string[] {"_Hair", "_Body", "_Shirt", "_Pants"};
+    public string[] partIndexes = new string[] {"_HairIndex", "_SkinIndex", "_ShirtIndex", "_PantsIndex"};
 
     private void Start()
     {
@@ -84,6 +85,7 @@ public class Body_Part_Selector : MonoBehaviour
         // Update Character Body Part
         characterBody.BodyParts[partIndex] = bodyPartSelections[partIndex].bodyPartOptions[bodyPartSelections[partIndex].bodyPartCurrentIndex];
         player.transform.GetComponent<SpriteRenderer>().material.SetTexture(parts[partIndex], characterBody.BodyParts[partIndex].Texture);
+        player.transform.GetComponent<SpriteRenderer>().material.SetFloat(partIndexes[partIndex], bodyPartSelections[partIndex].bodyPartCurrentIndex);
         //Debug.Log(partIndex + " " + characterBuild.characterBodyParts[partIndex].bodyPart.bodyPartName);
     }
 }
