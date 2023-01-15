@@ -50,8 +50,6 @@ public class CountFood : MonoBehaviour
             score.gameObject.SetActive(false);
             WinLose.gameObject.SetActive(true);
             winLoseText.text = "Niederlage";
-            if(timeline.level == 1)
-                timeline.level = 1;
             position.hp = 2;
             position.x = 13.5f;
             position.y = -32f;
