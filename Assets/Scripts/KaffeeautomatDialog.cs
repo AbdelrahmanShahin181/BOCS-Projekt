@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Netcode;
+
 public class KaffeeautomatDialog : MonoBehaviour
 {
     public GameObject dialogBox;
@@ -11,9 +13,11 @@ public class KaffeeautomatDialog : MonoBehaviour
     public HealthManager healthManager;
     public HealthBarScript healthBarScript;
     public ECTSCounter ECTSCounter;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+       
     }
     // Update is called once per frame
     void Update()
@@ -32,6 +36,7 @@ public class KaffeeautomatDialog : MonoBehaviour
         }
         if(dialogBox.activeSelf &&Input.GetKeyDown(KeyCode.J) && playerInRange){
                 if(healthManager != null){
+                    ECTSCounter = player.GetComponent<ECTSCounter>();
                     if(ECTSCounter.wert > 0) {
                         ECTSCounter.senkeWert(1);
                         healthManager.heal(5);
@@ -45,6 +50,7 @@ public class KaffeeautomatDialog : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
+            player = other.gameObject;
             Debug.Log("Player entered");
             playerInRange = true;
         }
