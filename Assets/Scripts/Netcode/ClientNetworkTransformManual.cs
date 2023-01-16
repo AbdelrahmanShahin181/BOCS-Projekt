@@ -18,13 +18,17 @@ public class ClientNetworkTransformManual : NetworkBehaviour
     private NetworkVariable<int> _shirtTextur = new (writePerm: NetworkVariableWritePermission.Owner);
     private NetworkVariable<int> _pantsTextur = new (writePerm: NetworkVariableWritePermission.Owner);
 
+    private NetworkVariable<float> _xDir = new (writePerm: NetworkVariableWritePermission.Owner);
+    private NetworkVariable<float> _yDir = new (writePerm: NetworkVariableWritePermission.Owner);
+    private NetworkVariable<bool> _isWalking = new (writePerm: NetworkVariableWritePermission.Owner);
+    private NetworkVariable<bool> _isRunning = new (writePerm: NetworkVariableWritePermission.Owner);
 
-    void Update()
-    {
+    private NetworkVariable<Vector3> _scale = new (writePerm: NetworkVariableWritePermission.Owner);
+
+    void Start() {
         if (IsOwner)
         {
-            _netPos.Value = transform.position;
-            //_netColor.Value = GetComponent<SpriteRenderer>().color;
+            gameObject.tag = "Player";
 
             _hairColor.Value = GetComponent<SpriteRenderer>().material.GetColor("_CHair");
             _skinColor.Value = GetComponent<SpriteRenderer>().material.GetColor("_CSkin");
@@ -39,20 +43,40 @@ public class ClientNetworkTransformManual : NetworkBehaviour
         }
         else
         {
-            transform.position = _netPos.Value;
-            //GetComponent<SpriteRenderer>().color = _netColor.Value;
+            gameObject.tag = "Multiplayer";
 
             GetComponent<SpriteRenderer>().material.SetColor("_CHair",_hairColor.Value);
             GetComponent<SpriteRenderer>().material.SetColor("_CSkin",_skinColor.Value);
             GetComponent<SpriteRenderer>().material.SetColor("_CShirt",_shirtColor.Value);
             GetComponent<SpriteRenderer>().material.SetColor("_CPants",_pantsColor.Value);
 
-            //(int)GetComponent<SpriteRenderer>().material.GetFloat("_HairIndex") = _hairTextur.Value;
             GetComponent<LoadCharacterDesign>().SetBodypart("_Hair", 0, _hairTextur.Value);
             GetComponent<LoadCharacterDesign>().SetBodypart("_Body", 1, _skinTextur.Value);
             GetComponent<LoadCharacterDesign>().SetBodypart("_Shirt", 2, _shirtTextur.Value);
             GetComponent<LoadCharacterDesign>().SetBodypart("_Pants", 3, _pantsTextur.Value);
+        }
+    }
 
+
+    void Update()
+    {
+        if (IsOwner)
+        {
+            _netPos.Value = transform.position;
+            _xDir.Value = GetComponent<Animator>().GetFloat("moveX");
+            _yDir.Value = GetComponent<Animator>().GetFloat("moveY");
+            _isWalking.Value = GetComponent<Animator>().GetBool("isWalking");
+            _isRunning.Value = GetComponent<Animator>().GetBool("isRunning");
+            _scale.Value = transform.localScale;
+        }
+        else
+        {
+            transform.position = _netPos.Value;
+            GetComponent<Animator>().SetFloat("moveX", _xDir.Value);
+            GetComponent<Animator>().SetFloat("moveY", _yDir.Value);
+            GetComponent<Animator>().SetBool("isWalking", _isWalking.Value);
+            GetComponent<Animator>().SetBool("isRunning", _isRunning.Value);
+            transform.localScale = _scale.Value;
         }
     }
     

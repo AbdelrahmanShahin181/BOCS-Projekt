@@ -24,6 +24,7 @@ TagManager:
   - MobileUI
   - AI
   - Obstacle
+  - Multiplayer
   layers:
   - Default
   - TransparentFX

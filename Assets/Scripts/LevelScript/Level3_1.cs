@@ -17,6 +17,7 @@ public class Level3_1 : MonoBehaviour
     public Timeline timeline;
     [SerializeField] private SO_Position position;
     public GameObject player;
+    public bool dialogActive = false;
 
     private int counter = 0;
     
@@ -30,11 +31,12 @@ public class Level3_1 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             if(timeline.car == 1){
-                if(dialogBox.activeInHierarchy)
+                if(dialogBox.activeInHierarchy && dialogActive)
                 {
                 
                     if(counter >= dialog.Length)
                     {
+                        dialogActive = false;
                         timeline.car = 2;
                         timeline.level = 4;
                         dialogBox.SetActive(false);
@@ -48,17 +50,19 @@ public class Level3_1 : MonoBehaviour
                 }
                 else
                 {
+                    dialogActive = true;
                     dialogBox.SetActive(true);
                     dialogText.text = dialog[0];
                     counter = 1;
                 }
             }
             else if(timeline.car == 0){
-                if(dialogBox.activeInHierarchy)
+                if(dialogBox.activeInHierarchy && dialogActive)
                 {
                 
                     if(counter >= dialogWrong.Length)
                     {
+                        dialogActive = false;
                         dialogBox.SetActive(false);
                         counter = 0;
                     }
@@ -70,6 +74,7 @@ public class Level3_1 : MonoBehaviour
                 }
                 else
                 {
+                    dialogActive = true;
                     dialogBox.SetActive(true);
                     dialogText.text = dialogWrong[0];
                     counter = 1;
@@ -111,9 +116,11 @@ public class Level3_1 : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
+            if (dialogActive) {
+                dialogBox.SetActive(false);
+            }
             Debug.Log("Player left");
             playerInRange = false;
-            dialogBox.SetActive(false);
         }
     }
     

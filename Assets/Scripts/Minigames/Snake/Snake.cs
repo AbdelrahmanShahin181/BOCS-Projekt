@@ -114,7 +114,13 @@ public class Snake : MonoBehaviour
             Debug.Log("Score: "+_score);
             gameOverScreen.setUp(_score);
             _score = 0;
-            
+            position.hp = 2;
+            position.x = 13.5f;
+            position.y = -32f;
+            position.layer = 0;
+            string[] text = {"Hey, du in der letzten Reihe. Aufpassen!"};
+            timeline.endMinigameText(text);
+            SceneManager.LoadScene("Main Scene");
         }
         else if(other.tag == "Player"){
             die = true;
@@ -122,6 +128,13 @@ public class Snake : MonoBehaviour
             Debug.Log("Score: "+_score);
             gameOverScreen.setUp(_score);
             _score = 0;
+            position.hp = 2;
+            position.x = 13.5f;
+            position.y = -32f;
+            position.layer = 0;
+            string[] text = {"Hey, du in der letzten Reihe. Aufpassen!"};
+            timeline.endMinigameText(text);
+            SceneManager.LoadScene("Main Scene");
         }
 
     
@@ -135,13 +148,7 @@ public class Snake : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore",0);
         scoreText.text = _score.ToString() + " POINTS";
         highScoreText.text = "HIGHSCORE: " + highScore.ToString();
-        position.hp = 2;
-        position.x = 13.5f;
-        position.y = -32f;
-        position.layer = 0;
-        string[] text = {"Hey, du in der letzten Reihe. Aufpassen!"};
-        timeline.endMinigameText(text);
-        SceneManager.LoadScene("Main Scene");
+        
 
     }
     public void wonGame(){

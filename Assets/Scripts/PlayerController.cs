@@ -22,11 +22,12 @@ public class PlayerController : MonoBehaviour
         healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
-
-        PlayerCameraFollow.Instance.FollowPlayer(transform);
+        if(gameObject.CompareTag("Player")){
+            PlayerCameraFollow.Instance.FollowPlayer(transform);
+        }
     }
 
-    private void Awake() {
+    /*private void Awake() {
         DontDestroyOnLoad(this.gameObject);
         if (instance == null) {
             instance = gameObject;
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<ECTSCounter>().Start();
 
         PlayerCameraFollow.Instance.FollowPlayer(transform);
-    }
+    }*/
 
     // Update is called once per frame
     void FixedUpdate()

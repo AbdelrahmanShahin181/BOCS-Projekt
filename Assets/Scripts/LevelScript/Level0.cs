@@ -12,6 +12,7 @@ public class Level0 : MonoBehaviour
     public HealthManager healthManager;
     public HealthBarScript healthBarScript;
     public Timeline timeline;
+    public bool dialogActive = false;
 
     private int counter = 0;
     
@@ -52,11 +53,12 @@ public class Level0 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             
-            if(dialogBox.activeInHierarchy)
+            if(dialogBox.activeInHierarchy && dialogActive)
             {
                 if(counter >= dialog[timeline.level].Length)
                 {
                     dialogBox.SetActive(false);
+                    dialogActive = false;
                     counter = 0;
                     if(timeline.level == 0)
                         timeline.level = timeline.level + 1;
@@ -74,6 +76,7 @@ public class Level0 : MonoBehaviour
                 dialogBox.SetActive(true);
                 dialogText.text = dialog[timeline.level][0];
                 counter = 1;
+                dialogActive = true;
             }
         }
         if(dialogBox.activeSelf &&Input.GetKeyDown(KeyCode.Escape) && playerInRange){
@@ -88,9 +91,11 @@ public class Level0 : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
+            if (dialogActive) {
+                dialogBox.SetActive(false);
+            }
             Debug.Log("Player left");
             playerInRange = false;
-            dialogBox.SetActive(false);
         }
     }
     

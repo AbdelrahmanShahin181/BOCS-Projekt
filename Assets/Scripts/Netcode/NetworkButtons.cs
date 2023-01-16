@@ -7,6 +7,7 @@ using System;
 using PlayFab;
 using PlayFab.MultiplayerAgent.Model;
 using PlayFab.ClientModels;
+using UnityEngine.SceneManagement;
 
 
 public class NetworkButtons : MonoBehaviour {
@@ -14,8 +15,14 @@ public class NetworkButtons : MonoBehaviour {
 	private List<ConnectedPlayer> _connectedPlayers;
     int playerID = 0;
     public GameObject [] playerPrefabs;
+
     private void Awake(){
         GetPlayerData();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        
     }
 
     private void OnGUI() {
