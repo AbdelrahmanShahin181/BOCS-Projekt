@@ -14,6 +14,7 @@ public class KaffeeautomatDialog : MonoBehaviour
     public HealthBarScript healthBarScript;
     public ECTSCounter ECTSCounter;
     GameObject player;
+    public bool dialogActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +25,14 @@ public class KaffeeautomatDialog : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            if(dialogBox.activeInHierarchy)
+            if(dialogBox.activeInHierarchy && dialogActive)
             {
+                dialogActive = false;
                 dialogBox.SetActive(false);
             }
             else
             {
+                dialogActive = true;
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }
@@ -57,9 +60,11 @@ public class KaffeeautomatDialog : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
+            if (dialogActive) {
+                dialogBox.SetActive(false);
+            }
             Debug.Log("Player left");
             playerInRange = false;
-            dialogBox.SetActive(false);
         }
     }
 }

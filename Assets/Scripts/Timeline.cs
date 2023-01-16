@@ -34,6 +34,7 @@ public class Timeline : MonoBehaviour
         position.TimelineLevel = level;
         position.x = 6.0f;
         position.y = -90.5f;
+        position.layer = 0;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
