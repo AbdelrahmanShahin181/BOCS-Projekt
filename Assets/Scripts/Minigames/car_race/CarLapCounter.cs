@@ -27,6 +27,8 @@ public class CarLapCounter : MonoBehaviour
 
     private Timeline timeline;
 
+    [SerializeField] private SO_Position position;
+
 
     public event Action<CarLapCounter> OnPassCheckPoint;
 
@@ -88,6 +90,10 @@ public class CarLapCounter : MonoBehaviour
                         else {
                             Debug.Log("You Lost"+ " Your Position: " + carPosition);
                             positionHandler.getRasultScreenLost().SetActive(true);
+                            position.hp = 2;
+                            position.x = -7f;
+                            position.y = -103f;
+                            position.layer = 0;
                             string[] text ={"Puh, Das war zum Glück nur ein Traum. Aber so ein Alptraum setzt einem auch ganz schön zu. Versuche es gleich nochmal."};
                             timeline.endMinigameText(text);
                         }

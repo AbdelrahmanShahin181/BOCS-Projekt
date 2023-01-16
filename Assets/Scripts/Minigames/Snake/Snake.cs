@@ -26,7 +26,7 @@ public class Snake : MonoBehaviour
     private int _score = 0;
     private int highScore = 0;
 
-
+    [SerializeField] private SO_Position position;
     
     
     void Start()
@@ -135,7 +135,10 @@ public class Snake : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore",0);
         scoreText.text = _score.ToString() + " POINTS";
         highScoreText.text = "HIGHSCORE: " + highScore.ToString();
-
+        position.hp = 2;
+        position.x = 13.5f;
+        position.y = -32f;
+        position.layer = 0;
         string[] text = {"Hey, du in der letzten Reihe. Aufpassen!"};
         timeline.endMinigameText(text);
         SceneManager.LoadScene("Main Scene");

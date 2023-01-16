@@ -33,17 +33,18 @@ public class Level0 : MonoBehaviour
         dialog[1][0] = "Hast du schon was gegessen?";
         dialog[1][1] = "gehe bitte zur Mensa mein Lieber";
         dialog[2] = new string[2];
-        dialog[2][0] = "Hast du Semester 1 schon abgeschlossen ? Geil";
-        dialog[2][1] = "gehe bitte zur Vorlesung Mathe2 in H9";
+        dialog[2][0] = "Du hast das erste Semester schon abgeschlossen?";
+        dialog[2][1] = "Dann müsstest du doch jetzt in der Mathe 2 Vorlesung in H9 sitzen.";
         dialog[3] = new string[2];
-        dialog[3][0] = "und.. wie war Mathe? ;)";
-        dialog[3][1] = "jetzt wird Zeit zum Autorennen";
-        dialog[4] = new string[2];
-        dialog[4][0] = "und.. wie war Mathe? ;)";
-        dialog[4][1] = "jetzt wird Zeit zum Autorennen";
+        dialog[3][0] = "Ich hab von deinem Snake Rekord gehört.";
+        dialog[3][1] = "Einer der Studenten vor dem Haupteingang möchte dich sprechen.";
+        dialog[4] = new string[3];
+        dialog[4][0] = "Ich habe dich von hier vor der Hochschule herfahren gesehen.";
+        dialog[4][1] = "Du hast alle anderen ja wirklich abgehängt.";
+        dialog[4][2] = "Aber jetzt solltest du mal nach den Dozenten im C-Gebäude sehen.";
         dialog[5] = new string[2];
-        dialog[5][0] = "und.. wie war Mathe? ;)";
-        dialog[5][1] = "jetzt wird Zeit zum Autorennen";
+        dialog[5][0] = "Vielen Dank fürs Spielen!";
+        dialog[5][1] = "Du hast das Ende dieser Version erreicht!";
     }
     // Update is called once per frame
     void Update()

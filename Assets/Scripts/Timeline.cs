@@ -11,7 +11,7 @@ public class Timeline : MonoBehaviour
     public GameObject dialogBox;
     public Text dialogText;
     private bool textActive;
-    private string[] savedText = {"Das Spiel beginnt"};
+    private string[] savedText = {"Das Spiel beginnt. Mit [E] kannst du im Dialog fortfahren"};
     private int i = 0;
     public int car = 0;
     [SerializeField] private SO_Position position;
@@ -32,6 +32,8 @@ public class Timeline : MonoBehaviour
 
     private void OnApplicationQuit() {
         position.TimelineLevel = level;
+        position.x = 6.0f;
+        position.y = -90.5f;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
