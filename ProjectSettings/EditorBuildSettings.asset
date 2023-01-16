@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Snake.unity
     guid: 1d49349bbe1e171489f3d6946ce6b6ba
+  - enabled: 1
+    path: Assets/Scenes/Minigame-Mikrocontroller.unity
+    guid: 6c6b6c5141974b04c87dbaf896da2b10
   m_configObjects: {}

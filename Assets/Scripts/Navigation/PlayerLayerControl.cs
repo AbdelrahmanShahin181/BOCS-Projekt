@@ -22,7 +22,7 @@ public class PlayerLayerControl : MonoBehaviour
             if (currentElevator != null) {
                 //transform.position = currentElevator.GetComponent<ElevatorTeleport>().GetDestination().position;
                 menu.SetActive(!menu.activeSelf);
-                
+                menu.GetComponent<Elevator>().setPlayer(gameObject);
             }
             
         }
