@@ -71,7 +71,7 @@ public class Level0 : MonoBehaviour
                     counter++;
                 }
             }
-            else
+            else if(!dialogActive)
             {
                 dialogBox.SetActive(true);
                 dialogText.text = dialog[timeline.level][0];

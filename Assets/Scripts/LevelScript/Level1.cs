@@ -53,7 +53,7 @@ public class Level1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else
+                else if(!dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -77,7 +77,7 @@ public class Level1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else
+                else if(!dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);

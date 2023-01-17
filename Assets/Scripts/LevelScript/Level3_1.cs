@@ -48,7 +48,7 @@ public class Level3_1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else
+                else if(!dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -72,7 +72,7 @@ public class Level3_1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else
+                else if(!dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -81,7 +81,7 @@ public class Level3_1 : MonoBehaviour
                 }
             }
             else if(timeline.car == 2){
-                if(dialogBox.activeInHierarchy)
+                if(dialogBox.activeInHierarchy && dialogActive)
                 {
                 
                     if(counter >= dialogDone.Length)
@@ -95,7 +95,7 @@ public class Level3_1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else
+                else if(!dialogActive)
                 {
                     dialogBox.SetActive(true);
                     dialogText.text = dialogDone[0];

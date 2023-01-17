@@ -33,8 +33,8 @@ public class WinLoseCheck : MonoBehaviour
             if(won) {
                 WinLose.gameObject.SetActive(true);
                 winLoseText.text = "Erfolg";
-                if(timeline.level == 1)
-                    timeline.level = 2;
+                if(timeline.level == 4)
+                    timeline.level = 5;
                 string[] text = {"Das war knapp, hat aber gerade noch so gereicht. Aus Dank nutzt der Mitarbeiter seinen Zugriff zum Mainframe der Hochschule und versetzt dich ins vierte Semester."};
                 timeline.endMinigameText(text);
             }

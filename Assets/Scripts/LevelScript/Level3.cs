@@ -46,7 +46,7 @@ public class Level3 : MonoBehaviour
                         position.layer = player.transform.GetComponent<PlayerLayerControl>().layer;
                         SceneManager.LoadScene("Race Scene");
                     }
-                    else
+                    else if(!dialogActive)
                     {
                         dialogText.text = dialog[counter];
                         counter++;
@@ -76,7 +76,7 @@ public class Level3 : MonoBehaviour
                         counter++;
                     }
                 }
-                else
+                else if(!dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);

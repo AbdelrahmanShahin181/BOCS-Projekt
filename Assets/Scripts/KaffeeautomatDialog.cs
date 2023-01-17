@@ -30,14 +30,14 @@ public class KaffeeautomatDialog : MonoBehaviour
                 dialogActive = false;
                 dialogBox.SetActive(false);
             }
-            else
+            else  if(!dialogActive)
             {
                 dialogActive = true;
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }
         }
-        if(dialogBox.activeSelf &&Input.GetKeyDown(KeyCode.J) && playerInRange){
+        if(dialogBox.activeSelf && dialogActive && Input.GetKeyDown(KeyCode.J) && playerInRange){
                 if(healthManager != null){
                     ECTSCounter = player.GetComponent<ECTSCounter>();
                     if(ECTSCounter.wert > 0) {

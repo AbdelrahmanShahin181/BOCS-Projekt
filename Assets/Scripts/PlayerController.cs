@@ -44,11 +44,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        Debug.Log("...........Scene: " + scene);
+        //Debug.Log("...........Scene: " + scene);
         healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
+        gameObject.GetComponent<ECTSCounter>().Start();
         gameObject.GetComponent<PlayerLayerControl>().Start();
         gameObject.GetComponent<LoadCharacterDesign>().Start();
-        gameObject.GetComponent<ECTSCounter>().Start();
+        
         //gameObject.GetComponent<ClientNetworkTransformManual>().Start();
 
         if(gameObject.CompareTag("Player")){
