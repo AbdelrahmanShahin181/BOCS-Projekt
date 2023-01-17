@@ -37,7 +37,7 @@ public class LoadCharacterDesign : MonoBehaviour
     }
 
     public void SetBodypart(string Name, int partIndex, int Index) {
-        Debug.Log("Name: " + Name + " PartID: " + partIndex + " Index: " + Index);
+        //Debug.Log("Name: " + Name + " PartID: " + partIndex + " Index: " + Index);
         //bodyPart.BodyParts[partIndex] = Options.bodyPartSelections[partIndex].bodyPartOptions[Options.bodyPartSelections[partIndex].bodyPartCurrentIndex];
         transform.GetComponent<SpriteRenderer>().material.SetTexture(Name, Options.bodyPartSelections[partIndex].bodyPartOptions[Index].Texture);
     }
