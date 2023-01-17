@@ -38,7 +38,7 @@ public class FoodSpawn : MonoBehaviour
     
     void timerEnded()
     {
-        int whichFood = Random.Range(0, 4);
+        int whichFood = Random.Range(0, 5);
         
         switch (whichFood) {
             case 0:

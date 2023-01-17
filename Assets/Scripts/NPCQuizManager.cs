@@ -12,6 +12,7 @@ public class NPCQuizManager : MonoBehaviour
     [Header("Dialog UI")]
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
+    [SerializeField] private SO_Position position;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -21,6 +22,7 @@ public class NPCQuizManager : MonoBehaviour
 
     private static NPCQuizManager instance;
     private int rightChoice;
+    private int QuizNum;
 
     
     HealthManager hpLoss;
@@ -71,8 +73,8 @@ public class NPCQuizManager : MonoBehaviour
         }
     }
 
-    public void StartDialog(TextAsset inkJSON, int correctChoice){
-
+    public void StartDialog(TextAsset inkJSON, int correctChoice, int Num){
+        QuizNum = Num;
         rightChoice = correctChoice;
         currentStory = new Story(inkJSON.text);
         dialogIsActive = !dialogIsActive;
@@ -144,7 +146,7 @@ public class NPCQuizManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
 
         if(choiceIndex == rightChoice){
-
+            position.Questions[QuizNum] = true;
             AddECTS();
         }
 
