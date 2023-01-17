@@ -12,14 +12,28 @@ public class ResetSave : MonoBehaviour
         
     }
     public void Reset() {
-        if(GameObject.Find("Network Manager") != null) {
-            Destroy(GameObject.Find("Network Manager").gameObject);
+        string[] temp ={"Das Spiel beginnt. Mit [E] kannst du im Dialog fortfahren"};
+        Timeline timeline = GameObject.Find("Timeline").GetComponent<Timeline>();
+        timeline.endMinigameText(temp);
+        timeline.i = 0;
+        timeline.textActive = true;
+
+        GameObject.FindWithTag("Player").GetComponent<PlayerController>().Reset();
+        
+        if(GameObject.FindWithTag("Network Manager") != null) {
+            GameObject[] NetworkManagers = GameObject.FindGameObjectsWithTag("Network Manager");
+            for (int i = 0; i< NetworkManagers.Length; i++) {
+                Destroy(NetworkManagers[i]);
+            }
         }
         if(GameObject.FindWithTag("Player") != null) {
             Destroy(GameObject.FindWithTag("Player").gameObject);
         }
         if(GameObject.FindWithTag("Multiplayer") != null) {
-            Destroy(GameObject.FindWithTag("Multiplayer").gameObject);
+            GameObject[] OtherPlayers = GameObject.FindGameObjectsWithTag("Multiplayer");
+            for (int i = 0; i< OtherPlayers.Length; i++) {
+                Destroy(OtherPlayers[i]);
+            }
         }
         if(GameObject.Find("Timeline") != null) {
             Destroy(GameObject.Find("Timeline").gameObject);

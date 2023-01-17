@@ -10,9 +10,9 @@ public class Timeline : MonoBehaviour
     private static GameObject instance;
     public GameObject dialogBox;
     public Text dialogText;
-    private bool textActive;
+    public bool textActive;
     private string[] savedText = {"Das Spiel beginnt. Mit [E] kannst du im Dialog fortfahren"};
-    private int i = 0;
+    public int i = 0;
     public int car = 0;
     [SerializeField] private SO_Position position;
 
@@ -57,7 +57,7 @@ public class Timeline : MonoBehaviour
     void Update() {
         if((Input.GetKeyDown(KeyCode.E)||Input.GetKeyDown(KeyCode.Escape)) && textActive) {
             i++;
-            if (i< savedText.Length) {
+            if (i < savedText.Length) {
                 dialogText.text = savedText[i];
             }
             else{

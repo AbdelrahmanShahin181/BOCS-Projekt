@@ -25,6 +25,7 @@ TagManager:
   - AI
   - Obstacle
   - Multiplayer
+  - Network Manager
   layers:
   - Default
   - TransparentFX

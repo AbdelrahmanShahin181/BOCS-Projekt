@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Awake() {
+    private void OnEnable() {
         if(SceneManager.GetActiveScene().name != "CharacterCustomization") {
             DontDestroyOnLoad(this.gameObject);
         }
@@ -42,33 +42,42 @@ public class PlayerController : MonoBehaviour
             else
                 Destroy(gameObject);
         }*/
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if(gameObject!= null) 
+            SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        if(gameObject != null) {
         //Debug.Log("...........Scene: " + scene);
-        if(SceneManager.GetActiveScene().name == "Main Scene" || SceneManager.GetActiveScene().name == "CharacterCustomization") {
-            if(GameObject.Find("Healthbar")!=null)
-                healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
-            if(gameObject.GetComponent<ECTSCounter>().isActiveAndEnabled)
-                gameObject.GetComponent<ECTSCounter>().Start();
-            if(gameObject.GetComponent<PlayerLayerControl>().isActiveAndEnabled)
-                gameObject.GetComponent<PlayerLayerControl>().Start();
-            if(gameObject.GetComponent<LoadCharacterDesign>().isActiveAndEnabled)
-                gameObject.GetComponent<LoadCharacterDesign>().Start();
-            
-            //gameObject.GetComponent<ClientNetworkTransformManual>().Start();
+            if(SceneManager.GetActiveScene().name == "Main Scene" || SceneManager.GetActiveScene().name == "CharacterCustomization") {
+                if(GameObject.Find("Healthbar")!=null)
+                    healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
+                if(gameObject.GetComponent<ECTSCounter>().isActiveAndEnabled)
+                    gameObject.GetComponent<ECTSCounter>().Start();
+                if(gameObject.GetComponent<PlayerLayerControl>().isActiveAndEnabled)
+                    gameObject.GetComponent<PlayerLayerControl>().Start();
+                if(gameObject.GetComponent<LoadCharacterDesign>().isActiveAndEnabled)
+                    gameObject.GetComponent<LoadCharacterDesign>().Start();
+                
+                //gameObject.GetComponent<ClientNetworkTransformManual>().Start();
 
-            if(gameObject.CompareTag("Player") && PlayerCameraFollow.Instance != null){
-                PlayerCameraFollow.Instance.FollowPlayer(transform);
+                if(gameObject.CompareTag("Player") && PlayerCameraFollow.Instance != null){
+                    PlayerCameraFollow.Instance.FollowPlayer(transform);
+                }
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
             }
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+            else {
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            }
         }
-        else {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        }
+    }
+
+    public void Reset() {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Destroy(this);
     }
 
     // Update is called once per frame
