@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6723149107129999114}
   - component: {fileID: 6723149107129999113}
   - component: {fileID: 1959926476}
+  - component: {fileID: 6183406822999635606}
   - component: {fileID: 1959926478}
   - component: {fileID: 7074529820197911831}
-  - component: {fileID: 6183406822999635606}
   - component: {fileID: 6723149107129999117}
   - component: {fileID: 1959926479}
   - component: {fileID: 1959926480}
@@ -168,6 +168,18 @@ MonoBehaviour:
   wert: 0
   text: {fileID: 0}
   position: {fileID: 11400000, guid: 67bfaa8d06fc3a141bf7dcf60f1545af, type: 2}
+--- !u!114 &6183406822999635606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723149107129999119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229301333fe8b6041b3c1a1eaed3497a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1959926478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,18 +226,6 @@ MonoBehaviour:
   - _SkinIndex
   - _ShirtIndex
   - _PantsIndex
---- !u!114 &6183406822999635606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6723149107129999119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229301333fe8b6041b3c1a1eaed3497a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6723149107129999117
 MonoBehaviour:
   m_ObjectHideFlags: 0

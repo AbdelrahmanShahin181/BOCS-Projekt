@@ -12,14 +12,14 @@ public class ResetSave : MonoBehaviour
         
     }
     public void Reset() {
+        if(GameObject.Find("Network Manager") != null) {
+            Destroy(GameObject.Find("Network Manager").gameObject);
+        }
         if(GameObject.FindWithTag("Player") != null) {
             Destroy(GameObject.FindWithTag("Player").gameObject);
         }
         if(GameObject.FindWithTag("Multiplayer") != null) {
             Destroy(GameObject.FindWithTag("Multiplayer").gameObject);
-        }
-        if(GameObject.Find("Network Manager") != null) {
-            Destroy(GameObject.Find("Network Manager").gameObject);
         }
         if(GameObject.Find("Timeline") != null) {
             Destroy(GameObject.Find("Timeline").gameObject);
