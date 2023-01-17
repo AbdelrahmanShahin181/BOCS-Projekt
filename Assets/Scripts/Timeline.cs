@@ -38,12 +38,14 @@ public class Timeline : MonoBehaviour
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        dialogBox = GameObject.Find("Spielmaske").transform.GetChild(3).gameObject;
-        dialogText = dialogBox.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>();
-        textActive = true;
-        dialogBox.SetActive(true);
-        i = 0;
-        dialogText.text = savedText[i];
+        if(GameObject.Find("Spielmaske") != null){
+            dialogBox = GameObject.Find("Spielmaske").transform.GetChild(3).gameObject;
+            dialogText = dialogBox.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>();
+            textActive = true;
+            dialogBox.SetActive(true);
+            i = 0;
+            dialogText.text = savedText[i];
+        }
         //position.TimelineLevel = level;
     }
     

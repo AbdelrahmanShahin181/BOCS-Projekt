@@ -15,12 +15,8 @@ GameObject:
   - component: {fileID: 4374716913138653574}
   - component: {fileID: 4374716913138653573}
   - component: {fileID: 4374716913138653580}
-  - component: {fileID: 1912694853794294732}
   - component: {fileID: -9101329897024348271}
-  - component: {fileID: 7117455671980975374}
-  - component: {fileID: 6128662673629425007}
   - component: {fileID: 4242007856798529289}
-  - component: {fileID: 5934418672128377984}
   m_Layer: 0
   m_Name: Player_Girl
   m_TagString: Player
@@ -184,19 +180,6 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &1912694853794294732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4374716913138653570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41562ee370901e04a92ebed6f6ffece2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
 --- !u!114 &-9101329897024348271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,31 +206,6 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
---- !u!114 &7117455671980975374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4374716913138653570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1964b888b561e474a9997c0b866252c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 4374716913138653573}
---- !u!114 &6128662673629425007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4374716913138653570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57faa2604b6076247b036657e34d1c6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4242007856798529289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,18 +221,4 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   healthBar: {fileID: 1901377559730063085, guid: ddbe614585fd08f4198f61e68affc46a, type: 3}
---- !u!114 &5934418672128377984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4374716913138653570}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5fce27716021f4c948cc8de851cf76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chatMessagePrefab: {fileID: 0}
-  messageParent: {fileID: 2321090870217147268, guid: c64f24ed88c18824f99dfbacf23ff874, type: 3}
-  chatInputField: {fileID: 0}
+  position: {fileID: 0}

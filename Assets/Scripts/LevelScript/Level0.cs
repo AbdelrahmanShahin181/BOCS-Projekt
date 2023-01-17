@@ -71,7 +71,7 @@ public class Level0 : MonoBehaviour
                     counter++;
                 }
             }
-            else if(!dialogActive)
+            else if(!dialogBox.activeInHierarchy && !dialogActive)
             {
                 dialogBox.SetActive(true);
                 dialogText.text = dialog[timeline.level][0];
@@ -93,6 +93,7 @@ public class Level0 : MonoBehaviour
         if (other.CompareTag("Player")) {
             if (dialogActive) {
                 dialogBox.SetActive(false);
+                dialogActive = false;
             }
             Debug.Log("Player left");
             playerInRange = false;

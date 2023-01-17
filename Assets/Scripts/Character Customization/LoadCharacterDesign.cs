@@ -23,9 +23,10 @@ public class LoadCharacterDesign : MonoBehaviour
             transform.GetComponent<SpriteRenderer>().material.SetFloat(partIndexes[i], bodyPart.indexes[i]);
             
         }
-        
-        transform.GetComponent<PlayerLayerControl>().ChangeLayer(position.layer);
-        transform.position = new Vector3(position.x, position.y, 0);
+        if(transform.GetComponent<PlayerLayerControl>().isActiveAndEnabled) {
+            transform.GetComponent<PlayerLayerControl>().ChangeLayer(position.layer);
+            transform.position = new Vector3(position.x, position.y, 0);
+        }
         
     }
 

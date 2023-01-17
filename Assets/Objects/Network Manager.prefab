@@ -51,23 +51,8 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 9026008099843701644}
-    PlayerPrefab: {fileID: 4374716913138653570, guid: 7397ee5c9668f1240a6f72c1106c9f08, type: 3}
-    NetworkPrefabs:
-    - Override: 0
-      Prefab: {fileID: 4374716913138653570, guid: 7397ee5c9668f1240a6f72c1106c9f08, type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
-    - Override: 0
-      Prefab: {fileID: 4374716913138653570, guid: 9f2411d8125300d4a897101a80b0a1a9, type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
-    - Override: 0
-      Prefab: {fileID: 0}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
+    PlayerPrefab: {fileID: 6723149107129999119, guid: f44206c1bc32a2a4ebd30f8ab07a5093, type: 3}
+    NetworkPrefabs: []
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -103,7 +88,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 192.168.0.103
+    Address: 127.0.0.1
     Port: 7777
     ServerListenAddress: 0.0.0.0
   DebugSimulator:
@@ -123,6 +108,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefabs:
-  - {fileID: 4374716913138653570, guid: 7397ee5c9668f1240a6f72c1106c9f08, type: 3}
-  - {fileID: 4374716913138653570, guid: 9f2411d8125300d4a897101a80b0a1a9, type: 3}
-  - {fileID: 4374716913138653570, guid: 1f44d8cb79debf841b7dd462b703a274, type: 3}
+  - {fileID: 6723149107129999119, guid: f44206c1bc32a2a4ebd30f8ab07a5093, type: 3}

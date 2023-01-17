@@ -30,7 +30,7 @@ public class KaffeeautomatDialog : MonoBehaviour
                 dialogActive = false;
                 dialogBox.SetActive(false);
             }
-            else  if(!dialogActive)
+            else  if(!dialogBox.activeInHierarchy && !dialogActive)
             {
                 dialogActive = true;
                 dialogBox.SetActive(true);
@@ -62,6 +62,7 @@ public class KaffeeautomatDialog : MonoBehaviour
         if (other.CompareTag("Player")) {
             if (dialogActive) {
                 dialogBox.SetActive(false);
+                dialogActive = false;
             }
             Debug.Log("Player left");
             playerInRange = false;

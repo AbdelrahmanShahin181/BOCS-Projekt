@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NPCQuizTrigger : MonoBehaviour
 {
     [Header("Ink JSON")]
+    private GameObject dialogPanel;
     [SerializeField] private TextAsset inkJSON;
     [SerializeField] private SO_Position position;
 
@@ -17,6 +18,7 @@ public class NPCQuizTrigger : MonoBehaviour
     public Text dialogText;
 
     public void Awake(){
+        dialogPanel = NPCQuizManager.GetInstance().dialogPanel;
         inRange = false;
     }
 
@@ -25,7 +27,7 @@ public class NPCQuizTrigger : MonoBehaviour
         if(inRange /*&& !NPCQuizManager.GetInstance().activeSelf*/){
 
             if(Input.GetKeyDown(KeyCode.E)){
-                if(position.Questions[QuizNum-1]) {
+                if(position.Questions[QuizNum-1] && !dialogPanel.activeSelf) {
                     if(dialogBox.activeInHierarchy && dialogActive)
                     {
                         dialogActive = false;

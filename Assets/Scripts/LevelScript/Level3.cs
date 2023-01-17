@@ -46,13 +46,13 @@ public class Level3 : MonoBehaviour
                         position.layer = player.transform.GetComponent<PlayerLayerControl>().layer;
                         SceneManager.LoadScene("Race Scene");
                     }
-                    else if(!dialogActive)
+                    else 
                     {
                         dialogText.text = dialog[counter];
                         counter++;
                     }
                 }
-                else
+                else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -76,7 +76,7 @@ public class Level3 : MonoBehaviour
                         counter++;
                     }
                 }
-                else if(!dialogActive)
+                else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -100,6 +100,7 @@ public class Level3 : MonoBehaviour
         if (other.CompareTag("Player")) {
             if (dialogActive) {
                 dialogBox.SetActive(false);
+                dialogActive = false;
             }
             Debug.Log("Player left");
             playerInRange = false;

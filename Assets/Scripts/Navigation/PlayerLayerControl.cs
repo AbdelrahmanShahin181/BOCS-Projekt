@@ -12,8 +12,10 @@ public class PlayerLayerControl : MonoBehaviour
     public int layer = 0;
 
     public void Start() {
-        karte = GameObject.Find("Karte");
-        menu = GameObject.Find("Spielmaske").transform.GetChild(0).gameObject;
+        if(GameObject.Find("Karte") != null)
+            karte = GameObject.Find("Karte");
+        if(GameObject.Find("Spielmaske") != null)
+            menu = GameObject.Find("Spielmaske").transform.GetChild(0).gameObject;
     }
     // Update is called once per frame
     void Update()
@@ -109,7 +111,9 @@ public class PlayerLayerControl : MonoBehaviour
                     }
                 }
             }
-            catch(NullReferenceException e){}
+            catch(NullReferenceException e){
+                NullReferenceException test = e;
+            }
             
 
             for(int i = target+2; i<9; i++) {

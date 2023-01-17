@@ -10,7 +10,7 @@ using Unity.Netcode.Transports.UTP;
 public class NPCQuizManager : MonoBehaviour
 {
     [Header("Dialog UI")]
-    [SerializeField] private GameObject dialogPanel;
+    public GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private SO_Position position;
 

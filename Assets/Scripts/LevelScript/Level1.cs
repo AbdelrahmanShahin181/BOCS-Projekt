@@ -53,7 +53,7 @@ public class Level1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else if(!dialogActive)
+                else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -77,7 +77,7 @@ public class Level1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else if(!dialogActive)
+                else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -101,6 +101,7 @@ public class Level1 : MonoBehaviour
         if (other.CompareTag("Player")) {
             if (dialogActive) {
                 dialogBox.SetActive(false);
+                dialogActive = false;
             }
             Debug.Log("Player left");
             playerInRange = false;

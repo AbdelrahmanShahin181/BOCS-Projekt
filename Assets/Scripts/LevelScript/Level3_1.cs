@@ -48,7 +48,7 @@ public class Level3_1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else if(!dialogActive)
+                else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -72,7 +72,7 @@ public class Level3_1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else if(!dialogActive)
+                else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
                     dialogActive = true;
                     dialogBox.SetActive(true);
@@ -95,7 +95,7 @@ public class Level3_1 : MonoBehaviour
                         counter++;
                     }
                 }
-                else if(!dialogActive)
+                else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
                     dialogBox.SetActive(true);
                     dialogText.text = dialogDone[0];
@@ -118,6 +118,7 @@ public class Level3_1 : MonoBehaviour
         if (other.CompareTag("Player")) {
             if (dialogActive) {
                 dialogBox.SetActive(false);
+                dialogActive = false;
             }
             Debug.Log("Player left");
             playerInRange = false;

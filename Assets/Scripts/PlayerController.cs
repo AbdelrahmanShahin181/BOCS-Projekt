@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Awake() {
-        DontDestroyOnLoad(this.gameObject);
+        if(SceneManager.GetActiveScene().name != "CharacterCustomization") {
+            DontDestroyOnLoad(this.gameObject);
+        }
         /*if(gameObject.CompareTag("Player")){
             PlayerCameraFollow.Instance.FollowPlayer(transform);
         }*/
@@ -45,15 +47,27 @@ public class PlayerController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         //Debug.Log("...........Scene: " + scene);
-        healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
-        gameObject.GetComponent<ECTSCounter>().Start();
-        gameObject.GetComponent<PlayerLayerControl>().Start();
-        gameObject.GetComponent<LoadCharacterDesign>().Start();
-        
-        //gameObject.GetComponent<ClientNetworkTransformManual>().Start();
+        if(SceneManager.GetActiveScene().name == "Main Scene" || SceneManager.GetActiveScene().name == "CharacterCustomization") {
+            if(GameObject.Find("Healthbar")!=null)
+                healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
+            if(gameObject.GetComponent<ECTSCounter>().isActiveAndEnabled)
+                gameObject.GetComponent<ECTSCounter>().Start();
+            if(gameObject.GetComponent<PlayerLayerControl>().isActiveAndEnabled)
+                gameObject.GetComponent<PlayerLayerControl>().Start();
+            if(gameObject.GetComponent<LoadCharacterDesign>().isActiveAndEnabled)
+                gameObject.GetComponent<LoadCharacterDesign>().Start();
+            
+            //gameObject.GetComponent<ClientNetworkTransformManual>().Start();
 
-        if(gameObject.CompareTag("Player")){
-            PlayerCameraFollow.Instance.FollowPlayer(transform);
+            if(gameObject.CompareTag("Player") && PlayerCameraFollow.Instance != null){
+                PlayerCameraFollow.Instance.FollowPlayer(transform);
+            }
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+        }
+        else {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         }
     }
 
