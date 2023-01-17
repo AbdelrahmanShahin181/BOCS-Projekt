@@ -20,6 +20,7 @@ public class ClientNetworkTransformManual : NetworkBehaviour
 
     private NetworkVariable<float> _xDir = new (writePerm: NetworkVariableWritePermission.Owner);
     private NetworkVariable<float> _yDir = new (writePerm: NetworkVariableWritePermission.Owner);
+    private NetworkVariable<int> _layer = new (writePerm: NetworkVariableWritePermission.Owner);
     private NetworkVariable<bool> _isWalking = new (writePerm: NetworkVariableWritePermission.Owner);
     private NetworkVariable<bool> _isRunning = new (writePerm: NetworkVariableWritePermission.Owner);
 
@@ -29,6 +30,18 @@ public class ClientNetworkTransformManual : NetworkBehaviour
         if (IsOwner)
         {
             gameObject.tag = "Player";
+        }
+        else
+        {
+            gameObject.tag = "Multiplayer";
+        }
+    }
+
+
+    void Update()
+    {
+        if (IsOwner)
+        {
 
             _hairColor.Value = GetComponent<SpriteRenderer>().material.GetColor("_CHair");
             _skinColor.Value = GetComponent<SpriteRenderer>().material.GetColor("_CSkin");
@@ -40,11 +53,17 @@ public class ClientNetworkTransformManual : NetworkBehaviour
             _skinTextur.Value = (int)GetComponent<SpriteRenderer>().material.GetFloat("_SkinIndex");
             _shirtTextur.Value = (int)GetComponent<SpriteRenderer>().material.GetFloat("_ShirtIndex");
             _pantsTextur.Value = (int)GetComponent<SpriteRenderer>().material.GetFloat("_PantsIndex");
+
+            _netPos.Value = transform.position;
+            _xDir.Value = GetComponent<Animator>().GetFloat("moveX");
+            _yDir.Value = GetComponent<Animator>().GetFloat("moveY");
+            _isWalking.Value = GetComponent<Animator>().GetBool("isWalking");
+            _isRunning.Value = GetComponent<Animator>().GetBool("isRunning");
+            _scale.Value = transform.localScale;
+            _layer.Value = GetComponent<PlayerLayerControl>().layer;
         }
         else
         {
-            gameObject.tag = "Multiplayer";
-
             GetComponent<SpriteRenderer>().material.SetColor("_CHair",_hairColor.Value);
             GetComponent<SpriteRenderer>().material.SetColor("_CSkin",_skinColor.Value);
             GetComponent<SpriteRenderer>().material.SetColor("_CShirt",_shirtColor.Value);
@@ -54,29 +73,14 @@ public class ClientNetworkTransformManual : NetworkBehaviour
             GetComponent<LoadCharacterDesign>().SetBodypart("_Body", 1, _skinTextur.Value);
             GetComponent<LoadCharacterDesign>().SetBodypart("_Shirt", 2, _shirtTextur.Value);
             GetComponent<LoadCharacterDesign>().SetBodypart("_Pants", 3, _pantsTextur.Value);
-        }
-    }
 
-
-    void Update()
-    {
-        if (IsOwner)
-        {
-            _netPos.Value = transform.position;
-            _xDir.Value = GetComponent<Animator>().GetFloat("moveX");
-            _yDir.Value = GetComponent<Animator>().GetFloat("moveY");
-            _isWalking.Value = GetComponent<Animator>().GetBool("isWalking");
-            _isRunning.Value = GetComponent<Animator>().GetBool("isRunning");
-            _scale.Value = transform.localScale;
-        }
-        else
-        {
             transform.position = _netPos.Value;
             GetComponent<Animator>().SetFloat("moveX", _xDir.Value);
             GetComponent<Animator>().SetFloat("moveY", _yDir.Value);
             GetComponent<Animator>().SetBool("isWalking", _isWalking.Value);
             GetComponent<Animator>().SetBool("isRunning", _isRunning.Value);
             transform.localScale = _scale.Value;
+            GetComponent<PlayerLayerControl>().ChangeLayer(_layer.Value);
         }
     }
     

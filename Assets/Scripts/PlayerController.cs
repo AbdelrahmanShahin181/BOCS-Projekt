@@ -27,24 +27,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /*private void Awake() {
+    private void Awake() {
         DontDestroyOnLoad(this.gameObject);
-        if (instance == null) {
-            instance = gameObject;
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        else
-            Destroy(gameObject);
+        /*if(gameObject.CompareTag("Player")){
+            PlayerCameraFollow.Instance.FollowPlayer(transform);
+        }*/
+        /*if(gameObject.CompareTag("Player")){
+            if (instance == null) {
+                instance = gameObject;
+                SceneManager.sceneLoaded += OnSceneLoaded;
+            }
+            else
+                Destroy(gameObject);
+        }*/
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        Debug.Log("...........Scene: " + scene);
         healthManager = GameObject.Find("Healthbar").GetComponent<HealthManager>();
         gameObject.GetComponent<PlayerLayerControl>().Start();
         gameObject.GetComponent<LoadCharacterDesign>().Start();
         gameObject.GetComponent<ECTSCounter>().Start();
+        //gameObject.GetComponent<ClientNetworkTransformManual>().Start();
 
-        PlayerCameraFollow.Instance.FollowPlayer(transform);
-    }*/
+        if(gameObject.CompareTag("Player")){
+            PlayerCameraFollow.Instance.FollowPlayer(transform);
+        }
+    }
 
     // Update is called once per frame
     void FixedUpdate()

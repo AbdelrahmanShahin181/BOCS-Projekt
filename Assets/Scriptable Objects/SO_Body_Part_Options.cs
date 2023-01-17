@@ -6,7 +6,7 @@ using UnityEngine;
 public class SO_Body_Part_Options : ScriptableObject
 {
     // Full Character Body
-    public SO_Character_Body characterBody;
+    //public SO_Character_Body characterBody;
     // Body Part Selections
     public BodyPartSelection[] bodyPartSelections;
 }

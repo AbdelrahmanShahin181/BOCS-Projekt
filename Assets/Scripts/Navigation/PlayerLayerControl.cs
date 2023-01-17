@@ -84,40 +84,43 @@ public class PlayerLayerControl : MonoBehaviour
     }
 
     public void ChangeLayer(int target){
-        for(int i = 0; i<target+1; i++) {
-            karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(true);
-            karte.transform.GetChild(i).transform.GetChild(1).gameObject.SetActive(false);
-            karte.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
-            
-        }
+        if(gameObject.CompareTag("Player")) {
+            for(int i = 0; i<target+1; i++) {
+                karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(true);
+                karte.transform.GetChild(i).transform.GetChild(1).gameObject.SetActive(false);
+                karte.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
+                
+            }
 
-        karte.transform.GetChild(target+1).transform.GetChild(2).gameObject.SetActive(true);
-        karte.transform.GetChild(target+1).transform.GetChild(1).gameObject.SetActive(true);
-        karte.transform.GetChild(target+1).transform.GetChild(0).gameObject.SetActive(true);
-        try {
-            Transform cStairsUp = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Up");
-            Transform cStairsDown = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Down");
-            if(cStairsUp != null && cStairsDown != null){
-                if(target<layer){
-                    cStairsUp.gameObject.SetActive(true);
-                    cStairsDown.gameObject.SetActive(false);
-                }
-                else {
-                    cStairsUp.gameObject.SetActive(false);
-                    cStairsDown.gameObject.SetActive(true);
+            karte.transform.GetChild(target+1).transform.GetChild(2).gameObject.SetActive(true);
+            karte.transform.GetChild(target+1).transform.GetChild(1).gameObject.SetActive(true);
+            karte.transform.GetChild(target+1).transform.GetChild(0).gameObject.SetActive(true);
+            try {
+                Transform cStairsUp = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Up");
+                Transform cStairsDown = karte.transform.GetChild(target+1).Find("Triggers").Find("Navigation").Find("Stairs").Find("StairC").Find("Down");
+                if(cStairsUp != null && cStairsDown != null){
+                    if(target<layer){
+                        cStairsUp.gameObject.SetActive(true);
+                        cStairsDown.gameObject.SetActive(false);
+                    }
+                    else {
+                        cStairsUp.gameObject.SetActive(false);
+                        cStairsDown.gameObject.SetActive(true);
+                    }
                 }
             }
+            catch(NullReferenceException e){}
+            
+
+            for(int i = target+2; i<9; i++) {
+                karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(false);
+                karte.transform.GetChild(i).transform.GetChild(1).gameObject.SetActive(false);
+                karte.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
+            }
+
+            layer = target;
         }
-        catch(NullReferenceException e){}
         transform.GetComponent<SpriteRenderer>().sortingLayerName = target + "_Def";
-
-        for(int i = target+2; i<9; i++) {
-            karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(false);
-            karte.transform.GetChild(i).transform.GetChild(1).gameObject.SetActive(false);
-            karte.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
-        }
-
-        layer = target;
     }
 
     public void Teleport(int target){
