@@ -11,4 +11,5 @@ public class SO_Position : ScriptableObject
     public int hp;
     public int kaffeeCoins;
     public int TimelineLevel;
+    public bool[] Questions;
 }

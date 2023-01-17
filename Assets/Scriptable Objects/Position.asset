@@ -16,5 +16,6 @@ MonoBehaviour:
   y: -90.5
   layer: 0
   hp: 10
-  kaffeeCoins: 21
-  TimelineLevel: 2
+  kaffeeCoins: 0
+  TimelineLevel: 0
+  Questions: 0000000000
