@@ -41,7 +41,10 @@ public class NPCQuizManager : MonoBehaviour
     public static NPCQuizManager GetInstance(){
 
         if(instance == null){
-
+            //GameObject instanceObj = new GameObject("NPCQuizManager");
+            //gameObject.AddComponent<NPCQuizManager>();
+            //instance = instanceObj.AddComponent<NPCQuizManager>();
+            //instance = dialogPanel.gameObject.AddComponent<NPCQuizManager>();
             instance = new NPCQuizManager();
         }
 

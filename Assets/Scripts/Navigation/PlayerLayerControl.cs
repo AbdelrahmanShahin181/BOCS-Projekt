@@ -86,7 +86,7 @@ public class PlayerLayerControl : MonoBehaviour
     }
 
     public void ChangeLayer(int target){
-        if(gameObject.CompareTag("Player")) {
+        if(gameObject.CompareTag("Player") && karte != null) {
             for(int i = 0; i<target+1; i++) {
                 karte.transform.GetChild(i).transform.GetChild(2).gameObject.SetActive(true);
                 karte.transform.GetChild(i).transform.GetChild(1).gameObject.SetActive(false);

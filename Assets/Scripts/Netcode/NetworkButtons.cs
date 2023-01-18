@@ -15,32 +15,43 @@ public class NetworkButtons : MonoBehaviour {
 	private List<ConnectedPlayer> _connectedPlayers;
     int playerID = 0;
     public GameObject [] playerPrefabs;
+    public string portString = "7777";
+    public string ip = "127.0.0.1";
 
     private void Awake(){
         GetPlayerData();
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        
     }
 
     private void OnGUI() {
-        GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+        
         if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer) {
-            if (GUILayout.Button("Host")){
-                NetworkManager.Singleton.StartHost();
-            } 
-            if (GUILayout.Button("Server")){
-				StartRemoteServer();
-                NetworkManager.Singleton.StartServer();
-            } 
-            if (GUILayout.Button("Client")){ 
-                NetworkManager.Singleton.StartClient();
-            }
+            /*GUILayout.BeginArea(new Rect(320, 10, 300, 300));
+                GUILayout.Label("IP:");
+                ip = GUILayout.TextField(ip);
+                GUILayout.Label("Port:");
+                portString = GUILayout.TextField(portString);
+            GUILayout.EndArea();*/
+            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+                if (GUILayout.Button("Host")){
+                    //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = ip;
+                    //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port = Convert.ToUInt16(portString);
+                    NetworkManager.Singleton.StartHost();
+                } 
+                if (GUILayout.Button("Server")){
+                    //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = ip;
+                    //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port = Convert.ToUInt16(portString);
+                    StartRemoteServer();
+                    NetworkManager.Singleton.StartServer();
+                } 
+                if (GUILayout.Button("Client")){ 
+                    //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = ip;
+                    //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port = Convert.ToUInt16(portString);
+                    NetworkManager.Singleton.StartClient();
+                    
+                }
+            GUILayout.EndArea();
         }
-
-        GUILayout.EndArea();
+        
         NetworkManager.Singleton.NetworkConfig.PlayerPrefab = playerPrefabs[playerID];
         //playerPrefabs[playerID].SetActive(true);
     }
@@ -52,7 +63,7 @@ public class NetworkButtons : MonoBehaviour {
 		PlayFabMultiplayerAgentAPI.Start();
 		StartCoroutine(ReadyForPlayers());
 		//get ip address
-		string ip = NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address;
+		ip = NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address;
 		print("IP Adresse ist : " + ip);
 		ushort port = NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port;
 		print("Port ist : " + port);

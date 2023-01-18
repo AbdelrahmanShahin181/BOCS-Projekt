@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -15,9 +18,32 @@ public class Timeline : MonoBehaviour
     public int i = 0;
     public int car = 0;
     [SerializeField] private SO_Position position;
+    public GameObject NetworkManager;
+    public string portString = "7777";
+    public string ip = "127.0.0.1";
 
     void Start() {
+        
         level = position.TimelineLevel;
+        FindInActiveObjectByName("Network Manager");
+    }
+
+    private void OnGUI() {
+        
+        if (!NetworkManager.activeSelf) {
+            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+                GUILayout.Label("IP:");
+                ip = GUILayout.TextField(ip);
+                GUILayout.Label("Port:");
+                portString = GUILayout.TextField(portString);
+                if (GUILayout.Button("Start")){
+                    NetworkManager.GetComponent<UnityTransport>().ConnectionData.Address = ip;
+                    NetworkManager.GetComponent<UnityTransport>().ConnectionData.Port = Convert.ToUInt16(portString);
+                    NetworkManager.SetActive(true);
+                } 
+            GUILayout.EndArea();
+            
+        }
     }
 
     private void Awake() {
@@ -66,5 +92,21 @@ public class Timeline : MonoBehaviour
             }
         }
     }
+
+    GameObject FindInActiveObjectByName(string name)
+{
+    Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+    for (int i = 0; i < objs.Length; i++)
+    {
+        if (objs[i].hideFlags == HideFlags.None)
+        {
+            if (objs[i].name == name)
+            {
+                return objs[i].gameObject;
+            }
+        }
+    }
+    return null;
+}
     
 }

@@ -53,7 +53,7 @@ public class PlayfabManager : MonoBehaviour
     void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
         messageText.text = "Register Success";
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("username");
     }
     
     void OnLoginSuccess(LoginResult result)
@@ -63,7 +63,7 @@ public class PlayfabManager : MonoBehaviour
         // switch scene
         GetPlayerData();
         //usernameInput.text = userData["username"];
-         SceneManager.LoadScene(2);
+         SceneManager.LoadScene("Intro");
 
     }
     void OnUserDataSuccess(GetUserDataResult result)
@@ -100,7 +100,7 @@ public class PlayfabManager : MonoBehaviour
         Debug.Log("Got error setting user data Ancestor to Arthur");
         Debug.Log(error.GenerateErrorReport());
     });
-    SceneManager.LoadScene(2);
+    SceneManager.LoadScene("Intro");
     }
 
     public void SetPlayerID(int playerID) {
@@ -112,9 +112,9 @@ public class PlayfabManager : MonoBehaviour
         if(result.Data == null || !result.Data.ContainsKey("username"))
         {
             Debug.Log("No data found");
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("username");
         }else{
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Main Scene");
         }
     }
 
@@ -128,9 +128,9 @@ public class PlayfabManager : MonoBehaviour
             if(result.Data == null || !result.Data.ContainsKey("username"))
             {
                 Debug.Log("No data found");
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene("username");
             }else{
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene("Intro");
             }
         }, 
         error => {
