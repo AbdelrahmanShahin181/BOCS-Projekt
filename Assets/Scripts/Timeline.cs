@@ -29,8 +29,8 @@ public class Timeline : MonoBehaviour
     }
 
     private void OnGUI() {
-        
-        if (!NetworkManager.activeSelf) {
+        NetworkManager = FindInActiveObjectByTag("Network Manager"); 
+        if (NetworkManager != null && !NetworkManager.activeSelf) {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
                 GUILayout.Label("IP:");
                 ip = GUILayout.TextField(ip);
@@ -64,7 +64,7 @@ public class Timeline : MonoBehaviour
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        NetworkManager = FindInActiveObjectByTag("Network Manager"); 
+        
         if(GameObject.Find("Spielmaske") != null){
             dialogBox = GameObject.Find("Spielmaske").transform.GetChild(3).gameObject;
             dialogText = dialogBox.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>();
