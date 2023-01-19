@@ -17,6 +17,7 @@ public class NPC_movement : MonoBehaviour
     public float waitCounter;
     private int walkDirection = 0;
     private Animator anim;
+    private NPCQuizTrigger trigger;
 
 
    
@@ -25,6 +26,7 @@ public class NPC_movement : MonoBehaviour
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         waitCounter = waitTime;
+        trigger = GetComponent<NPCQuizTrigger>();
         //walkCounter = walkTime;
         chooseDirection();
         
@@ -33,8 +35,9 @@ public class NPC_movement : MonoBehaviour
 
     void Update()
     {
-        if(NPCQuizManager.GetInstance().dialogIsActive){
+        if(NPCQuizManager.GetInstance().dialogIsActive || trigger.dialogActive){
             myRigidbody.velocity = Vector2.zero;
+            anim.SetBool("moving", false); 
             return;
         }
 

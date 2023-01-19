@@ -2,18 +2,26 @@
 === main ===
 Kannst du mir kurz helfen? Wie melde ich mich zu den Klausuren an?
 	+ [Dafür sind die Professoren zuständig!]
-		-> antwortFalsch("Professoren")
+		-> antwortFalsch1()
 	+ [Du musst das hochschulinterne Tool >Selbstbedienungsfunktion< verwenden.]
 		-> antwortRichtig("Selbstbedienungsfunktion")
 	+ [Du wirst automatisch mit der Anmeldung zum Kurs auch für die Klausur angemeldet.]
-		-> antwortFalsch("Automatisch")
+		-> antwortFalsch2()
 	+ [Auf der Hochschul-Hompage.]
-		-> antwortFalsch("Homepage")
+		-> antwortFalsch3()
 
-=== antwortFalsch(auswahl)
-Du hast {auswahl} gewählt, dass ist leider Falsch! [E] Versuche es erneut!
+=== antwortFalsch1()
+Tut mir leid, dass ist leider Falsch! [E] Versuche es erneut!
+-> END
+
+=== antwortFalsch2()
+Das kannst du sicher besser! [E] Versuche es erneut!
+-> END
+
+=== antwortFalsch3()
+Nein! (Das wissen doch sonst alle.....) [E] Versuche es erneut!
 -> END
 
 == antwortRichtig(auswahl)
-{auswahl} ist richtig! +5 ECTS. Fahre nun fort! [E]
+{auswahl} ist richtig! Du erhältst 2 Kaffee-Coins - Damit kannst du dir an den Automaten in der Mensa und in der Lounge einen Kaffee kaufen.
 -> END
