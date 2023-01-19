@@ -15,4 +15,11 @@ public class SkipIntro : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape)) {
+            SceneManager.LoadScene("CharacterCustomization");
+        }
+    }
+
 }

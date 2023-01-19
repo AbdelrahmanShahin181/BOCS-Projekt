@@ -29,7 +29,8 @@ public class Timeline : MonoBehaviour
     }
 
     private void OnGUI() {
-        NetworkManager = FindInActiveObjectByTag("Network Manager"); 
+        if (NetworkManager == null)
+            NetworkManager = FindInActiveObjectByTag("Network Manager"); 
         if (NetworkManager != null && !NetworkManager.activeSelf) {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
                 GUILayout.Label("IP:");
