@@ -47,7 +47,7 @@ public class CountFood : MonoBehaviour
             //sleep for 5 seconds
             if(timeline.level == 1)
                 timeline.level = 2;
-            string[] text = {"Wow, so viel Essen hat noch niemand bisher gestapelt. Dafür erhälst du einen Ehrenpreis vom AKAFÖ und wirst sofort ins zweite Semester versetzt",
+            string[] text = {"Wow, so viel Essen hat noch niemand bisher gestapelt. Dafür erhältst Du einen Ehrenpreis vom AKAFÖ und wirst sofort ins zweite Semester versetzt!",
             "Und da steht gleich im H9 die Mathe 2 Vorlesung an. Die ist nicht ganz einfach, also sollte man da wirklich aufpassen."};
             timeline.endMinigameText(text);
         }

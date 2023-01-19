@@ -117,7 +117,7 @@ public class Snake : MonoBehaviour
             position.x = 13.5f;
             position.y = -32f;
             position.layer = 0;
-            string[] text = {"Hey, du in der letzten Reihe. Aufpassen!"};
+            string[] text = {"Hey, du in der letzten Reihe. Aufpassen!","Verdammt! Du wurdest erwischt. Du fällst vor Scham in Ohnmacht und wachst geschwächt neben dem Kaffeeautomaten in der Lounge wieder auf."};
             timeline.endMinigameText(text);
             SceneManager.LoadScene("Main Scene");
         }
@@ -131,7 +131,7 @@ public class Snake : MonoBehaviour
             position.x = 13.5f;
             position.y = -32f;
             position.layer = 0;
-            string[] text = {"Hey, du in der letzten Reihe. Aufpassen!"};
+            string[] text = {"Hey, du in der letzten Reihe. Aufpassen!","Verdammt! Du wurdest erwischt. Du fällst vor Scham in Ohnmacht und wachst geschwächt neben dem Kaffeeautomaten in der Lounge wieder auf."};
             timeline.endMinigameText(text);
             SceneManager.LoadScene("Main Scene");
         }
@@ -159,8 +159,8 @@ public class Snake : MonoBehaviour
             if(timeline.level == 2)
                 timeline.level = 3;
             string[] text ={"Oh wow. Es ist zwar nicht ok während der Vorlesug Snake zu spielen, aber das ist ein neuer Hochschulrekord.",
-            "Ich werde mal mit dem Dekan reden. Dafür wird er dich sicherlich ins dritte Semester versetzen.",
-            "Frag mal an der Information wie es jetzt für dich weitergehen könnte."};
+            "Ich werde mal mit dem Dekan reden. Dafür wird er Dich sicherlich ins dritte Semester versetzen. Dafür sorge ich!",
+            "Frag mal an der Information, wie es jetzt für Dich weitergehen könnte."};
             timeline.endMinigameText(text);
             SceneManager.LoadScene("Main Scene");
            
