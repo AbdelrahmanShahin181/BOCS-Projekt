@@ -34,12 +34,12 @@ public class CarController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift)){
-            maxSpeed *= 1,5f;
+            maxSpeed *= 1.5f;
             accelerationFactor *= 2;
         }
             
         else if (Input.GetKeyUp(KeyCode.LeftShift)){
-            maxSpeed /= 1,5f;
+            maxSpeed /= 1.5f;
             accelerationFactor /= 2;
         }
             
