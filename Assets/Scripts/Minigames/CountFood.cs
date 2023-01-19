@@ -8,6 +8,7 @@ using System.Threading;
 public class CountFood : MonoBehaviour
 {
     public TextMeshProUGUI score;
+    public int goal = 10;
     public int foodCount = 0;
     public float gameTime = 60.0f;
     public GameObject WinLose;
@@ -35,7 +36,7 @@ public class CountFood : MonoBehaviour
     }
 
     void gameEnded(){
-        if ( foodCount >= 5) {
+        if ( foodCount >= goal) {
             score.gameObject.SetActive(false);
             WinLose.gameObject.SetActive(true);
             winLoseText.text = "Erfolg";

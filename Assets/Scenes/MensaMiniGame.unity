@@ -654,8 +654,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 790358179}
+  goal: 10
   foodCount: 0
-  gameTime: 30
+  gameTime: 60
   WinLose: {fileID: 2005292870}
   winLoseText: {fileID: 1743095920}
   timeline: {fileID: 0}

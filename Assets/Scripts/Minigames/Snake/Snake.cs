@@ -15,7 +15,7 @@ public class Snake : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
-
+    public int goal = 10;
 
     public GameOverScreen gameOverScreen;
     public WonScreen wonScreen ;
@@ -151,7 +151,7 @@ public class Snake : MonoBehaviour
 
     }
     public void wonGame(){
-       if (_score == 4){
+       if (_score >= goal){
            die = true;
             //wonGame.gameObject.SetActive(true);    
             wonScreen.setUp(_score);
