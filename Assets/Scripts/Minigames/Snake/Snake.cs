@@ -159,7 +159,8 @@ public class Snake : MonoBehaviour
             if(timeline.level == 2)
                 timeline.level = 3;
             string[] text ={"Oh wow. Es ist zwar nicht ok während der Vorlesug Snake zu spielen, aber das ist ein neuer Hochschulrekord.",
-            "Ich werde mal mit dem Dekan reden. Dafür wird er dich sicherlich ins dritte Semester versetzen."};
+            "Ich werde mal mit dem Dekan reden. Dafür wird er dich sicherlich ins dritte Semester versetzen.",
+            "Frag mal an der Information wie es jetzt für dich weitergehen könnte."};
             timeline.endMinigameText(text);
             SceneManager.LoadScene("Main Scene");
            

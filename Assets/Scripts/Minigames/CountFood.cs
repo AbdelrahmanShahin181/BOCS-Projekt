@@ -8,6 +8,7 @@ using System.Threading;
 public class CountFood : MonoBehaviour
 {
     public TextMeshProUGUI score;
+    public TextMeshProUGUI timer;
     public int goal = 10;
     public int foodCount = 0;
     public float gameTime = 60.0f;
@@ -25,7 +26,9 @@ public class CountFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         gameTime -= Time.deltaTime;
+        timer.text = gameTime.ToString("F2");
         if (gameTime <= 0.0f) {
             gameEnded();
         }
@@ -38,6 +41,7 @@ public class CountFood : MonoBehaviour
     void gameEnded(){
         if ( foodCount >= goal) {
             score.gameObject.SetActive(false);
+            timer.gameObject.SetActive(false);
             WinLose.gameObject.SetActive(true);
             winLoseText.text = "Erfolg";
             //sleep for 5 seconds
