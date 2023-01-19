@@ -6,6 +6,7 @@ using TMPro;
 
 public class WinLoseCheck : MonoBehaviour
 {
+    public TextMeshProUGUI timer;
     public GameObject inputs;
     public float targetTime = 10.0f;
     private bool won = true;
@@ -23,6 +24,7 @@ public class WinLoseCheck : MonoBehaviour
     void Update()
     {
         targetTime -= Time.deltaTime;
+        timer.text = targetTime.ToString("F2");
         if (targetTime<=0.0f) {
             for(int i = 0; i<4; i++) {
                 if(!inputs.transform.GetChild(i).transform.GetChild(2).gameObject.activeSelf){
