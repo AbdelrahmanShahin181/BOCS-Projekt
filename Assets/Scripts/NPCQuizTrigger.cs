@@ -45,7 +45,13 @@ public class NPCQuizTrigger : MonoBehaviour
                     Debug.Log(QuizNum);
                 }
             }
+            if(Input.GetKeyDown(KeyCode.Escape) && (dialogActive || dialogPanel.activeSelf)){
+                dialogActive = false;
+                dialogBox.SetActive(false);
+                NPCQuizManager.GetInstance().ExitDialogeMode();
+            }
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

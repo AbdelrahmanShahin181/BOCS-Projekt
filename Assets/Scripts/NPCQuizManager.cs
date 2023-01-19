@@ -165,7 +165,7 @@ public class NPCQuizManager : MonoBehaviour
     public void AddECTS(){
 
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<ECTSCounter>().erhoeheWert(5);
+        player.GetComponent<ECTSCounter>().erhoeheWert(2);
     }
 
     public void looseHP(){

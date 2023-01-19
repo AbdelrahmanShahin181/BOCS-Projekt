@@ -38,18 +38,23 @@ public class KaffeeautomatDialog : MonoBehaviour
             }
         }
         if(dialogBox.activeSelf && dialogActive && Input.GetKeyDown(KeyCode.J) && playerInRange){
-                if(healthManager != null){
-                    ECTSCounter = player.GetComponent<ECTSCounter>();
-                    if(ECTSCounter.wert > 0) {
-                        ECTSCounter.senkeWert(1);
-                        healthManager.heal(5);
-                        dialogText.text = "Du hast 5 Lebenspunkte wiederhergestellt!  [E] Exit";
-                    }
-                    else {
-                        dialogText.text = "Du hast nicht genug Kaffee Coins";
-                    }
+            if(healthManager != null){
+                ECTSCounter = player.GetComponent<ECTSCounter>();
+                if(ECTSCounter.wert > 0) {
+                    ECTSCounter.senkeWert(1);
+                    healthManager.heal(5);
+                    dialogText.text = "Du hast 5 Lebenspunkte wiederhergestellt!  [E] Exit";
+                }
+                else {
+                    dialogText.text = "Du hast nicht genug Kaffee Coins";
                 }
             }
+        }
+        if(Input.GetKeyDown(KeyCode.Escape) && playerInRange && dialogActive)
+        {
+            dialogActive = false;
+            dialogBox.SetActive(false);
+        }
     }
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
