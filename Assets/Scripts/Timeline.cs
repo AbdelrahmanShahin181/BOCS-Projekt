@@ -25,7 +25,7 @@ public class Timeline : MonoBehaviour
     void Start() {
         
         level = position.TimelineLevel;
-        FindInActiveObjectByName("Network Manager");
+        NetworkManager = FindInActiveObjectByTag("Network Manager"); 
     }
 
     private void OnGUI() {
@@ -94,19 +94,37 @@ public class Timeline : MonoBehaviour
     }
 
     GameObject FindInActiveObjectByName(string name)
-{
-    Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
-    for (int i = 0; i < objs.Length; i++)
     {
-        if (objs[i].hideFlags == HideFlags.None)
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
         {
-            if (objs[i].name == name)
+            if (objs[i].hideFlags == HideFlags.None)
             {
-                return objs[i].gameObject;
+                Debug.Log(objs[i].name);
+                if (objs[i].name == name)
+                {
+                    return objs[i].gameObject;
+                }
             }
         }
+        return null;
     }
-    return null;
-}
+
+    GameObject FindInActiveObjectByTag(string tag)
+    {
+
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].CompareTag(tag))
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
+    }
     
 }
