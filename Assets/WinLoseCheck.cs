@@ -23,9 +23,11 @@ public class WinLoseCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetTime -= Time.deltaTime;
-        timer.text = targetTime.ToString("F2");
-        if (targetTime<=0.0f) {
+        if (targetTime > 0.0f) {
+            targetTime -= Time.deltaTime;
+            timer.text = targetTime.ToString("F2");
+        }
+        else {
             for(int i = 0; i<4; i++) {
                 if(!inputs.transform.GetChild(i).transform.GetChild(2).gameObject.activeSelf){
                     won = false;
@@ -37,7 +39,7 @@ public class WinLoseCheck : MonoBehaviour
                 winLoseText.text = "Erfolg";
                 if(timeline.level == 4)
                     timeline.level = 5;
-                string[] text = {"Das war knapp, hat aber gerade noch so gereicht. Aus Dank nutzt der Mitarbeiter seinen Zugriff zum Mainframe der Hochschule und versetzt dich ins vierte Semester."};
+                string[] text = {"Das war knapp, hat aber gerade noch so gereicht. Als Dankeschön nutze ich meinen Zugriff zum Mainframe der Hochschule und versetze dich ins vierte Semester.","Da muss ich eh noch mal dran, ich habe kürzlich einen Hackerangriff bemerkt...","Frag doch mal beim Infopoint nach, ob die etwas dazu wissen!"};
                 timeline.endMinigameText(text);
             }
             else {
@@ -47,10 +49,10 @@ public class WinLoseCheck : MonoBehaviour
                 position.x = 13.5f;
                 position.y = -32f;
                 position.layer = 0;
-                string[] text = {"Verdammt, da warst du wohl zu langsam. Der Mitarbeiter reißt dir hektisch den Microcontroller aus der Hand und stößt dich dabei vom Stuhl.","Als du wieder zu dir kommst liegst du benommen neben dem Kaffeautomaten in der Lounge."};
+                string[] text = {"Verdammt, da warst Du zu langsam. Der Mitarbeiter reißt dir hektisch den Microcontroller aus der Hand und stößt dich dabei vom Stuhl.","Als du wieder zu dir kommst liegst du benommen neben dem Kaffeautomaten in der Lounge."};
                 timeline.endMinigameText(text);
             }
-            
+            timer.text="0.00";
             if(Input.GetKeyDown(KeyCode.E)) {
                 SceneManager.LoadScene("Main Scene");
             }
