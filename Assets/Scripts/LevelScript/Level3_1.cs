@@ -87,6 +87,7 @@ public class Level3_1 : MonoBehaviour
                     if(counter >= dialogDone.Length)
                     {
                         dialogBox.SetActive(false);
+                        dialogActive = false;
                         counter = 0;
                     }
                     else
@@ -97,6 +98,7 @@ public class Level3_1 : MonoBehaviour
                 }
                 else if(!dialogBox.activeInHierarchy && !dialogActive)
                 {
+                    dialogActive = true;
                     dialogBox.SetActive(true);
                     dialogText.text = dialogDone[0];
                     counter = 1;
@@ -105,6 +107,7 @@ public class Level3_1 : MonoBehaviour
         }
         if(dialogBox.activeSelf &&Input.GetKeyDown(KeyCode.Escape) && playerInRange){
             dialogBox.SetActive(false);
+            dialogActive = false;
         }
     }
     public void OnTriggerEnter2D(Collider2D other) {

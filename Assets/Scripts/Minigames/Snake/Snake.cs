@@ -158,7 +158,7 @@ public class Snake : MonoBehaviour
             _score = 0;
             if(timeline.level == 2)
                 timeline.level = 3;
-            string[] text ={"Oh wow. Es ist zwar nicht ok während der Vorlesug Snake zu spielen, aber das ist ein neuer Hochschulrekord.",
+            string[] text ={"Oh wow. Es ist zwar nicht okay, während der Vorlesung Snake zu spielen, aber das ist ein neuer Hochschulrekord!",
             "Ich werde mal mit dem Dekan reden. Dafür wird er Dich sicherlich ins dritte Semester versetzen. Dafür sorge ich!",
             "Frag mal an der Information, wie es jetzt für Dich weitergehen könnte."};
             timeline.endMinigameText(text);

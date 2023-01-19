@@ -25,11 +25,11 @@ public class Level0 : MonoBehaviour
         dialog[0][0] = "Hallo und herzlich Willkommen!";
         dialog[0][1] = "Schön, dass Du Dich für ein Studium an der Hochschule Bochum entschieden hast.";	
         dialog[0][2] = "Du befindest Dich im Eingangsbereich, wir sind hier am Infopoint im A-Gebäude.";
-        dialog[0][3] = "Die Hörsääle befinden sich im B-Gebäude.";
+        dialog[0][3] = "Die Hörsäle befinden sich im B-Gebäude.";
         dialog[0][4] = "Praktische Arbeiten in Laborräumen werden im C-Gebäude durchgeführt.";
         dialog[0][5] = "Dort findest Du auch die zentrale Studienberatung sowie die Studierendenbüros.";
         dialog[0][6] = "Gehe bitte zur Mensa, um etwas zu essen. Du siehst etwas hungrig aus.";
-        dialog[0][7] = "Du findest die Mensa, indem du nach oben an den Fahrstühlen vorbei läufst.";
+        dialog[0][7] = "Du findest die Mensa, indem Du nach oben an den Fahrstühlen vorbei läufst.";
         dialog[1] = new string[2];
         dialog[1][0] = "Hast Du schon was gegessen? Du siehst etwas hungrig aus.";
         dialog[1][1] = "Die Mensa ist außerdem als Ersti einer der wichtigsten Orte an der Hochschule.";

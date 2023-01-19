@@ -23,5 +23,5 @@ Nein! (Das wissen doch sonst alle.....) [E] Versuche es erneut!
 -> END
 
 == antwortRichtig(auswahl)
-{auswahl} ist richtig! Du erhältst 2 Kaffee-Coins - Damit kannst du dir an den Automaten in der Mensa und in der Lounge einen Kaffee kaufen.
+{auswahl} ist richtig! Du erhältst 2 Kaffee-Coins. Damit kannst Du dir an den Automaten in der Mensa und in der Lounge einen Kaffee kaufen.
 -> END

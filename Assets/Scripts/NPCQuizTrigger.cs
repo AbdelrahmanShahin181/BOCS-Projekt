@@ -37,7 +37,7 @@ public class NPCQuizTrigger : MonoBehaviour
                     {
                         dialogActive = true;
                         dialogBox.SetActive(true);
-                        dialogText.text = "Danke, aber du hast mir bereits all meine Fragen beantwortet.";
+                        dialogText.text = "Danke, aber Du hast mir bereits meine Frage beantwortet.";
                     }
                 }
                 else {

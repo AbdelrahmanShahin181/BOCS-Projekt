@@ -61,6 +61,7 @@ public class CountFood : MonoBehaviour
             position.layer = 0;
             string[] text = {"Das war zu wenig Essen. Du fällst in Ohnmacht und wachst geschwächt neben dem Kaffeeautomaten in der Lounge wieder auf."};
             timeline.endMinigameText(text);
+            timer.gameObject.SetActive(false);
         }
     }
 
