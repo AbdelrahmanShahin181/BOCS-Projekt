@@ -18,7 +18,7 @@ public class ResetSave : MonoBehaviour
         timeline.i = 0;
         timeline.textActive = true;
 
-        GameObject.FindWithTag("Player").GetComponent<PlayerController>().Reset();
+        //GameObject.FindWithTag("Player").GetComponent<PlayerController>().Reset();
         
         if(GameObject.FindWithTag("Network Manager") != null) {
             GameObject[] NetworkManagers = GameObject.FindGameObjectsWithTag("Network Manager");

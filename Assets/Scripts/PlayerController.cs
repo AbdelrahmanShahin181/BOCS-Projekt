@@ -75,9 +75,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Reset() {
+        //SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        Destroy(this);
+        //Destroy(this);
     }
 
     // Update is called once per frame
