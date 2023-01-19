@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class HealthManager : MonoBehaviour
    
     void Update()
     {
-        
+        if(currentHealth <= 0) {
+            SceneManager.LoadScene("Death");
+        }
     }
 
     public void TakeDamage(int damage)
