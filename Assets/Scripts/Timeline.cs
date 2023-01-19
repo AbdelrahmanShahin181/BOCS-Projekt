@@ -83,7 +83,7 @@ public class Timeline : MonoBehaviour
     }
 
     void Update() {
-        if((Input.GetKeyDown(KeyCode.E)||Input.GetKeyDown(KeyCode.Escape)) && textActive) {
+        if((Input.GetKeyUp(KeyCode.E)||Input.GetKeyUp(KeyCode.Escape)) && textActive) {
             i++;
             if (i < savedText.Length) {
                 dialogText.text = savedText[i];
