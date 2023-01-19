@@ -32,7 +32,7 @@ public class Level0 : MonoBehaviour
         dialog[0][7] = "Du findest die Mensa, indem du nach Oben an den Fahrstühlen vorbei läufst.";
         dialog[1] = new string[2];
         dialog[1][0] = "Hast du schon was gegessen?";
-        dialog[1][1] = "gehe bitte zur Mensa mein Lieber";
+        dialog[1][1] = "Du siehst nämlich etwas hungrig aus. Geh bitte zur Mensa, um vorzufahren!";
         dialog[2] = new string[2];
         dialog[2][0] = "Du hast das erste Semester schon abgeschlossen?";
         dialog[2][1] = "Dann müsstest du doch jetzt in der Mathe 2 Vorlesung in H9 sitzen.";

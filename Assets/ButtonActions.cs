@@ -14,7 +14,7 @@ public class ButtonActions : MonoBehaviour
 
     // Update is called once per frame
     public void Respawn() {
-        string[] temp ={"Mit letzter Kraft schaffst du ess zum Kaffeautomaten und kannst gerade noch so einen Kaffe kaufen."};
+        string[] temp ={"Mit letzter Kraft schaffst du es zum Kaffeautomaten und kannst gerade noch so einen Kaffe kaufen. Aber pass auf, du bist geschwächt und hast nur 1 Lebenspunkt!"};
         Timeline timeline = GameObject.Find("Timeline").GetComponent<Timeline>();
         timeline.endMinigameText(temp);
         timeline.i = 0;
