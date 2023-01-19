@@ -84,7 +84,7 @@ public class CarLapCounter : MonoBehaviour
                             if(timeline.level ==3)
                                 //timeline.level = 4;
                                 timeline.car = 1;
-                            string[] text = {"Wow, du bist wirklich ganz schön schnell. Ein Versprechen ist ein Versprechen also darfst du das Auto behalten", "Wenn du aber sowieso immer mit der U-Bahn kommst, weil du so Umweltbewusst bist, solltest du mal mit dem Dozenten in C-6 sprechen.", "Ich habe gehört der sucht ein neues Auto. Vielleicht bietet er dir ja etwas im Tausch an"};
+                            string[] text = {"Respekt, Bruder. Ein Versprechen ist ein Versprechen, also darfst Du das Auto behalten.", "Wenn Du aber sowieso immer mit der U-Bahn kommst, weil Du so umweltbewusst bist, solltest Du mal mit dem Dozenten in C-6 sprechen.", "Ich habe gehört, der sucht ein neues Auto. Vielleicht bietet er dir ja etwas im Tausch an - der AMG hat schließlich 500PS."};
                             timeline.endMinigameText(text);
                         }
                         else {
@@ -94,7 +94,7 @@ public class CarLapCounter : MonoBehaviour
                             position.x = -7f;
                             position.y = -103f;
                             position.layer = 0;
-                            string[] text ={"Puh, Das war zum Glück nur ein Traum. Aber so ein Alptraum setzt einem auch ganz schön zu. Versuche es gleich nochmal."};
+                            string[] text ={"Puh, das war zum Glück nur ein Traum. Aber so ein Alptraum setzt einem auch ganz schön zu. Versuche es gleich nochmal."};
                             timeline.endMinigameText(text);
                         }
                         positionHandler.setWinnerDeclared(true);
